@@ -3,8 +3,7 @@
 ])
 
 <div class="relative inline-flex" x-data="{ open: false }">
-    <button
-        class="btn  px-2.5 bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-400 "
+    <button class="btn  px-2.5 bg-white border-2 border-gray-200 hover:border-gray-300 text-gray-400 "
         aria-haspopup="true" @click.prevent="open = !open" :aria-expanded="open">
         <span class="sr-only">Filter</span><wbr>
         <svg class="fill-current" width="16" height="16" viewBox="0 0 16 16">
@@ -23,37 +22,13 @@
             <li class="py-1 px-3">
                 <label class="flex items-center">
                     <input type="checkbox" class="form-checkbox" checked />
-                    <span class="text-sm font-medium ml-2">Direct VS Indirect</span>
-                </label>
-            </li>
-            <li class="py-1 px-3">
-                <label class="flex items-center">
-                    <input type="checkbox" class="form-checkbox" checked />
-                    <span class="text-sm font-medium ml-2">Real Time Value</span>
-                </label>
-            </li>
-            <li class="py-1 px-3">
-                <label class="flex items-center">
-                    <input type="checkbox" class="form-checkbox" checked />
-                    <span class="text-sm font-medium ml-2">Top Channels</span>
+                    <span class="text-sm font-medium ml-2">Angkutan Barang</span>
                 </label>
             </li>
             <li class="py-1 px-3">
                 <label class="flex items-center">
                     <input type="checkbox" class="form-checkbox" />
-                    <span class="text-sm font-medium ml-2">Sales VS Refunds</span>
-                </label>
-            </li>
-            <li class="py-1 px-3">
-                <label class="flex items-center">
-                    <input type="checkbox" class="form-checkbox" />
-                    <span class="text-sm font-medium ml-2">Last Order</span>
-                </label>
-            </li>
-            <li class="py-1 px-3">
-                <label class="flex items-center">
-                    <input type="checkbox" class="form-checkbox" />
-                    <span class="text-sm font-medium ml-2">Total Spent</span>
+                    <span class="text-sm font-medium ml-2">Angkutan Orang</span>
                 </label>
             </li>
         </ul>
@@ -61,11 +36,10 @@
             <ul class="flex items-center justify-between">
                 <li>
                     <button
-                        class="btn-xs bg-white  border-gray-200  hover:border-gray-300  text-red-500">Clear</button>
+                        class="btn-xs bg-white  border-gray-200  hover:border-gray-300  text-orange-300">Clear</button>
                 </li>
                 <li>
-                    <button
-                        class="btn-xs bg-white  border-gray-200  hover:border-gray-300  text-gray-800 "
+                    <button class="btn-xs bg-white  border-gray-200  hover:border-gray-300  text-orange-600 "
                         @click="open = false" @focusout="open = false">Apply</button>
                 </li>
             </ul>

@@ -57,7 +57,7 @@ const dashboardCard04 = () => {
       datasets: [
         // Light blue bars
         {
-          label: 'Direct',
+          label: 'Orang',
           data: dataset1,
           backgroundColor: tailwindConfig().theme.colors.gray[800],
           hoverBackgroundColor: tailwindConfig().theme.colors.gray[900],
@@ -67,7 +67,7 @@ const dashboardCard04 = () => {
         },
         // Blue bars
         {
-          label: 'Indirect',
+          label: 'Barang',
           data: dataset2,
           backgroundColor: tailwindConfig().theme.colors.orange[500],
           hoverBackgroundColor: tailwindConfig().theme.colors.orange[600],
@@ -116,7 +116,7 @@ const dashboardCard04 = () => {
             display: false,
           },
           ticks: {
-            color: darkMode ? textColor.dark : textColor.light,
+            color: textColor.light,
           },
         },
       },

@@ -1,7 +1,7 @@
 <div class="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white  shadow-sm rounded-xl border-2 border-gray-200">
     <div class="px-5 pt-5">
         <header class="flex justify-between items-start mb-2">
-            <h2 class="text-lg font-semibold text-gray-800 ">Acme Advanced</h2>
+            <h2 class="text-lg font-semibold text-gray-800 ">Kendaraan</h2>
             <!-- Menu button -->
             <div class="relative inline-flex" x-data="{ open: false }">
                 <button
@@ -45,10 +45,9 @@
                 </div>
             </div>
         </header>
-        <div class="text-xs font-semibold text-gray-400  uppercase mb-1">Sales</div>
+        <div class="text-xs font-semibold text-gray-400  uppercase mb-1">Mingguan</div>
         <div class="flex items-start">
-            <div class="text-3xl font-bold text-gray-800  mr-2">Rp{{ number_format('13233') }}</div>
-            <div class="text-sm font-medium text-red-700 px-1.5 bg-red-500/20 rounded-full">-14%</div>
+            <div class="text-3xl font-bold text-gray-800  mr-2">Kendaraan</div>
         </div>
     </div>
     <!-- Chart built with Chart.js 3 -->

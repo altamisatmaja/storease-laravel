@@ -2,7 +2,7 @@
 <div x-data="{ searchOpen: false }" class="z-50">
     <!-- Button -->
     <button
-        class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 lg:hover:bg-gray-200   rounded-full"
+        class="w-8 h-8 flex items-center justify-center hover:bg-gray-800 lg:hover:bg-gray-800   rounded-full"
         :class="{ 'bg-gray-200 ': searchOpen }"
         @click.prevent="searchOpen = true;if (searchOpen) $nextTick(()=>{$refs.searchInput.focus()});"
         aria-controls="search-modal"
@@ -50,7 +50,7 @@
             <form class="border-b border-gray-200 ">
                 <div class="relative">
                     <label for="modal-search" class="sr-only">Search</label>
-                    <input id="modal-search" class="w-full  bg-white  border-0 focus:ring-transparent placeholder-gray-400  appearance-none py-3 pl-10 pr-4" type="search" placeholder="Search Anything…" x-ref="searchInput" />
+                    <input id="modal-search" class="w-full  bg-white  border-0 active:ring-orange-600 focus:ring-orange-600 placeholder-gray-400  appearance-none py-3 pl-10 pr-4" type="search" placeholder="Search Anything…" x-ref="searchInput" />
                     <button class="absolute inset-0 right-auto group" type="submit" aria-label="Search">
                         <svg class="shrink-0 fill-current text-gray-400  group-hover:text-gray-500  ml-4 mr-2" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
                             <path d="M7 14c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7ZM7 2C4.243 2 2 4.243 2 7s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5Z" />

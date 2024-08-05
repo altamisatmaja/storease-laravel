@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('owned_vehicles', function (Blueprint $table) {
             $table->id();
+            $table->dateTime('bought_at');
+
+            $table->unsignedBigInteger('vehicle_id');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('rent_vehicles', function (Blueprint $table) {
             $table->id();
+            $table->integer('biaya');
+            $table->dateTime('start_at');
+            $table->dateTime('end_at');
+
+            $table->unsignedBigInteger('vehicle_id');
+            $table->foreign('vehicle_id')->references('id')->on('vehicles')->onDelete('cascade');
             $table->timestamps();
         });
     }

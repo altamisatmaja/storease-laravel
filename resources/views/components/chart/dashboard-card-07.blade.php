@@ -1,6 +1,6 @@
 <div class="flex flex-col lg:col-span-6 sm:col-span-12 bg-white  shadow-sm rounded-xl border-2 border-gray-200">
     <header class="px-5 py-4 border-b border-gray-100 ">
-        <h2 class="font-semibold text-gray-800 ">Top Channels</h2>
+        <h2 class="font-semibold text-gray-800 ">Kendaraan banyak digunakan</h2>
     </header>
     <div class="p-3">
 
@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <!-- Table body -->
-                <tbody class="text-sm font-medium divide-y divide-gray-100 dark:divide-gray-700/60">
+                <tbody class="text-sm font-medium divide-y divide-gray-100 dark:divide-gray-200">
                     <!-- Row -->
                     <tr>
                         <td class="p-2">

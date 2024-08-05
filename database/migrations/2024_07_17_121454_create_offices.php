@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('offices', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_kantor');
+
+            $table->unsignedBigInteger('region_id');
+            $table->unsignedBigInteger('refrence_to_offices_id')->nullable();
+
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
+            $table->foreign('refrence_to_offices_id')->references('id')->on('offices')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Approver\DashboardApproverController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,3 +13,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::middleware(['role:Approver'])->group(function () {
+    Route::get('approver/dashboard', [DashboardApproverController::class, 'index'])->name('approver.dashboard');
+    Route::post('approver/dashboard/pemesanan/{approvalProcessId}/update-status', [DashboardApproverController::class, 'updateApprovalStatus'])->name('approver.dashboard.booking.update-status');
+});

@@ -1,6 +1,6 @@
 <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-white shadow-md">
     <!-- Sidebar backdrop (mobile only) -->
-    <div x-show="sidebarOpen" class="fixed inset-0 bg-black bg-opacity-50 z-30 lg:hidden" @click="sidebarOpen = false">
+    <div x-show="sidebarOpen" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-30 lg:hidden" @click="sidebarOpen = false">
     </div>
 
     <!-- Sidebar -->
@@ -80,7 +80,7 @@
                         <ul class="mt-2 " :class="open ? '!block' : 'hidden'">
                             <li class="mb-5 last:mb-2">
                                 <a class="block text-gray-500  hover:text-gray-800   transition truncate"
-                                    href="{{ route('admin.dashboard') }}">
+                                href="{{ route('admin.dashboard.booking') }}">
                                     <div class="flex items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                                             width="20px" fill="#6b7280">

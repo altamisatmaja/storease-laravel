@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('mining_states', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_tambang');
+            $table->string('alamat_lengkap');
+
+            $table->unsignedBigInteger('region_id');
+            $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
             $table->timestamps();
         });
     }

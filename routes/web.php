@@ -31,3 +31,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
 require __DIR__.'/approver.php';
+
+Route::fallback(function() {
+    return view('pages/utility/404');
+});

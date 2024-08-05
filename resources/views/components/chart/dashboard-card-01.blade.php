@@ -1,7 +1,9 @@
+
+
 <div class="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white  shadow-sm rounded-xl border-2 border-gray-200">
     <div class="px-5 pt-5">
         <header class="flex justify-between items-start mb-2">
-            <h2 class="text-lg font-semibold text-gray-800 ">Acme Plus</h2>
+            <h2 class="text-lg font-semibold text-gray-800 ">Kendaraaan</h2>
             <!-- Menu button -->
             <div class="relative inline-flex" x-data="{ open: false }">
                 <button class="rounded-full"
@@ -40,11 +42,9 @@
                 </div>
             </div>
         </header>
-        <div class="text-xs font-semibold text-gray-400 uppercase mb-1">Sales</div>
+        <div class="text-xs font-semibold text-gray-400 uppercase mb-1">Bulanan</div>
         <div class="flex items-start">
-            <div class="text-3xl font-bold text-gray-800  mr-2">Rp 12,345</div> <!-- Static Value -->
-            <div class="text-sm font-medium text-green-700 px-1.5 bg-green-500/20 rounded-full">+49%</div>
-            <!-- Static Value -->
+            <div class="text-3xl font-bold text-gray-800  mr-2">Kendaraan</div>
         </div>
     </div>
     <div class="grow max-sm:max-h-[128px] xl:max-h-[128px]">

@@ -1,16 +1,14 @@
-// Import Chart.js
 import {
     Chart, LineController, LineElement, Filler, PointElement, LinearScale, TimeScale, Tooltip,
   } from 'chart.js';
   import 'chartjs-adapter-moment';
   import { chartAreaGradient } from '../app';
 
-  // Import utilities
   import { tailwindConfig, formatValue, hexToRGB } from '../utils';
 
   Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, TimeScale, Tooltip);
 
-  const dashboardCard01 = () => {
+  const dashboardCard01 = async () => {
     const ctx = document.getElementById('dashboard-card-01');
     if (!ctx) return;
 
@@ -31,17 +29,34 @@ import {
       dark: '#4B5563'
     };
 
-    // Static data
     const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-    const dataset1 = [65, 59, 80, 81, 56, 55, 40, 45, 60, 70, 75, 85];
-    const dataset2 = [28, 48, 40, 19, 86, 27, 90, 60, 55, 65, 77, 88];
+
+    const fetchData = async () => {
+      try {
+        const response = await fetch(`${window.Laravel.apiBaseUrl}/api/chart/pemesanan-bulanan`);
+        const data = await response.json();
+
+        return {
+          dataset1: data.datasets.find(dataset => dataset.label === 'Barang').data,
+          dataset2: data.datasets.find(dataset => dataset.label === 'Personel').data,
+        };
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        return {
+          dataset1: Array(12).fill(0),
+          dataset2: Array(12).fill(0),
+        };
+      }
+    };
+
+    const { dataset1, dataset2 } = await fetchData();
 
     const chart = new Chart(ctx, {
       type: 'line',
       data: {
         labels: labels,
         datasets: [
-          // Indigo line
+
           {
             data: dataset1,
             fill: true,
@@ -49,7 +64,7 @@ import {
               const chart = context.chart;
               const { ctx, chartArea } = chart;
               if (!chartArea) {
-                // This case happens when the chart is not yet fully initialized
+
                 return null;
               }
               return chartAreaGradient(ctx, chartArea, [
@@ -68,7 +83,7 @@ import {
             clip: 20,
             tension: 0.2
           },
-          // Gray line
+
           {
             data: dataset2,
             borderColor: `rgba(${hexToRGB(tailwindConfig().theme.colors.gray[500])}, 0.25)`,
@@ -94,14 +109,14 @@ import {
             beginAtZero: true,
           },
           x: {
-            type: 'category', // Change to 'category' since we're using static labels
+            type: 'category',
             display: false,
           },
         },
         plugins: {
           tooltip: {
             callbacks: {
-              title: () => false, // Disable tooltip title
+              title: () => false,
               label: (context) => formatValue(context.parsed.y),
             },
             bodyColor: darkMode ? tooltipBodyColor.dark : tooltipBodyColor.light,
