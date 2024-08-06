@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class FooterAdminController extends Controller
 {
     public function index(){
-        return view('dashboard.admin.cms.footer');
+        return view('pages.dashboard.admin.cms.footer');
     }
 }

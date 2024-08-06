@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ChangePasswordAdminController;
 use App\Http\Controllers\Admin\CMS\AboutAdminController;
 use App\Http\Controllers\Admin\CMS\FooterAdminController;
 use App\Http\Controllers\Admin\CMS\GeneralAdminController;
@@ -38,4 +39,6 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard/partner/pengajuan', [PartnerAdminController::class, 'list_store'])->name('admin.dashboard.partner.pengajuan');
     Route::get('admin/dashboard/partner/pengajuan/tambah', [PartnerAdminController::class, 'store'])->name('admin.dashboard.partner.pengajuan.tambah');
     Route::get('admin/dashboard/partner/pengajuan/ubah/{id}', [PartnerAdminController::class, 'update'])->name('admin.dashboard.partner.pengajuan.ubah');
+
+    Route::get('admin/dashboard/auth', [ChangePasswordAdminController::class, 'index'])->name('admin.dashboard.auth.changepassword');
 });
