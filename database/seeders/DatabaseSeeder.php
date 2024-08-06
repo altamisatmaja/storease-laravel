@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,23 +21,11 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        $this->call(RegionSeeder::class);
-        $this->call(ProvinceSeeder::class);
-        $this->call(UserSeeder::class);
+        $user = [
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('admin'),
+        ];
 
-        $this->call(ApprovalLevelSeeder::class);
-        $this->call(CategoryVehicleSeeder::class);
-        $this->call(DepartementSeeder::class);
-
-        $this->call(EmployeePositionSeeder::class);
-        $this->call(MerkVehicleSeeder::class);
-        $this->call(ModelVehicleSeeder::class);
-
-        $this->call(OfficeSeeder::class);
-        $this->call(EmployeeSeeder::class);
-        $this->call(ApproverSeeder::class);
-
-        $this->call(MiningStateSeeder::class);
-        $this->call(VehicleSeeder::class);
+        DB::table('users')->insert($user);
     }
 }

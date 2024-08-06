@@ -3,12 +3,12 @@
 ])
 
 <div class="relative inline-flex" x-data="{ open: false }">
-    <button class="inline-flex  justify-center items-center group gap-x-5" aria-haspopup="true" @click.prevent="open = !open"
-        :aria-expanded="open">
-        <img class="w-8 h-8 rounded-full" src="https://avatars.githubusercontent.com/u/116476102?v=4" width="32" height="32" alt="" />
+    <button class="inline-flex  justify-center items-center group gap-x-5" aria-haspopup="true"
+        @click.prevent="open = !open" :aria-expanded="open">
+        <img class="w-8 h-8 rounded-full" src="https://i.pinimg.com/236x/bd/c1/e5/bdc1e5e427351857e07a44b7eef254b6.jpg"
+            width="32" height="32" alt="" />
         <div class="flex items-center truncate">
-            <span
-                class="truncate text-md font-medium text-white mr-4 group-hover:text-gray-800 ">Admin</span>
+            <span class="truncate text-md font-medium text-white mr-4 group-hover:text-gray-800 ">Admin</span>
             <svg class="w-3 h-3 shrink-0 ml-1 fill-current text-gray-400 " viewBox="0 0 12 12">
                 <path d="M5.9 11.4L.5 6l1.4-1.4 4 4 4-4L11.3 6z" />
             </svg>

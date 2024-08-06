@@ -1,6 +1,13 @@
+<style>
+    .white-filter {
+        filter: brightness(0) invert(1);
+    }
+</style>
+
+
 <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-white shadow-md">
     <!-- Sidebar backdrop (mobile only) -->
-    <div x-show="sidebarOpen" class="fixed inset-0 bg-gray-800 bg-opacity-50 z-30 lg:hidden" @click="sidebarOpen = false">
+    <div x-show="sidebarOpen" class="fixed inset-0 bg-[#423c6a] bg-opacity-50 z-30 lg:hidden" @click="sidebarOpen = false">
     </div>
 
     <!-- Sidebar -->
@@ -8,17 +15,18 @@
         :class="{ 'translate-x-0': sidebarOpen }">
         <div class="flex flex-col h-full">
             <!-- Sidebar header -->
-            <div class="flex items-center justify-center gap-x-4 h-16 bg-gray-800">
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
-                        fill="#ffffff">
-                        <path
-                            d="M219-120q-25 0-42.5-17.5T159-180q0-25 17.5-42.5T219-240h64L181-574q-27-15-44.5-44T119-680q0-50 35-85t85-35q39 0 69.5 22.5T351-720h128v-40q0-17 11.5-28.5T519-800q9 0 17.5 4t14.5 12l68-64q9-9 21.5-11.5T665-856l156 72q12 6 16.5 17.5T837-744q-6 12-17.5 15.5T797-730l-144-66-94 88v56l94 86 144-66q11-5 23-1t17 15q6 12 1 23t-17 17l-156 74q-12 6-24.5 3.5T619-512l-68-64q-6 6-14.5 11t-17.5 5q-17 0-28.5-11.5T479-600v-40H351q-3 8-6.5 15t-9.5 15l200 370h84q25 0 42.5 17.5T679-180q0 25-17.5 42.5T619-120H219Zm20-520q17 0 28.5-11.5T279-680q0-17-11.5-28.5T239-720q-17 0-28.5 11.5T199-680q0 17 11.5 28.5T239-640Z" />
-                    </svg>
-                </div>
-                <div class="flex flex-col">
-                    <div class="text-md font-semibold text-gray-100 ">PT Nickel Pasific Tbk.</div>
-                    <div class="text-sm font-semibold text-gray-100 ">Administrator</div>
+            <div class="flex items-center justify-center gap-x-4 h-16 bg-[#423c6a] w-full">
+                <div class="flex flex-col w-full px-4">
+                    <div class="flex flex-wrap gap-x-2">
+                        <svg width="17" height="24" viewBox="0 0 17 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.30938 21C7.14062 20.5125 6.925 20.0625 6.6625 19.65C6.4 19.2375 6.09062 18.8531 5.73438 18.4969C5.37813 18.1406 4.99375 17.8266 4.58125 17.5547C4.16875 17.2828 3.71875 17.0625 3.23125 16.8938C3.26875 17.4375 3.4 17.9438 3.625 18.4125C3.85 18.8813 4.15 19.3031 4.525 19.6781C4.9 20.0531 5.32188 20.3578 5.79063 20.5922C6.25938 20.8266 6.76562 20.9625 7.30938 21ZM10.3469 21C10.8906 20.9438 11.3969 20.8031 11.8656 20.5781C12.3344 20.3531 12.7562 20.0531 13.1312 19.6781C13.5062 19.3031 13.8062 18.8813 14.0312 18.4125C14.2563 17.9438 14.3969 17.4375 14.4531 16.8938C13.9656 17.0625 13.5109 17.2781 13.0891 17.5406C12.6672 17.8031 12.2781 18.1125 11.9219 18.4688C11.5656 18.825 11.2563 19.2141 10.9938 19.6359C10.7312 20.0578 10.5156 20.5125 10.3469 21ZM8.82812 10.875C10.0656 10.875 11.125 10.4344 12.0062 9.55313C12.8875 8.67188 13.3281 7.6125 13.3281 6.375V5.025L11.3594 6.68438L8.82812 3.61875L6.29688 6.68438L4.32812 5.025V6.375C4.32812 7.6125 4.76875 8.67188 5.65 9.55313C6.53125 10.4344 7.59062 10.875 8.82812 10.875ZM7.70312 23.25C5.82812 23.25 4.23438 22.5938 2.92188 21.2812C1.60937 19.9688 0.953125 18.375 0.953125 16.5V14.25C2.28437 14.2312 3.54063 14.5031 4.72188 15.0656C5.90313 15.6281 6.89687 16.3875 7.70312 17.3438V13.0406C6.09063 12.7781 4.75 12.0234 3.68125 10.7766C2.6125 9.52969 2.07812 8.0625 2.07812 6.375V2.55C2.07812 2.0625 2.29375 1.72031 2.725 1.52344C3.15625 1.32656 3.55938 1.3875 3.93438 1.70625L6.01562 3.50625L7.95625 1.14375C8.18125 0.88125 8.47188 0.75 8.82812 0.75C9.18437 0.75 9.475 0.88125 9.7 1.14375L11.6406 3.50625L13.7219 1.70625C14.0969 1.3875 14.5 1.32656 14.9313 1.52344C15.3625 1.72031 15.5781 2.0625 15.5781 2.55V6.375C15.5781 8.0625 15.0437 9.52969 13.975 10.7766C12.9062 12.0234 11.5656 12.7781 9.95312 13.0406V17.3438C10.7594 16.3875 11.7531 15.6281 12.9344 15.0656C14.1156 14.5031 15.3719 14.2312 16.7031 14.25V16.5C16.7031 18.375 16.0469 19.9688 14.7344 21.2812C13.4219 22.5938 11.8281 23.25 9.95312 23.25H7.70312Z"
+                                fill="#ffffff" />
+                        </svg>
+                        <img class="h-5 white-filter" src="{{ asset('icons/storease.png') }}" alt="">
+                    </div>
+                    <div class="text-sm ml-6 font-semibold text-gray-100 ">Administrator</div>
                 </div>
                 <button @click="sidebarOpen = false" class="lg:hidden text-gray-100  focus:outline-none">
                     <svg class="w-6 h-6" fill="#ffffff" stroke="currentColor" viewBox="0 0 24 24"
@@ -39,7 +47,7 @@
     <!-- Content -->
     <div class="flex-1 flex flex-col overflow-hidden">
         <!-- Topbar -->
-        <header class="flex items-center justify-between h-16 bg-gray-800  px-6  lg:hidden">
+        <header class="flex items-center justify-between h-16 bg-[#423c6a]  px-6  lg:hidden">
             <button @click="sidebarOpen = true" class="text-gray-100  focus:outline-none lg:hidden">
                 <svg class="w-6 h-6" fill="#ffffff" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +88,7 @@
                         <ul class="mt-2 " :class="open ? '!block' : 'hidden'">
                             <li class="mb-5 last:mb-2">
                                 <a class="block text-gray-500  hover:text-gray-800   transition truncate"
-                                href="{{ route('admin.dashboard.booking') }}">
+                                    href="{{ route('admin.dashboard.booking') }}">
                                     <div class="flex items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                                             width="20px" fill="#6b7280">

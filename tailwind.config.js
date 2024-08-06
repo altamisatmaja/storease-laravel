@@ -6,7 +6,14 @@ export default {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                primarybase: "#423c6a",
+                sekunderbase: "#4a47a2",
+                hoverbase: "#f4b0c7",
+                textbase: "#423c6a",
+            },
+        },
     },
     plugins: [],
 };

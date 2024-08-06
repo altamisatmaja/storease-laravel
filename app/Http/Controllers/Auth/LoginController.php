@@ -15,14 +15,8 @@ class LoginController extends Controller
         logger('User authenticated:', ['user' => Auth::user()]);
 
 
-        if(Auth::user() && Auth::user()->role == 'Admin'){
+        if(Auth::user()){
             return redirect()->route('admin.dashboard');
-        }
-        else if (Auth::user() && Auth::user()->role == 'Approver'){
-            return redirect()->route('approver.dashboard');
-        } else {
-            Auth::guard('web')->logout();
-            return redirect()->route('login')->with('status', 'Peringatan! Anda tidak memiliki akses untuk masuk.');
         }
     }
 }

@@ -44,17 +44,22 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+                        @if (session('errors'))
+                            <div class="mb-4 font-medium text-sm text-green-600">
+                                {{ session('errors') }}
+                            </div>
+                        @endif
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
                             <div class="mb-4">
-                                <label for="username" class="block text-gray-800 text-md font-semibold mb-2">Username
+                                <label for="email" class="block text-gray-800 text-md font-semibold mb-2">Email
                                     *</label>
-                                <input type="text" id="username" name="username" :value="old('username')" autofocus
+                                <input type="text" id="email" name="email" :value="old('email')" autofocus
                                     class=" w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600"
-                                    required placeholder="Username anda">
-                                @if ($errors->has('username'))
+                                    required placeholder="email anda">
+                                @if ($errors->has('email'))
                                     <div class="mb-4 font-medium text-md mt-2 text-red-600">
-                                        {{ $errors->first('username') }}
+                                        {{ $errors->first('email') }}
                                     </div>
                                 @endif
 
