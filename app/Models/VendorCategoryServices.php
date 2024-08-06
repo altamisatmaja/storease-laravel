@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class VendorCategoryServices extends Model
 {
     use HasFactory;
+
+    protected $table = 'vendor_category_services';
+
+    protected $fillable = [
+        'category_name',
+        'slug',
+    ];
 }
