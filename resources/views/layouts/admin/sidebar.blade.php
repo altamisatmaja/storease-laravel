@@ -88,7 +88,7 @@
                         <ul class="mt-2 " :class="open ? '!block' : 'hidden'">
                             <li class="mb-5 last:mb-2">
                                 <a class="block text-gray-500  hover:text-gray-800   transition truncate"
-                                    href="{{ route('admin.dashboard.booking') }}">
+                                    href="{{ route('admin.dashboard') }}">
                                     <div class="flex items-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                                             width="20px" fill="#6b7280">

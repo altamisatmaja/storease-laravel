@@ -1,14 +1,14 @@
 <?php
 
-use App\Http\Controllers\Admin\BookingAdminController;
-use App\Http\Controllers\Admin\BookingExportController;
+use App\Http\Controllers\Admin\CMS\AboutAdminController;
+use App\Http\Controllers\Admin\CMS\FooterAdminController;
+use App\Http\Controllers\Admin\CMS\GeneralAdminController;
+use App\Http\Controllers\Admin\CMS\HeroAdminController;
+use App\Http\Controllers\Admin\CMS\OurServiceAdminController;
+use App\Http\Controllers\Admin\CMS\PortofolioAdminController;
+use App\Http\Controllers\Admin\CMS\TestimoniAdminController;
 use App\Http\Controllers\Admin\DashboardAdminController;
-use App\Http\Controllers\Admin\EmployeeAdminController;
-use App\Http\Controllers\Admin\FuelAdminController;
-use App\Http\Controllers\Admin\HistoryAdminController;
-use App\Http\Controllers\Admin\OfficeAdminController;
-use App\Http\Controllers\Admin\ServiceScheduleAdminController;
-use App\Http\Controllers\Admin\VehicleController;
+use App\Http\Controllers\Admin\PartnerAdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,22 +26,16 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
 
-    Route::get('admin/dashboard/pemesanan/pengajuan', [BookingAdminController::class, 'index'])->name('admin.dashboard.booking');
-    Route::get('admin/dashboard/pemesanan/pengajuan/tambah', [BookingAdminController::class, 'create'])->name('admin.dashboard.booking.add');
-    Route::post('admin/dashboard/pemesanan/pengajuan/tambah', [BookingAdminController::class, 'store'])->name('admin.dashboard.booking.store');
-    Route::get('admin/dashboard/pemesanan/util/export-excel', [BookingAdminController::class, 'exportToExcel'])->name('admin.dashboard.booking.excel');
+    Route::get('admin/dashboard/cms/about', [AboutAdminController::class, 'index'])->name('admin.dashboard.cms.about');
+    Route::get('admin/dashboard/cms/footer', [FooterAdminController::class, 'index'])->name('admin.dashboard.cms.footer');
+    Route::get('admin/dashboard/cms/general', [GeneralAdminController::class, 'index'])->name('admin.dashboard.cms.general');
+    Route::get('admin/dashboard/cms/hero', [HeroAdminController::class, 'index'])->name('admin.dashboard.cms.hero');
+    Route::get('admin/dashboard/cms/our-service', [OurServiceAdminController::class, 'index'])->name('admin.dashboard.cms.ourservice');
+    Route::get('admin/dashboard/cms/portofolio', [PortofolioAdminController::class, 'index'])->name('admin.dashboard.cms.portofolio');
+    Route::get('admin/dashboard/cms/testimoni', [TestimoniAdminController::class, 'index'])->name('admin.dashboard.cms.testimoni');
 
-    Route::get('admin/dashboard/pemesanan/riwayat-pengajuan', [BookingAdminController::class, 'history'])->name('admin.dashboard.booking.history');
-
-    Route::get('admin/dashboard/karyawan', [EmployeeAdminController::class, 'index'])->name('admin.dashboard.employee');
-
-    Route::get('admin/dashboard/bbm', [FuelAdminController::class, 'index'])->name('admin.dashboard.fuel');
-
-    Route::get('admin/dashboard/riwayat', [HistoryAdminController::class, 'index'])->name('admin.dashboard.history');
-
-    Route::get('admin/dashboard/kantor', [OfficeAdminController::class, 'index'])->name('admin.dashboard.office');
-
-    Route::get('admin/dashboard/jadwal-servis', [ServiceScheduleAdminController::class, 'index'])->name('admin.dashboard.schedule-services');
-
-    Route::get('admin/dashboard/kendaraan', [VehicleController::class, 'index'])->name('admin.dashboard.vehicle');
+    Route::get('admin/dashboard/partner', [PartnerAdminController::class, 'index'])->name('admin.dashboard.partner');
+    Route::get('admin/dashboard/partner/pengajuan', [PartnerAdminController::class, 'list_store'])->name('admin.dashboard.partner.pengajuan');
+    Route::get('admin/dashboard/partner/pengajuan/tambah', [PartnerAdminController::class, 'store'])->name('admin.dashboard.partner.pengajuan.tambah');
+    Route::get('admin/dashboard/partner/pengajuan/ubah/{id}', [PartnerAdminController::class, 'update'])->name('admin.dashboard.partner.pengajuan.ubah');
 });

@@ -1,5 +1,5 @@
 <p class="px-2 border-b-2 pb-2 border-gray-200 uppercase text-sm font-bold text-[#f4b0c7]">Main</p>
-<ul class="space-y-2">
+<ul class="space-y-2 pt-2">
     <li
         class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-hoverbase hover:text-white duration-200">
         <a href="{{ route('admin.dashboard') }}" class="block text-textbase hover:text-white truncate transition">
@@ -37,7 +37,7 @@
             <ul class="pl-8 mt-2 " :class="open ? '!block' : 'hidden'">
                 <li class="mb-5 last:mb-0">
                     <a class="block pl-3 text-gray-500  hover:text-gray-700  transition truncate"
-                        href="{{ route('admin.dashboard.booking') }}">
+                        href="{{ route('admin.dashboard') }}">
                         <div class="flex items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                                 width="20px" fill="#6b7280">
@@ -50,7 +50,7 @@
                 </li>
                 <li class="last:mb-0">
                     <a class="block pl-3 text-gray-500  hover:text-gray-700  transition truncate"
-                        href="{{ route('admin.dashboard.booking.history') }}">
+                        href="{{ route('admin.dashboard') }}">
                         <div class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                                 width="20px" fill="#6b7280">
@@ -68,7 +68,7 @@
     <div class="space-y-2">
         <li
             class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-hoverbase hover:text-white duration-200">
-            <a href="{{ route('admin.dashboard.schedule-services') }}" class="block text-textbase  truncate transition">
+            <a href="{{ route('admin.dashboard') }}" class="block text-textbase  truncate transition">
                 <div class="flex items-center hover:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                         fill="currentColor" class="hover:text-white">
@@ -81,8 +81,7 @@
         </li>
         <li
             class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-hoverbase hover:text-white duration-200">
-            <a href="{{ route('admin.dashboard.fuel') }}"
-                class="block text-textbase hover:text-white truncate transition">
+            <a href="{{ route('admin.dashboard') }}" class="block text-textbase hover:text-white truncate transition">
                 <div class="flex items-center hover:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                         fill="currentColor" class="hover:text-white">
@@ -95,7 +94,7 @@
         </li>
         <li
             class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-hoverbase ">
-            <a class="block text-textbase  truncate transition" href="{{ route('admin.dashboard.office') }}">
+            <a class="block text-textbase  truncate transition" href="{{ route('admin.dashboard') }}">
                 <div class="flex items-center hover:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                         fill="currentColor" class="hover:text-white">
@@ -108,7 +107,7 @@
         </li>
         <li
             class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-hoverbase ">
-            <a class="block text-textbase  truncate transition" href="{{ route('admin.dashboard.vehicle') }}">
+            <a class="block text-textbase  truncate transition" href="{{ route('admin.dashboard') }}">
                 <div class="flex items-center hover:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                         fill="currentColor" class="hover:text-white">
@@ -121,7 +120,7 @@
         </li>
         <li
             class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-hoverbase ">
-            <a class="block text-textbase  truncate transition" href="{{ route('admin.dashboard.employee') }}">
+            <a class="block text-textbase  truncate transition" href="{{ route('admin.dashboard') }}">
                 <div class="flex items-center hover:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                         fill="currentColor" class="hover:text-white">
@@ -134,7 +133,7 @@
         </li>
         <li
             class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-hoverbase ">
-            <a class="block text-textbase  truncate transition" href="{{ route('admin.dashboard.history') }}">
+            <a class="block text-textbase  truncate transition" href="{{ route('admin.dashboard') }}">
                 <div class="flex items-center hover:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                         fill="currentColor" class="hover:text-white">
@@ -147,7 +146,7 @@
         </li>
         <li
             class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-hoverbase ">
-            <a class="block text-textbase  truncate transition" href="{{ route('admin.dashboard.history') }}">
+            <a class="block text-textbase  truncate transition" href="{{ route('admin.dashboard') }}">
                 <div class="flex items-center hover:text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
                         fill="currentColor" class="hover:text-white">
