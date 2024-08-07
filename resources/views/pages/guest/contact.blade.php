@@ -1,104 +1,112 @@
 @extends('layouts.guest.app')
 
 @section('content')
-    <section class="flex flex-col w-full h-[550px] bg-cover bg-fixed bg-center flex justify-center items-center"
+    <section class="relative flex flex-col w-full h-[550px] bg-cover bg-fixed bg-center justify-center items-center"
         style="
-            background-image: url(https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?auto=format&fit=crop&w=880&q=80);
-        ">
-        <h1 class="text-white text-5xl font-semibold  mb-10">
-            This is Parallax Effect
+        background-image: url(https://www.jagowebsite.net/wp-content/uploads/2019/03/target-pasar-wedding-organizer.jpg);
+    ">
+        <div class="absolute inset-0 bg-sekunderbase opacity-50"></div>
+        <h1 class="text-white text-5xl font-semibold mb-10 relative z-10">
+            Kontak kami!
         </h1>
         <a href="https://egoistdeveloper.github.io/twcss-to-sass-playground/" target="_blank"
-            class="text-white/90 hover:text-white">
-            Convetert to SASS
+            class="text-white/90 hover:text-white relative z-10">
+            Tetap terhubung dengan kami!
         </a>
     </section>
     <div class="my-6">
         <div class="grid sm:grid-cols-2 items-center gap-16 p-8 mx-auto bg-white rounded-md text-[#333] font-[sans-serif]">
             <div>
-                <h1 class="text-3xl font-extrabold">Let's Talk</h1>
-                <p class="text-sm text-gray-400 mt-3">Have some big idea or brand to develop and need help? Then
-                    reach out we'd love to hear about your project and provide help.</p>
-                <div class="mt-12">
-                    <h2 class="text-lg font-extrabold">Email</h2>
-                    <ul class="mt-3">
-                        <li class="flex items-center">
-                            <div class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#007bff'
-                                    viewBox="0 0 479.058 479.058">
-                                    <path
-                                        d="M434.146 59.882H44.912C20.146 59.882 0 80.028 0 104.794v269.47c0 24.766 20.146 44.912 44.912 44.912h389.234c24.766 0 44.912-20.146 44.912-44.912v-269.47c0-24.766-20.146-44.912-44.912-44.912zm0 29.941c2.034 0 3.969.422 5.738 1.159L239.529 264.631 39.173 90.982a14.902 14.902 0 0 1 5.738-1.159zm0 299.411H44.912c-8.26 0-14.971-6.71-14.971-14.971V122.615l199.778 173.141c2.822 2.441 6.316 3.655 9.81 3.655s6.988-1.213 9.81-3.655l199.778-173.141v251.649c-.001 8.26-6.711 14.97-14.971 14.97z"
-                                        data-original="#000000" />
-                                </svg>
-                            </div>
-                            <a target="blank" href="#" class="text-[#007bff] text-sm ml-3">
-                                <small class="block">Mail</small>
-                                <strong>https://gmail.com</strong>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mt-12">
-                    <h2 class="text-lg font-extrabold">Socials</h2>
-                    <ul class="flex mt-3 space-x-4">
-                        <li class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                            <a href="javascript:void(0)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#007bff'
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M6.812 13.937H9.33v9.312c0 .414.335.75.75.75l4.007.001a.75.75 0 0 0 .75-.75v-9.312h2.387a.75.75 0 0 0 .744-.657l.498-4a.75.75 0 0 0-.744-.843h-2.885c.113-2.471-.435-3.202 1.172-3.202 1.088-.13 2.804.421 2.804-.75V.909a.75.75 0 0 0-.648-.743A26.926 26.926 0 0 0 15.071 0c-7.01 0-5.567 7.772-5.74 8.437H6.812a.75.75 0 0 0-.75.75v4c0 .414.336.75.75.75zm.75-3.999h2.518a.75.75 0 0 0 .75-.75V6.037c0-2.883 1.545-4.536 4.24-4.536.878 0 1.686.043 2.242.087v2.149c-.402.205-3.976-.884-3.976 2.697v2.755c0 .414.336.75.75.75h2.786l-.312 2.5h-2.474a.75.75 0 0 0-.75.75V22.5h-2.505v-9.312a.75.75 0 0 0-.75-.75H7.562z"
-                                        data-original="#000000" />
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                            <a href="javascript:void(0)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#007bff'
-                                    viewBox="0 0 511 512">
-                                    <path
-                                        d="M111.898 160.664H15.5c-8.285 0-15 6.719-15 15V497c0 8.285 6.715 15 15 15h96.398c8.286 0 15-6.715 15-15V175.664c0-8.281-6.714-15-15-15zM96.898 482H30.5V190.664h66.398zM63.703 0C28.852 0 .5 28.352.5 63.195c0 34.852 28.352 63.2 63.203 63.2 34.848 0 63.195-28.352 63.195-63.2C126.898 28.352 98.551 0 63.703 0zm0 96.395c-18.308 0-33.203-14.891-33.203-33.2C30.5 44.891 45.395 30 63.703 30c18.305 0 33.195 14.89 33.195 33.195 0 18.309-14.89 33.2-33.195 33.2zm289.207 62.148c-22.8 0-45.273 5.496-65.398 15.777-.684-7.652-7.11-13.656-14.942-13.656h-96.406c-8.281 0-15 6.719-15 15V497c0 8.285 6.719 15 15 15h96.406c8.285 0 15-6.715 15-15V320.266c0-22.735 18.5-41.23 41.235-41.23 22.734 0 41.226 18.495 41.226 41.23V497c0 8.285 6.719 15 15 15h96.403c8.285 0 15-6.715 15-15V302.066c0-79.14-64.383-143.523-143.524-143.523zM466.434 482h-66.399V320.266c0-39.278-31.953-71.23-71.226-71.23-39.282 0-71.239 31.952-71.239 71.23V482h-66.402V190.664h66.402v11.082c0 5.77 3.309 11.027 8.512 13.524a15.01 15.01 0 0 0 15.875-1.82c20.313-16.294 44.852-24.907 70.953-24.907 62.598 0 113.524 50.926 113.524 113.523zm0 0"
-                                        data-original="#000000" />
-                                </svg>
-                            </a>
-                        </li>
-                        <li class="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                            <a href="javascript:void(0)">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill='#007bff'
-                                    viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 9.3a2.7 2.7 0 1 0 0 5.4 2.7 2.7 0 0 0 0-5.4Zm0-1.8a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Zm5.85-.225a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25 0ZM12 4.8c-2.227 0-2.59.006-3.626.052-.706.034-1.18.128-1.618.299a2.59 2.59 0 0 0-.972.633 2.601 2.601 0 0 0-.634.972c-.17.44-.265.913-.298 1.618C4.805 9.367 4.8 9.714 4.8 12c0 2.227.006 2.59.052 3.626.034.705.128 1.18.298 1.617.153.392.333.674.632.972.303.303.585.484.972.633.445.172.918.267 1.62.3.993.047 1.34.052 3.626.052 2.227 0 2.59-.006 3.626-.052.704-.034 1.178-.128 1.617-.298.39-.152.674-.333.972-.632.304-.303.485-.585.634-.972.171-.444.266-.918.299-1.62.047-.993.052-1.34.052-3.626 0-2.227-.006-2.59-.052-3.626-.034-.704-.128-1.18-.299-1.618a2.619 2.619 0 0 0-.633-.972 2.595 2.595 0 0 0-.972-.634c-.44-.17-.914-.265-1.618-.298-.993-.047-1.34-.052-3.626-.052ZM12 3c2.445 0 2.75.009 3.71.054.958.045 1.61.195 2.185.419A4.388 4.388 0 0 1 19.49 4.51c.457.45.812.994 1.038 1.595.222.573.373 1.227.418 2.185.042.96.054 1.265.054 3.71 0 2.445-.009 2.75-.054 3.71-.045.958-.196 1.61-.419 2.185a4.395 4.395 0 0 1-1.037 1.595 4.44 4.44 0 0 1-1.595 1.038c-.573.222-1.227.373-2.185.418-.96.042-1.265.054-3.71.054-2.445 0-2.75-.009-3.71-.054-.958-.045-1.61-.196-2.185-.419A4.402 4.402 0 0 1 4.51 19.49a4.414 4.414 0 0 1-1.037-1.595c-.224-.573-.374-1.227-.419-2.185C3.012 14.75 3 14.445 3 12c0-2.445.009-2.75.054-3.71s.195-1.61.419-2.185A4.392 4.392 0 0 1 4.51 4.51c.45-.458.994-.812 1.595-1.037.574-.224 1.226-.374 2.185-.419C9.25 3.012 9.555 3 12 3Z">
-                                    </path>
-                                </svg>
-                            </a>
-                        </li>
-                    </ul>
+                <h1 class="text-3xl font-extrabold">Informasi Kontak</h1>
+                <p class="text-lg text-gray-400 mt-3">Selamat datang di website resmi storease,
+                    informasi kontak resmi kami tertera pada halaman ini.
+                </p>
+                <div class="space-y-4 mt-10">
+                    <div class="flex items-start space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                            fill="#423c6a">
+                            <path
+                                d="M480-168q129.33-118 191.33-214.17 62-96.16 62-169.83 0-114.86-73.36-188.1-73.36-73.23-179.97-73.23T300.03-740.1q-73.36 73.24-73.36 188.1 0 73.67 63 169.83Q352.67-286 480-168Zm-.17 65.67q-11.83 0-23.5-4-11.66-4-20.66-12.67-49.67-45.33-99-97.33-49.34-52-88.5-107.84Q209-380 184.5-437.83 160-495.67 160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 56.33-24.5 114.17Q751-380 711.83-324.17q-39.16 55.84-88.5 107.84-49.33 52-99 97.33-9 8.67-20.83 12.67-11.83 4-23.67 4ZM480-560Zm.06 73.33q30.27 0 51.77-21.56 21.5-21.55 21.5-51.83 0-30.27-21.56-51.77-21.55-21.5-51.83-21.5-30.27 0-51.77 21.56-21.5 21.55-21.5 51.83 0 30.27 21.56 51.77 21.55 21.5 51.83 21.5Z" />
+                        </svg>
+                        <p>DcHub, Gedung Fakultas Ilmu Komputer, Universitas Jember</p>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                            fill="#423c6a">
+                            <path
+                                d="M796-120q-119 0-240-55.5T333-333Q231-435 175.5-556T120-796q0-18.86 12.57-31.43T164-840h147.33q14 0 24.34 9.83Q346-820.33 349.33-806l26.62 130.43q2.05 14.9-.62 26.24-2.66 11.33-10.82 19.48L265.67-530q24 41.67 52.5 78.5T381-381.33q35 35.66 73.67 65.5Q493.33-286 536-262.67l94.67-96.66q9.66-10.34 23.26-14.5 13.61-4.17 26.74-2.17L806-349.33q14.67 4 24.33 15.53Q840-322.27 840-308v144q0 18.86-12.57 31.43T796-120ZM233-592l76-76.67-21-104.66H187q3 41.66 13.67 86Q211.33-643 233-592Zm365.33 361.33q40.34 18.34 85.84 29.67 45.5 11.33 89.16 13.67V-288l-100-20.33-75 77.66ZM233-592Zm365.33 361.33Z" />
+                        </svg>
+                        <p>085121004933</p>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                            fill="#423c6a">
+                            <path
+                                d="M146.67-160q-27 0-46.84-19.83Q80-199.67 80-226.67v-506.66q0-27 19.83-46.84Q119.67-800 146.67-800h666.66q27 0 46.84 19.83Q880-760.33 880-733.33v506.66q0 27-19.83 46.84Q840.33-160 813.33-160H146.67Zm666.66-510L497.67-466.33q-4.34 2.33-8.5 3.83Q485-461 480-461t-9.17-1.5q-4.16-1.5-8.5-3.83L146.67-670v443.33h666.66V-670ZM480-521.33l330.67-212H150l330 212ZM146.67-670v8V-707.88v.82-26.27 26-.78V-662v-8 443.33V-670Z" />
+                        </svg>
+                        <p>storease12@gmail.com</p>
+                    </div>
+                    <div class="flex items-start space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px"
+                            fill="#423c6a">
+                            <path
+                                d="M515.33-493.33v-162q0-14.34-9.5-23.84t-23.83-9.5q-14.33 0-23.83 9.5-9.5 9.5-9.5 23.84v175q0 6.66 2.33 12.5 2.33 5.83 7 11.16l140 143.34q9.67 10.33 24.33 10 14.67-.34 24.34-10 9.66-9.67 9.66-24 0-14.34-9.66-24l-131.34-132ZM480-80q-82.33 0-155.33-31.5-73-31.5-127.34-85.83Q143-251.67 111.5-324.67T80-480q0-82.33 31.5-155.33 31.5-73 85.83-127.34Q251.67-817 324.67-848.5T480-880q82.33 0 155.33 31.5 73 31.5 127.34 85.83Q817-708.33 848.5-635.33T880-480q0 82.33-31.5 155.33-31.5 73-85.83 127.34Q708.33-143 635.33-111.5T480-80Zm0-400Zm0 333.33q137.67 0 235.5-97.83 97.83-97.83 97.83-235.5 0-137.67-97.83-235.5-97.83-97.83-235.5-97.83-137.67 0-235.5 97.83-97.83 97.83-97.83 235.5 0 137.67 97.83 235.5 97.83 97.83 235.5 97.83Z" />
+                        </svg>
+                        <p>Senin - Sabtu 09.30 - 17.00 WIB</p>
+                    </div>
                 </div>
             </div>
 
             <form class="ml-auto space-y-4">
+                <h1 class="text-3xl font-extrabold">Ingin Menghubungi Kami?
+                </h1>
+                <p class="text-md text-gray-400 mt-3">Gunakan form dibawah ini, Customer Service kami akan segera merespond
+                    anda
+                </p>
                 <div class="grid grid-cols-2 gap-x-2">
-                    <input type='text' placeholder='Name Lengkap'
-                        class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]" />
-                    <input type='text' placeholder='Alamat'
-                        class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]" />
+                    <div>
+                        <label for="name" class="text-md text-primarybase">Nama Lengkap</label>
+                        <input type='text' placeholder='Name Lengkap'
+                            class="w-full
+                        rounded-md py-2.5 px-4 border text-sm outline-primarybase" />
+                    </div>
+                    <div>
+                        <label for="name" class="text-md text-primarybase">Alamat</label>
+                        <input type='text' placeholder='Alamat'
+                            class="w-full rounded-md py-2.5 px-4 border text-sm outline-primarybase" />
+                    </div>
                 </div>
                 <div class="grid grid-cols-2 gap-x-2">
-                    <input type='text' placeholder='No HP'
-                        class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]" />
-                    <input type='text' placeholder=' Email'
-                        class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]" />
+                    <div>
+                        <label for="name" class="text-md text-primarybase">Nomor Hp</label>
+                        <input type='text' placeholder='No HP'
+                            class="w-full rounded-md py-2.5 px-4 border text-sm outline-primarybase" />
+                    </div>
+                    <div>
+                        <label for="name" class="text-md text-primarybase">Email</label>
+                        <input type='text' placeholder=' Email'
+                            class="w-full rounded-md py-2.5 px-4 border text-sm outline-primarybase" />
+                    </div>
                 </div>
-                <input type='text' placeholder='Subject'
-                    class="w-full rounded-md py-2.5 px-4 border text-sm outline-[#007bff]" />
-                <textarea placeholder='Message' rows="6" class="w-full rounded-md px-4 border text-sm pt-2.5 outline-[#007bff]"></textarea>
+                <div>
+                    <label for="name" class="text-md text-primarybase">Subjek</label>
+                    <input type='text' placeholder='Subject'
+                        class="w-full rounded-md py-2.5 px-4 border text-sm outline-primarybase" />
+                </div>
+                <div>
+                    <label for="name" class="text-md text-primarybase">Pesan</label>
+                    <textarea placeholder='Message' rows="6" class="w-full rounded-md px-4 border text-sm pt-2.5 outline-primarybase"></textarea>
+                </div>
                 <button type='button'
-                    class="text-white bg-[#007bff] hover:bg-blue-600 font-semibold rounded-md text-sm px-4 py-2.5 w-full">Send</button>
+                    class="text-white bg-primarybase hover:bg-blue-600 font-semibold rounded-md text-sm px-4 py-2.5 w-full">Kirim</button>
             </form>
         </div>
     </div>
-
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1974.6822176682679!2d113.71559793855504!3d-8.16598964295056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1723011592196!5m2!1sen!2sid"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="w-full h-[600px] px-10">
+        <h1 class="text-4xl font-extrabold text-center text-primarybase my-3">Lokasi kami</h1>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1974.6822176682679!2d113.71559793855504!3d-8.16598964295056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sid!4v1723011592196!5m2!1sen!2sid"
+            class="w-full h-[500px] rounded-lg " style="border:0;" allowfullscreen="true" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
 @endsection

@@ -36,18 +36,19 @@
                     <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
                         <a href="#"
                             class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-3xl text-right">
-                            All the features you want to know
+                            Tentang
                         </a>
                         <p class="mt-3 text-lg text-gray-500 text-right">
-                            <span class="font-bold text-primarybase text-xl">storease. -</span> Lorem ipsum dolor sit amet
-                            consectetur
-                            adipisicing elit. Iure veritatis sint
-                            autem nesciunt,
-                            laudantium quia tempore delect. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                            veritatis sint autem nesciunt,
-                            laudantium quia tempore delect. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
-                            veritatis sint autem nesciunt,
-                            laudantium quia tempore delect
+                            <span class="font-bold text-primarybase text-xl">storease. -</span> adalah sanggar Tata Rias dan
+                            Tata Busana Tradisional yang berdiri sejak tahun 1978 pada awalnya merupakan salon kecantikan
+                            wajah dan rambut, dan kini berkembang menjadi Sanggar Tata Rias, Sanggar Tata Busana,
+                            Photography, Upacara Adat dan lain-lain, sesuai visi kami menjadi perusahaan One Stop Wedding
+                            Service.
+
+                            Inovasi, Kreativitas, serta Profesionalisme merupakan salah satu kiat kami dalam menarik
+                            pelanggan, sehingga konsumen yang telah dilayani mencapai ribuan pasangan, dengan rata-rata
+                            penanganan sekitar 50-100 pasangan perbulan, dengan harga penawaran paket yang beragam, karena
+                            paket yang ditawarkan kepada konsumen bersifat customisasi (disesuaikan).
                         </p>
                     </div>
                     <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-md h-72 lg:h-96"
@@ -55,37 +56,29 @@
                 </div>
             </div>
         </section>
-        <section class="h-[550px] items-center">
-            <div class="flex mx-auto w-full text-center">
-                <section class="flex flex-col md:flex-row w-full">
-                    <div class="w-full md:w-1/2 p-4 text-center">
-                        <div class="flex flex-col">
-                            <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-2xl">Visi
-                            </h2>
-                            <p>consectetur
-                                adipisicing elit. Iure veritatis sint
-                                autem nesciunt,
-                                laudantium quia tempore delect. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Iure
-                                veritatis sint autem nesciunt,</p>
-                        </div>
+        <section class="h-[550px] flex items-center">
+            <div class="flex flex-col md:flex-row w-full max-w-4xl mx-auto text-center items-center">
+                <div class="w-full md:w-1/2 p-4">
+                    <div class="flex flex-col">
+                        <h2 class="mt-4 text-2xl font-semibold text-gray-800 hover:underline">Visi</h2>
+                        <p>Menjadi Perusahaan One Stop Wedding Service dan selalu menjadi market leader dengan tetap menjaga
+                            sustainabilitas perusahaan</p>
                     </div>
-                    <div class="w-full
-                        md:w-1/2 p-4 text-center">
-                        <div class="flex flex-col">
-                            <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-2xl">Misi
-                            </h2>
-                            <p>consectetur
-                                adipisicing elit. Iure veritatis sint
-                                autem nesciunt,
-                                laudantium quia tempore delect. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Iure
-                                veritatis sint autem nesciunt,</p>
-                        </div>
+                </div>
+                <div class="w-full md:w-1/2 p-4">
+                    <div class="flex flex-col">
+                        <h2 class="mt-4 text-2xl font-semibold text-gray-800 hover:underline text-left">Misi</h2>
+                        <p>1. Memberikan Pelayanan dengan Kualitas dan Hasil terbaik untuk kepuasan pelanggan<br>
+                            2. Menjadikan Kepuasan Pelanggan sebagai satu-satunya tolak ukur dalam melayani pelanggan<br>
+                            3. Mengembangkan Produk dan Jasa Layanan yang inovatif untuk meningkatkan kepuasan pelanggan<br>
+                            4. Senantiasa meningkatkan kualitas sumber daya manusia guna menghasilkan produk dan pelayanan
+                            terbaik
+                        </p>
                     </div>
-                </section>
+                </div>
             </div>
         </section>
+
 
         <section class="bg-white py-8 w-full px-4" id="portofolio">
             <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-4xl text-center">Portofolio

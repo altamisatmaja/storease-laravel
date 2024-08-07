@@ -28,21 +28,6 @@ class DatabaseSeeder extends Seeder
 
         DB::table('general')->insert($general);
 
-        $hero = [
-            [
-                'title' => 'Who We Are',
-                'image' => 'hero.img',
-                'page' => 'Home'
-            ],
-            [
-                'title' => 'Tetap Terhubung Dengan Kami',
-                'image' => 'contactus.img',
-                'page' => 'Contact Us'
-            ],
-        ];
-
-        DB::table('hero')->insert($hero);
-
         $vendor_category_services = [
             [
                 'category_name' => 'Fotografer & Videografer',
@@ -53,7 +38,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'catering',
             ],
             [
-                'category_name' => 'Venue',
+                'category_name' => 'venue',
                 'slug' => 'Venue',
             ],
             [
@@ -118,9 +103,10 @@ class DatabaseSeeder extends Seeder
 
         DB::table('hero')->insert($hero);
 
-        $home_pages = [
-            'hero_images' => 'hero-welcome-images.png',
-            'about_section_description' => 'Who we are?',
+        $about_pages = [
+            'about_images' => 'hero-welcome-images.jpg',
+            'about_section_description' => 'adalah sanggar Tata Rias dan Tata Busana Tradisional yang berdiri sejak tahun 1978 pada awalnya merupakan salon kecantikan wajah dan rambut, dan kini berkembang menjadi Sanggar Tata Rias, Sanggar Tata Busana, Photography, Upacara Adat dan lain-lain, sesuai visi kami menjadi perusahaan One Stop Wedding Service.
+Inovasi, Kreativitas, serta Profesionalisme merupakan salah satu kiat kami dalam menarik pelanggan, sehingga konsumen yang telah dilayani mencapai ribuan pasangan, dengan rata-rata penanganan sekitar 50-100 pasangan perbulan, dengan harga penawaran paket yang beragam, karena paket yang ditawarkan kepada konsumen bersifat customisasi (disesuaikan).',
             'our_vision' => 'Menjadi Perusahaan One Stop Wedding Service dan selalu menjadi market leader dengan tetap menjaga sustainabilitas perusahaan',
             'our_mission' => '1. Memberikan Pelayanan dengan Kualitas dan Hasil terbaik untuk kepuasan pelanggan<br>
 2. Menjadikan Kepuasan Pelanggan sebagai satu-satunya tolak ukur dalam melayani pelanggan<br>
@@ -129,7 +115,7 @@ class DatabaseSeeder extends Seeder
 ',
         ];
 
-        DB::table('home_pages')->insert($home_pages);
+        DB::table('about_pages')->insert($about_pages);
 
         DB::table('portofolio_home_pages')->insert([
             [
@@ -216,5 +202,13 @@ class DatabaseSeeder extends Seeder
                 'rating' => 5,
             ],
         ]);
+
+        $this->call([
+            VendorSeeder::class,
+            VendorImagesSeeder::class,
+            VendorServicesSeeder::class,
+            VendorTeamSeeder::class,
+        ]);
+
     }
 }

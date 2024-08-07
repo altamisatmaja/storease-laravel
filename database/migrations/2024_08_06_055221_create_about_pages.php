@@ -10,9 +10,9 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('home_pages', function (Blueprint $table) {
+        Schema::create('about_pages', function (Blueprint $table) {
             $table->id();
-            $table->string('hero_images')->nullable();
+            $table->string('about_images')->nullable();
             $table->text('about_section_description')->nullable();
             $table->text('our_vision')->nullable();
             $table->text('our_mission')->nullable();
@@ -25,6 +25,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('home_pages');
+        Schema::dropIfExists('about_pages');
     }
 };
