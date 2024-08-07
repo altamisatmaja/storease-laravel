@@ -7,11 +7,13 @@ use Illuminate\Http\Request;
 
 class GuestPartnerPagesController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         return view('pages.guest.partner.index');
     }
 
-    public function show($slug) {
+    public function show()
+    {
         return view('pages.guest.partner.detail');
     }
 }
