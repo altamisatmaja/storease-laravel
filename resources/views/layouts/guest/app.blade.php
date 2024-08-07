@@ -32,24 +32,10 @@
             background-color: #4a5568;
         }
 
-        .scroll-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-        }
-
         .scroll-item {
             flex: 0 0 100%;
             box-sizing: border-box;
         }
-
-        .scroll-item {
-            flex: 0 0 auto;
-            box-sizing: border-box;
-            width: 100%;
-            margin-right: 16px;
-        }
-
 
         .scroll-button {
             position: absolute;

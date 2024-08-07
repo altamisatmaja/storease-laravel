@@ -1,165 +1,364 @@
-@extends('layouts.guest.app')
+    <style>
+        .carousel-container {
+            scroll-snap-type: x mandatory;
+            overflow-x: auto;
+            display: flex;
+            scroll-behavior: smooth;
+        }
 
-@section('content')
-    <section class="flex flex-col w-full h-[550px] bg-cover bg-fixed bg-center flex justify-center items-center"
-        style="
-            background-image: url(https://blog-cdn.kitalulus.com/blog/wp-content/uploads/2024/02/20095813/62b5a64282c88e5dfa3b85de_Peluang-usaha-wedding-organizer.jpg);
-        ">
-        <h1 class="text-white text-5xl font-semibold  mb-10">
-            This is Parallax Effect
-        </h1>
-        <a href="https://egoistdeveloper.github.io/twcss-to-sass-playground/" target="_blank"
-            class="text-white/90 hover:text-white">
-            Convetert to SASS
-        </a>
-    </section>
+        .carousel-item {
+            scroll-snap-align: start;
+        }
+    </style>
 
-    <section class="bg-white dark:bg-gray-900">
-        <div class="container px-6 py-10 mx-auto">
-            <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">From the blog
+
+    @extends('layouts.guest.app')
+
+    @section('content')
+        <section class="relative flex flex-col w-full h-[550px] bg-cover bg-fixed bg-center justify-center items-center"
+            style="
+        background-image: url(https://blog-cdn.kitalulus.com/blog/wp-content/uploads/2024/02/20095813/62b5a64282c88e5dfa3b85de_Peluang-usaha-wedding-organizer.jpg);
+    ">
+            <div class="absolute inset-0 bg-sekunderbase opacity-50"></div>
+            <h1 class="text-white text-5xl font-semibold mb-10 relative z-10">
+                Tentang storease
             </h1>
+            <a href="https://egoistdeveloper.github.io/twcss-to-sass-playground/" target="_blank"
+                class="text-white/90 hover:text-white relative z-10">
+                Who we are?
+            </a>
+        </section>
 
-            <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
-                <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
-                    src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"alt="">
 
-                <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-                    <p class="text-sm text-blue-500 uppercase">category</p>
+        <section class="bg-white text-primarybase h-[450px]">
+            <div class="container px-6 py-10 mx-auto">
+                <div class="mt-8 lg:-mx-6 lg:flex lg:items-center">
+                    <div class="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
+                        <a href="#"
+                            class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-3xl text-right">
+                            All the features you want to know
+                        </a>
+                        <p class="mt-3 text-lg text-gray-500 text-right">
+                            <span class="font-bold text-primarybase text-xl">storease. -</span> Lorem ipsum dolor sit amet
+                            consectetur
+                            adipisicing elit. Iure veritatis sint
+                            autem nesciunt,
+                            laudantium quia tempore delect. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                            veritatis sint autem nesciunt,
+                            laudantium quia tempore delect. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+                            veritatis sint autem nesciunt,
+                            laudantium quia tempore delect
+                        </p>
+                    </div>
+                    <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-md h-72 lg:h-96"
+                        src="https://maukuliah.ap-south-1.linodeobjects.com/job/1701325954-PMddr62q7z.jpg"alt="">
+                </div>
+            </div>
+        </section>
+        <section class="h-[550px] items-center">
+            <div class="flex mx-auto w-full text-center">
+                <section class="flex flex-col md:flex-row w-full">
+                    <div class="w-full md:w-1/2 p-4 text-center">
+                        <div class="flex flex-col">
+                            <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-2xl">Visi
+                            </h2>
+                            <p>consectetur
+                                adipisicing elit. Iure veritatis sint
+                                autem nesciunt,
+                                laudantium quia tempore delect. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Iure
+                                veritatis sint autem nesciunt,</p>
+                        </div>
+                    </div>
+                    <div class="w-full
+                        md:w-1/2 p-4 text-center">
+                        <div class="flex flex-col">
+                            <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-2xl">Misi
+                            </h2>
+                            <p>consectetur
+                                adipisicing elit. Iure veritatis sint
+                                autem nesciunt,
+                                laudantium quia tempore delect. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Iure
+                                veritatis sint autem nesciunt,</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
 
-                    <a href="#"
-                        class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline dark:text-white md:text-3xl">
-                        All the features you want to know
-                    </a>
+        <section class="bg-white py-8 h-screen" id="portofolio">
+            <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-4xl text-center">Portofolio
+            </h2>
 
-                    <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt,
-                        laudantium quia tempore delect
-                    </p>
+            <div class="relative w-full max-w-4xl overflow-hidden">
+                <div class="absolute inset-y-0 left-0 flex items-center">
+                    <button id="prev" class="bg-blue-500 text-white p-2 rounded-full focus:outline-none">
+                        &larr;
+                    </button>
+                </div>
+                <div class="carousel-container flex space-x-4 p-4">
+                    <!-- Card 1 -->
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold">Card 1</h2>
+                        <p class="text-gray-600">This is card number 1.</p>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold">Card 2</h2>
+                        <p class="text-gray-600">This is card number 2.</p>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold">Card 3</h2>
+                        <p class="text-gray-600">This is card number 3.</p>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold">Card 4</h2>
+                        <p class="text-gray-600">This is card number 4.</p>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold">Card 5</h2>
+                        <p class="text-gray-600">This is card number 5.</p>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold">Card 6</h2>
+                        <p class="text-gray-600">This is card number 6.</p>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold">Card 7</h2>
+                        <p class="text-gray-600">This is card number 7.</p>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold">Card 8</h2>
+                        <p class="text-gray-600">This is card number 8.</p>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold">Card 9</h2>
+                        <p class="text-gray-600">This is card number 9.</p>
+                    </div>
+                    <!-- Card 10 -->
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold">Card 10</h2>
+                        <p class="text-gray-600">This is card number 10.</p>
+                    </div>
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center">
+                    <button id="next" class="bg-blue-500 text-white p-2 rounded-full focus:outline-none">
+                        &rarr;
+                    </button>
+                </div>
+            </div>
 
-                    <a href="#" class="inline-block mt-2 text-blue-500 underline hover:text-blue-400">Read
-                        more</a>
 
-                    <div class="flex items-center mt-6">
-                        <img class="object-cover object-center w-10 h-10 rounded-full"
-                            src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
-                            alt="">
 
-                        <div class="mx-4">
-                            <h1 class="text-sm text-gray-700 dark:text-gray-200">Amelia. Anderson</h1>
-                            <p class="text-sm text-gray-500 dark:text-gray-400">Lead Developer</p>
+
+        </section>
+
+        <section class="bg-white py-8 h-screen" id="portofolio">
+            <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-4xl text-center">Testimoni
+            </h2>
+
+            <div class="container mx-auto px-6">
+                <div class="relative">
+                    <div class="flex overflow-x-auto scroll-smooth h-full scroll-container">
+                        <div class="scroll-item bg-white p-4 shadow-lg flex-auto w-full mr-4">
+                            <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+                                <div class="mx-auto max-w-2xl lg:max-w-4xl">
+                                    <figure class="mt-10">
+                                        <blockquote
+                                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita
+                                                voluptas
+                                                culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
+                                                corporis.”</p>
+                                        </blockquote>
+                                        <figcaption class="mt-10">
+                                            <img class="mx-auto h-10 w-10 rounded-full"
+                                                src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
+                                                alt="">
+                                            <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                                                <div class="font-semibold text-gray-900">Judith Black</div>
+                                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
+                                                    class="fill-gray-900">
+                                                    <circle cx="1" cy="1" r="1" />
+                                                </svg>
+                                                <div class="text-gray-600">CEO of Workcation</div>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div
+                                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
+                                </div>
+                                <div
+                                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
+                                </div>
+                            </section>
+                        </div>
+                        <div class="scroll-item bg-white p-4 shadow-lg">
+                            <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+                                <div class="mx-auto max-w-2xl lg:max-w-4xl">
+                                    <figure class="mt-10">
+                                        <blockquote
+                                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita
+                                                voluptas
+                                                culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
+                                                corporis.”</p>
+                                        </blockquote>
+                                        <figcaption class="mt-10">
+                                            <img class="mx-auto h-10 w-10 rounded-full"
+                                                src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
+                                                alt="">
+                                            <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                                                <div class="font-semibold text-gray-900">Judith Black</div>
+                                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
+                                                    class="fill-gray-900">
+                                                    <circle cx="1" cy="1" r="1" />
+                                                </svg>
+                                                <div class="text-gray-600">CEO of Workcation</div>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div
+                                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
+                                </div>
+                                <div
+                                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
+                                </div>
+                            </section>
+                        </div>
+                        <div class="scroll-item bg-white p-4 shadow-lg">
+                            <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+                                <div class="mx-auto max-w-2xl lg:max-w-4xl">
+                                    <figure class="mt-10">
+                                        <blockquote
+                                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita
+                                                voluptas
+                                                culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
+                                                corporis.”</p>
+                                        </blockquote>
+                                        <figcaption class="mt-10">
+                                            <img class="mx-auto h-10 w-10 rounded-full"
+                                                src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
+                                                alt="">
+                                            <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                                                <div class="font-semibold text-gray-900">Judith Black</div>
+                                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
+                                                    class="fill-gray-900">
+                                                    <circle cx="1" cy="1" r="1" />
+                                                </svg>
+                                                <div class="text-gray-600">CEO of Workcation</div>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div
+                                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
+                                </div>
+                                <div
+                                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
+                                </div>
+                            </section>
+                        </div>
+                        <div class="scroll-item bg-white p-4 shadow-lg">
+                            <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+                                <div class="mx-auto max-w-2xl lg:max-w-4xl">
+                                    <figure class="mt-10">
+                                        <blockquote
+                                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita
+                                                voluptassssss
+                                                culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
+                                                corporis.”</p>
+                                        </blockquote>
+                                        <figcaption class="mt-10">
+                                            <img class="mx-auto h-10 w-10 rounded-full"
+                                                src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
+                                                alt="">
+                                            <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                                                <div class="font-semibold text-gray-900">Judith Black</div>
+                                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
+                                                    class="fill-gray-900">
+                                                    <circle cx="1" cy="1" r="1" />
+                                                </svg>
+                                                <div class="text-gray-600">CEO of Worksscation</div>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div
+                                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
+                                </div>
+                                <div
+                                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
+                                </div>
+                            </section>
+                        </div>
+                        <div class="scroll-item bg-white p-4 shadow-lg">
+                            <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+                                <div class="mx-auto max-w-2xl lg:max-w-4xl">
+                                    <figure class="mt-10">
+                                        <blockquote
+                                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita
+                                                voluptas
+                                                culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
+                                                corporis.”</p>
+                                        </blockquote>
+                                        <figcaption class="mt-10">
+                                            <img class="mx-auto h-10 w-10 rounded-full"
+                                                src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
+                                                alt="">
+                                            <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                                                <div class="font-semibold text-gray-900">Judithss Black</div>
+                                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
+                                                    class="fill-gray-900">
+                                                    <circle cx="1" cy="1" r="1" />
+                                                </svg>
+                                                <div class="text-gray-600">CEO of Workcation</div>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div
+                                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
+                                </div>
+                                <div
+                                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
+                                </div>
+                            </section>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <div class="flex mx-auto w-full text-center">
-        <section class="flex flex-col md:flex-row w-full">
-            <div class="w-full md:w-1/2 p-4 text-center">
-                <div class="flex flex-col">
-                    <p>ada</p>
-                    <p>adad</p>
-                </div>
-            </div>
-            <div class="w-full md:w-1/2 p-4 text-center">
-
-                <div class="flex flex-col">
-                    <p>ada</p>
-                    <p>adad</p>
-                </div>
-            </div>
         </section>
-    </div>
-    <section class="bg-gray-100 py-8" id="portofolio">
-        <div class="container mx-auto px-6">
-            <div class="relative">
-                <button id="scroll-left" class="scroll-button left">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7">
-                        </path>
-                    </svg>
-                </button>
-                <div class="scroll-container">
-                    <div class="scroll-item bg-white p-4 shadow-lg">Item 1</div>
-                    <div class="scroll-item bg-white p-4 shadow-lg">Item 2</div>
-                    <div class="scroll-item bg-white p-4 shadow-lg">Item 3</div>
-                    <div class="scroll-item bg-white p-4 shadow-lg">Item 4</div>
-                    <div class="scroll-item bg-white p-4 shadow-lg">Item 5</div>
-                </div>
-                <button id="scroll-right" class="scroll-button right">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7">
-                        </path>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </section>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                const carouselContainer = $('.carousel-container');
+                const cardWidth = $('.carousel-item').outerWidth(true);
 
-    <section class="container mx-auto p-6 relative">
-        <h1 class="text-center text-3xl font-bold mb-8">Portfolio</h1>
-        <div class="flex items-center">
-            <button id="left-arrow"
-                class="scroll-arrow left-0 absolute bg-gray-700 text-white px-3 py-1 rounded-md">&#9664;</button>
-            <div id="portfolio-container" class="overflow-x-auto whitespace-nowrap">
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 1" class="main-image">
-                    <img src="https://via.placeholder.com/150/0000FF" alt="Hover Image 1"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 2" class="main-image">
-                    <img src="https://via.placeholder.com/150/FF0000" alt="Hover Image 2"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 3" class="main-image">
-                    <img src="https://via.placeholder.com/150/00FF00" alt="Hover Image 3"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 4" class="main-image">
-                    <img src="https://via.placeholder.com/150/FFFF00" alt="Hover Image 4"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 5" class="main-image">
-                    <img src="https://via.placeholder.com/150/FF00FF" alt="Hover Image 5"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 5" class="main-image">
-                    <img src="https://via.placeholder.com/150/FF00FF" alt="Hover Image 5"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 5" class="main-image">
-                    <img src="https://via.placeholder.com/150/FF00FF" alt="Hover Image 5"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 5" class="main-image">
-                    <img src="https://via.placeholder.com/150/FF00FF" alt="Hover Image 5"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 5" class="main-image">
-                    <img src="https://via.placeholder.com/150/FF00FF" alt="Hover Image 5"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 5" class="main-image">
-                    <img src="https://via.placeholder.com/150/FF00FF" alt="Hover Image 5"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-                <div class="inline-block mx-4 portfolio-item relative">
-                    <img src="https://via.placeholder.com/150" alt="Main Image 5" class="main-image">
-                    <img src="https://via.placeholder.com/150/FF00FF" alt="Hover Image 5"
-                        class="hover-image absolute top-0 left-0 hidden">
-                </div>
-            </div>
-            <button id="right-arrow"
-                class="scroll-arrow right-0 absolute bg-gray-700 text-white px-3 py-1 rounded-md">&#9654;</button>
-        </div>
-    </section>
-@endsection
+                $('#next').click(function() {
+                    carouselContainer.animate({
+                        scrollLeft: '+=' + cardWidth
+                    }, 300);
+                });
+
+                $('#prev').click(function() {
+                    carouselContainer.animate({
+                        scrollLeft: '-=' + cardWidth
+                    }, 300);
+                });
+            });
+        </script>
+    @endsection
