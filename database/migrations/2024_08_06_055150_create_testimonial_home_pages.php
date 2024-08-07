@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('customer_name')->nullable();
             $table->string('customer_pictures')->nullable();
-            $table->string('description_testimonial')->nullable();
+            $table->text('description_testimonial')->nullable();
             $table->integer('rating');
             $table->timestamps();
         });

@@ -27,5 +27,27 @@ class DatabaseSeeder extends Seeder
         ];
 
         DB::table('users')->insert($user);
+
+        $general = [
+            'title' => 'storeease',
+            'icon' => 'icon.svg'
+        ];
+
+        DB::table('general')->insert($general);
+
+        $hero = [
+            [
+                'title' => 'Who We Are',
+                'image' => 'hero.img',
+                'page' => 'Home'
+            ],
+            [
+                'title' => 'Tetap Terhubung Dengan Kami',
+                'image' => 'contactus.img',
+                'page' => 'Contact Us'
+            ],
+        ];
+
+        DB::table('hero')->insert($hero);
     }
 }

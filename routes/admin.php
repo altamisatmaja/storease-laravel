@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryVendorAdminController;
 use App\Http\Controllers\Admin\ChangePasswordAdminController;
 use App\Http\Controllers\Admin\CMS\AboutAdminController;
 use App\Http\Controllers\Admin\CMS\FooterAdminController;
@@ -35,10 +36,16 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard/cms/portofolio', [PortofolioAdminController::class, 'index'])->name('admin.dashboard.cms.portofolio');
     Route::get('admin/dashboard/cms/testimoni', [TestimoniAdminController::class, 'index'])->name('admin.dashboard.cms.testimoni');
 
+    Route::get('admin/dashboard/kategori/partner', [CategoryVendorAdminController::class, 'index'])->name('admin.dashboard.category');
     Route::get('admin/dashboard/partner', [PartnerAdminController::class, 'index'])->name('admin.dashboard.partner');
     Route::get('admin/dashboard/partner/pengajuan', [PartnerAdminController::class, 'list_store'])->name('admin.dashboard.partner.pengajuan');
     Route::get('admin/dashboard/partner/pengajuan/tambah', [PartnerAdminController::class, 'store'])->name('admin.dashboard.partner.pengajuan.tambah');
     Route::get('admin/dashboard/partner/pengajuan/ubah/{id}', [PartnerAdminController::class, 'update'])->name('admin.dashboard.partner.pengajuan.ubah');
 
     Route::get('admin/dashboard/auth', [ChangePasswordAdminController::class, 'index'])->name('admin.dashboard.auth.changepassword');
+
+    Route::post('admin/dashboard/general/judul/ubah', [GeneralAdminController::class, 'change_title'])->name('admin.dashboard.general.title.change');
+
+    Route::post('admin/dashboard/hero/judul/home/ubah', [HeroAdminController::class, 'change_title_home'])->name('admin.dashboard.hero.home.title.change');
+    Route::post('admin/dashboard/hero/gambar/home/ubah', [HeroAdminController::class, 'change_image_home'])->name('admin.dashboard.hero.home.image.change');
 });

@@ -22,9 +22,56 @@
             </div>
         </div>
 
-        <!-- Cards -->
-        <div class="grid grid-cols-12 gap-6">
-            about.
+        <div class="">
+            <form action="">
+                <div class="my-4">
+                    <label for="title" class="block text-gray-800 text-lg font-semibold mb-2">Gambar</label>
+                    <label
+                        class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center cursor-pointer">
+                        <div class="h-full w-full text-center flex flex-col items-center justify-center">
+                            <div class="flex max-h-48  -mt-10">
+                                <img class="has-mask h-36 object-center"
+                                    src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
+                                    alt="freepik image">
+                            </div>
+                            <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here
+                                <br /> or <a href="" id="" class="text-blue-600 hover:underline">select
+                                    a
+                                    file</a> from your computer
+                            </p>
+                        </div>
+                        <input type="file" class="hidden">
+                    </label>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                </div>
+                <button
+                    class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-100 focus:ring-orange-600 bg-primarybase"
+                    type="submit">Simpan</button>
+            </form>
+        </div>
+        <div class="my-4">
+            <form action="">
+                <label for="title" class="block text-gray-800 text-lg font-semibold mb-2">Deskripsi tentang</label>
+                <textarea name="about" id="about">{{ old('about') }}</textarea>
+                <button
+                    class="w-full mt-4 text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-100 focus:ring-orange-600 bg-primarybase"
+                    type="submit">Simpan</button>
+            </form>
         </div>
     </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            new FroalaEditor('#about', {
+                toolbarButtons: [
+                    ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
+                    ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
+                        'backgroundColor'
+                    ],
+                    ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
+                ]
+            });
+        });
+    </script>
+
 @endsection

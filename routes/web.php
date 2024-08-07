@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Guest\GuestContactUsPagesController;
+use App\Http\Controllers\Guest\GuestHomePagesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,17 +16,8 @@ use Illuminate\Support\Facades\Route;
  * |
  */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/tentang', function () {
-    return view('welcome');
-});
-
-Route::get('/kontak', function () {
-    return view('welcome');
-});
+Route::get('/', [GuestHomePagesController::class, 'index']);
+Route::get('/kontak', [GuestContactUsPagesController::class, 'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
