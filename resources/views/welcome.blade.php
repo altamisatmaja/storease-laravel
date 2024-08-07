@@ -87,21 +87,34 @@
             </div>
         </section>
 
-        <section class="bg-white py-8 h-screen" id="portofolio">
+        <section class="bg-white py-8 w-full px-4" id="portofolio">
             <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-4xl text-center">Portofolio
             </h2>
 
-            <div class="relative w-full max-w-4xl overflow-hidden">
-                <div class="absolute inset-y-0 left-0 flex items-center">
-                    <button id="prev" class="bg-blue-500 text-white p-2 rounded-full focus:outline-none">
+            <div class="relative w-sceen overflow-hidden">
+                <div class="absolute inset-y-0 left-0 flex items-center z-40">
+                    <button id="prev" class="bg-blue-500 text-white p-2 rounded focus:outline-none">
                         &larr;
                     </button>
                 </div>
                 <div class="carousel-container flex space-x-4 p-4">
                     <!-- Card 1 -->
-                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold">Card 1</h2>
-                        <p class="text-gray-600">This is card number 1.</p>
+                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg">
+                        <div
+                            class="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
+                            <div
+                                class="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-clip-border bg-center text-gray-700 shadow-none">
+                                <div
+                                    class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50">
+                                </div>
+                            </div>
+                            <div class="relative p-6 py-14 px-6 md:px-12">
+                                <h2
+                                    class="mb-6 block font-sans text-4xl font-medium leading-[1.5] tracking-normal text-white antialiased">
+                                    How we design and code open-source projects?
+                                </h2>
+                            </div>
+                        </div>
                     </div>
                     <!-- Card 2 -->
                     <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
@@ -155,13 +168,9 @@
                     </button>
                 </div>
             </div>
-
-
-
-
         </section>
 
-        <section class="bg-white py-8 h-screen" id="portofolio">
+        <section class="bg-white py-8 " id="portofolio">
             <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-4xl text-center">Testimoni
             </h2>
 
