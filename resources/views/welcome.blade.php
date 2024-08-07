@@ -70,7 +70,7 @@
             </div>
         </section>
     </div>
-    <section class="bg-gray-100 py-8">
+    <section class="bg-gray-100 py-8" id="portofolio">
         <div class="container mx-auto px-6">
             <div class="relative">
                 <button id="scroll-left" class="scroll-button left">

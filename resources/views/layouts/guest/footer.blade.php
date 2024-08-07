@@ -1,12 +1,96 @@
-<footer class="bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100">
-    <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+<footer class="bg-primarybase font-sans text-white">
+    <div class="container px-6 py-12 mx-auto">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
+            <div class="sm:col-span-2">
+                <div>
+                    <div>
+                        <div class="flex flex-wrap gap-x-2 items-center">
+                            <svg class="lg:h-8 md:h-6 h-4" viewBox="0 0 17 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M7.30938 21C7.14062 20.5125 6.925 20.0625 6.6625 19.65C6.4 19.2375 6.09062 18.8531 5.73438 18.4969C5.37813 18.1406 4.99375 17.8266 4.58125 17.5547C4.16875 17.2828 3.71875 17.0625 3.23125 16.8938C3.26875 17.4375 3.4 17.9438 3.625 18.4125C3.85 18.8813 4.15 19.3031 4.525 19.6781C4.9 20.0531 5.32188 20.3578 5.79063 20.5922C6.25938 20.8266 6.76562 20.9625 7.30938 21ZM10.3469 21C10.8906 20.9438 11.3969 20.8031 11.8656 20.5781C12.3344 20.3531 12.7562 20.0531 13.1312 19.6781C13.5062 19.3031 13.8062 18.8813 14.0312 18.4125C14.2563 17.9438 14.3969 17.4375 14.4531 16.8938C13.9656 17.0625 13.5109 17.2781 13.0891 17.5406C12.6672 17.8031 12.2781 18.1125 11.9219 18.4688C11.5656 18.825 11.2563 19.2141 10.9938 19.6359C10.7312 20.0578 10.5156 20.5125 10.3469 21ZM8.82812 10.875C10.0656 10.875 11.125 10.4344 12.0062 9.55313C12.8875 8.67188 13.3281 7.6125 13.3281 6.375V5.025L11.3594 6.68438L8.82812 3.61875L6.29688 6.68438L4.32812 5.025V6.375C4.32812 7.6125 4.76875 8.67188 5.65 9.55313C6.53125 10.4344 7.59062 10.875 8.82812 10.875ZM7.70312 23.25C5.82812 23.25 4.23438 22.5938 2.92188 21.2812C1.60937 19.9688 0.953125 18.375 0.953125 16.5V14.25C2.28437 14.2312 3.54063 14.5031 4.72188 15.0656C5.90313 15.6281 6.89687 16.3875 7.70312 17.3438V13.0406C6.09063 12.7781 4.75 12.0234 3.68125 10.7766C2.6125 9.52969 2.07812 8.0625 2.07812 6.375V2.55C2.07812 2.0625 2.29375 1.72031 2.725 1.52344C3.15625 1.32656 3.55938 1.3875 3.93438 1.70625L6.01562 3.50625L7.95625 1.14375C8.18125 0.88125 8.47188 0.75 8.82812 0.75C9.18437 0.75 9.475 0.88125 9.7 1.14375L11.6406 3.50625L13.7219 1.70625C14.0969 1.3875 14.5 1.32656 14.9313 1.52344C15.3625 1.72031 15.5781 2.0625 15.5781 2.55V6.375C15.5781 8.0625 15.0437 9.52969 13.975 10.7766C12.9062 12.0234 11.5656 12.7781 9.95312 13.0406V17.3438C10.7594 16.3875 11.7531 15.6281 12.9344 15.0656C14.1156 14.5031 15.3719 14.2312 16.7031 14.25V16.5C16.7031 18.375 16.0469 19.9688 14.7344 21.2812C13.4219 22.5938 11.8281 23.25 9.95312 23.25H7.70312Z"
+                                    fill="#ffffff" />
+                            </svg>
+                            <img class="white-filter lg:h-8 md:h-6 h-4" src="{{ asset('icons/storease.png') }}"
+                                alt="">
+                        </div>
+                        <p class="max-w-xs my-4 text-lg font-bold text-white">
+                            Informasi Kontak
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                                width="20px" fill="#FFFFFF">
+                                <path
+                                    d="M480-168q129.33-118 191.33-214.17 62-96.16 62-169.83 0-114.86-73.36-188.1-73.36-73.23-179.97-73.23T300.03-740.1q-73.36 73.24-73.36 188.1 0 73.67 63 169.83Q352.67-286 480-168Zm-.17 65.67q-11.83 0-23.5-4-11.66-4-20.66-12.67-49.67-45.33-99-97.33-49.34-52-88.5-107.84Q209-380 184.5-437.83 160-495.67 160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 56.33-24.5 114.17Q751-380 711.83-324.17q-39.16 55.84-88.5 107.84-49.33 52-99 97.33-9 8.67-20.83 12.67-11.83 4-23.67 4ZM480-560Zm.06 73.33q30.27 0 51.77-21.56 21.5-21.55 21.5-51.83 0-30.27-21.56-51.77-21.55-21.5-51.83-21.5-30.27 0-51.77 21.56-21.5 21.55-21.5 51.83 0 30.27 21.56 51.77 21.55 21.5 51.83 21.5Z" />
+                            </svg>
+                            <p>Gedung Graha Liza, Jl. Asem Baris Raya No.11A, RT.4 RW.3</p>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                                width="20px" fill="#FFFFFF">
+                                <path
+                                    d="M796-120q-119 0-240-55.5T333-333Q231-435 175.5-556T120-796q0-18.86 12.57-31.43T164-840h147.33q14 0 24.34 9.83Q346-820.33 349.33-806l26.62 130.43q2.05 14.9-.62 26.24-2.66 11.33-10.82 19.48L265.67-530q24 41.67 52.5 78.5T381-381.33q35 35.66 73.67 65.5Q493.33-286 536-262.67l94.67-96.66q9.66-10.34 23.26-14.5 13.61-4.17 26.74-2.17L806-349.33q14.67 4 24.33 15.53Q840-322.27 840-308v144q0 18.86-12.57 31.43T796-120ZM233-592l76-76.67-21-104.66H187q3 41.66 13.67 86Q211.33-643 233-592Zm365.33 361.33q40.34 18.34 85.84 29.67 45.5 11.33 89.16 13.67V-288l-100-20.33-75 77.66ZM233-592Zm365.33 361.33Z" />
+                            </svg>
+                            <p>+6221 2200 8879</p>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                                width="20px" fill="#FFFFFF">
+                                <path
+                                    d="M146.67-160q-27 0-46.84-19.83Q80-199.67 80-226.67v-506.66q0-27 19.83-46.84Q119.67-800 146.67-800h666.66q27 0 46.84 19.83Q880-760.33 880-733.33v506.66q0 27-19.83 46.84Q840.33-160 813.33-160H146.67Zm666.66-510L497.67-466.33q-4.34 2.33-8.5 3.83Q485-461 480-461t-9.17-1.5q-4.16-1.5-8.5-3.83L146.67-670v443.33h666.66V-670ZM480-521.33l330.67-212H150l330 212ZM146.67-670v8V-707.88v.82-26.27 26-.78V-662v-8 443.33V-670Z" />
+                            </svg>
+                            <p>sanggarliza@gmail.com</p>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                                width="20px" fill="#FFFFFF">
+                                <path
+                                    d="M515.33-493.33v-162q0-14.34-9.5-23.84t-23.83-9.5q-14.33 0-23.83 9.5-9.5 9.5-9.5 23.84v175q0 6.66 2.33 12.5 2.33 5.83 7 11.16l140 143.34q9.67 10.33 24.33 10 14.67-.34 24.34-10 9.66-9.67 9.66-24 0-14.34-9.66-24l-131.34-132ZM480-80q-82.33 0-155.33-31.5-73-31.5-127.34-85.83Q143-251.67 111.5-324.67T80-480q0-82.33 31.5-155.33 31.5-73 85.83-127.34Q251.67-817 324.67-848.5T480-880q82.33 0 155.33 31.5 73 31.5 127.34 85.83Q817-708.33 848.5-635.33T880-480q0 82.33-31.5 155.33-31.5 73-85.83 127.34Q708.33-143 635.33-111.5T480-80Zm0-400Zm0 333.33q137.67 0 235.5-97.83 97.83-97.83 97.83-235.5 0-137.67-97.83-235.5-97.83-97.83-235.5-97.83-137.67 0-235.5 97.83-97.83 97.83-97.83 235.5 0 137.67 97.83 235.5 97.83 97.83 235.5 97.83Z" />
+                            </svg>
+                            <p>Senin - Minggu 09.30 - 17.00 WIB</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div>
-                <img src="#" class="mr-5 h-6 sm:h-9" alt="logo" />
-                <p class="max-w-xs mt-4 text-sm text-gray-600">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, accusantium.
-                </p>
-                <div class="flex mt-8 space-x-6 text-gray-600">
+                <p class="text-lg font-bold">Quick Link</p>
+                <div class="flex flex-col items-start mt-5 space-y-2">
+                    <p
+                        class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                        Beranda</p>
+                    <p
+                        class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                        Instagram</p>
+                    <p
+                        class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                        Portofolio</p>
+                    <p
+                        class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                        Partner</p>
+                </div>
+            </div>
+
+            <div>
+                <p class="text-lg font-bold">Customer Service</p>
+
+                <div class="flex flex-col items-start mt-5 space-y-2">
+                    <p
+                        class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                        Contact Us</p>
+                    <p
+                        class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+                        Our Service</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 text-xs text-gray-800 justify-between flex w-full border-t-2 border-white/15">
+            <div class="items-center mt-8">
+                <div class="flex space-x-6 text-white items-center mb-3">
                     <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
                         <span class="sr-only"> Facebook </span>
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -30,73 +114,11 @@
                                 d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
                         </svg>
                     </a>
-                    <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
-                        <span class="sr-only"> GitHub </span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fillRule="evenodd"
-                                d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                clipRule="evenodd" />
-                        </svg>
-                    </a>
-                    <a class="hover:opacity-75" href target="_blank" rel="noreferrer">
-                        <span class="sr-only"> Dribbble </span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fillRule="evenodd"
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
-                                clipRule="evenodd" />
-                        </svg>
-                    </a>
                 </div>
-            </div>
-            <div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
-                <div>
-                    <p class="font-medium">
-                        Company
-                    </p>
-                    <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                        <a class="hover:opacity-75" href> About </a>
-                        <a class="hover:opacity-75" href> Meet the Team </a>
-                        <a class="hover:opacity-75" href> History </a>
-                        <a class="hover:opacity-75" href> Careers </a>
-                    </nav>
-                </div>
-                <div>
-                    <p class="font-medium">
-                        Services
-                    </p>
-                    <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                        <a class="hover:opacity-75" href> 1on1 Coaching </a>
-                        <a class="hover:opacity-75" href> Company Review </a>
-                        <a class="hover:opacity-75" href> Accounts Review </a>
-                        <a class="hover:opacity-75" href> HR Consulting </a>
-                        <a class="hover:opacity-75" href> SEO Optimisation </a>
-                    </nav>
-                </div>
-                <div>
-                    <p class="font-medium">
-                        Helpful Links
-                    </p>
-                    <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                        <a class="hover:opacity-75" href> Contact </a>
-                        <a class="hover:opacity-75" href> FAQs </a>
-                        <a class="hover:opacity-75" href> Live Chat </a>
-                    </nav>
-                </div>
-                <div>
-                    <p class="font-medium">
-                        Legal
-                    </p>
-                    <nav class="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
-                        <a class="hover:opacity-75" href> Privacy Policy </a>
-                        <a class="hover:opacity-75" href> Terms &amp; Conditions </a>
-                        <a class="hover:opacity-75" href> Returns Policy </a>
-                        <a class="hover:opacity-75" href> Accessibility </a>
-                    </nav>
-                </div>
+                <p class="text-white text-lg">
+                    © 2024 storease.
+                </p>
             </div>
         </div>
-        <p class="mt-8 text-xs text-gray-800">
-            © 2022 Comany Name
-        </p>
     </div>
 </footer>
