@@ -17,7 +17,7 @@ class VendorImagesSeeder extends Seeder
         $vendors = Vendor::all();
 
         foreach ($vendors as $vendor) {
-            for ($i = 1; $i <= 5; $i++) {
+            for ($i = 1; $i <= 4; $i++) {
                 VendorImages::create([
                     'image_path' => "image_{$vendor->id}_{$i}.jpg",
                     'vendor_id' => $vendor->id,

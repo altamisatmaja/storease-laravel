@@ -17,16 +17,14 @@ class VendorServicesSeeder extends Seeder
         $vendors = Vendor::all();
 
         foreach ($vendors as $vendor) {
-            for ($i = 1; $i <= 5; $i++) {
                 VendorServices::create([
-                    'service_name' => "Service {$vendor->id} {$i}",
-                    'service_description' => "Service Description {$i}",
-                    'thumbnail_service' => "thumbnail_service_{$i}.jpg",
+                    'service_name' => "Service {$vendor->id}",
+                    'service_description' => "Service Description {$vendor->id}",
+                    'thumbnail_service' => "thumbnail_service_{$vendor->id}.jpg",
                     'start_price_at' => rand(1000, 10000),
-                    'location_available' => "Location Available {$i}",
+                    'location_available' => "Location Available {$vendor->id}",
                     'vendor_id' => $vendor->id,
                 ]);
-            }
         }
 
     }

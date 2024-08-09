@@ -25,7 +25,6 @@ Chart.register(
     Tooltip
 );
 
-// A chart built with Chart.js 3
 // https://www.chartjs.org/
 const dashboardCard02 = () => {
     const ctx = document.getElementById("dashboard-card-02");

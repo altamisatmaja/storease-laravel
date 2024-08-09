@@ -17,7 +17,7 @@ class VendorSeeder extends Seeder
         $categories = VendorCategoryServices::all();
 
         foreach ($categories as $category) {
-            for ($i = 1; $i <= 5; $i++) {
+            for ($i = 1; $i <= 3; $i++) {
                 Vendor::create([
                     'vendor_name' => "Vendor {$category->category_name} {$i}",
                     'provinsi_vendor' => "Provinsi {$i}",
@@ -25,12 +25,12 @@ class VendorSeeder extends Seeder
                     'kecamatan_vendor' => "Kecamatan {$i}",
                     'kelurahan_vendor' => "Kelurahan {$i}",
                     'detail_alamat_vendor' => "Detail Alamat Vendor {$i}",
-                    'about_vendor' => "About Vendor {$i}",
-                    'link_instagram_vendor' => "https://instagram.com/vendor_{$i}",
-                    'link_website_vendor' => "https://vendor{$i}.com",
-                    'link_facebook_vendor' => "https://facebook.com/vendor_{$i}",
+                    'about_vendor' => "About Vendor {$i}_{$category->id}",
+                    'link_instagram_vendor' => "https://instagram.com/vendor_{$i}_{$category->id}",
+                    'link_website_vendor' => "https://vendor{$i}_{$category->id}.com",
+                    'link_facebook_vendor' => "https://facebook.com/vendor_{$i}_{$category->id}",
                     'location_by_gmaps' => "Location {$i}",
-                    'thumbnail_vendor' => "thumbnail_vendor_{$i}.jpg",
+                    'thumbnail_vendor' => "thumbnail_vendor_{$i}_{$category->id}.jpg",
                     'vendor_category_services_id' => $category->id,
                     'slug' => "vendor-{$category->slug}-{$i}",
                 ]);

@@ -66,8 +66,6 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/dashboard/partner/pengajuan/store', [PartnerAdminController::class, 'store'])->name('admin.dashboard.partner.pengajuan.store');
     Route::get('admin/dashboard/partner/pengajuan/ubah/{id}', [PartnerAdminController::class, 'update'])->name('admin.dashboard.partner.pengajuan.ubah');
 
-    Route::get('admin/dashboard/auth', [ChangePasswordAdminController::class, 'index'])->name('admin.dashboard.auth.changepassword');
-
     Route::get('admin/dashboard/cms/hero', [HeroAdminController::class, 'index'])->name('admin.dashboard.cms.hero');
     Route::post('admin/dashboard/cms/hero/home/welcome/ubah', [HeroAdminController::class, 'hero_welcome'])->name('admin.dashboard.hero.welcome.update');
     Route::post('admin/dashboard/cms/hero/home/contact-us/ubah', [HeroAdminController::class, 'hero_contact_us'])->name('admin.dashboard.hero.contactus.update');

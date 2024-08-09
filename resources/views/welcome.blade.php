@@ -77,7 +77,6 @@
                     </button>
                 </div>
                 <div class="carousel-container flex space-x-4 p-4">
-                    <!-- Card 1 -->
                     <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg">
                         <div
                             class="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
@@ -95,7 +94,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Card 2 -->
                     <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
                         <h2 class="text-xl font-bold">Card 2</h2>
                         <p class="text-gray-600">This is card number 2.</p>
@@ -156,176 +154,39 @@
             <div class="container mx-auto px-6">
                 <div class="relative">
                     <div class="flex overflow-x-auto scroll-smooth h-full scroll-container">
-                        <div class="scroll-item bg-white p-4 shadow-lg flex-auto w-full mr-4">
-                            <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-                                <div class="mx-auto max-w-2xl lg:max-w-4xl">
-                                    <figure class="mt-10">
-                                        <blockquote
-                                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita
-                                                voluptas
-                                                culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
-                                                corporis.”</p>
-                                        </blockquote>
-                                        <figcaption class="mt-10">
-                                            <img class="mx-auto h-10 w-10 rounded-full"
-                                                src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
-                                                alt="">
-                                            <div class="mt-4 flex items-center justify-center space-x-3 text-base">
-                                                <div class="font-semibold text-gray-900">Judith Black</div>
-                                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
-                                                    class="fill-gray-900">
-                                                    <circle cx="1" cy="1" r="1" />
-                                                </svg>
-                                                <div class="text-gray-600">CEO of Workcation</div>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div
-                                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
-                                </div>
-                                <div
-                                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
-                                </div>
-                            </section>
-                        </div>
-                        <div class="scroll-item bg-white p-4 shadow-lg">
-                            <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-                                <div class="mx-auto max-w-2xl lg:max-w-4xl">
-                                    <figure class="mt-10">
-                                        <blockquote
-                                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita
-                                                voluptas
-                                                culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
-                                                corporis.”</p>
-                                        </blockquote>
-                                        <figcaption class="mt-10">
-                                            <img class="mx-auto h-10 w-10 rounded-full"
-                                                src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
-                                                alt="">
-                                            <div class="mt-4 flex items-center justify-center space-x-3 text-base">
-                                                <div class="font-semibold text-gray-900">Judith Black</div>
-                                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
-                                                    class="fill-gray-900">
-                                                    <circle cx="1" cy="1" r="1" />
-                                                </svg>
-                                                <div class="text-gray-600">CEO of Workcation</div>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div
-                                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
-                                </div>
-                                <div
-                                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
-                                </div>
-                            </section>
-                        </div>
-                        <div class="scroll-item bg-white p-4 shadow-lg">
-                            <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-                                <div class="mx-auto max-w-2xl lg:max-w-4xl">
-                                    <figure class="mt-10">
-                                        <blockquote
-                                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita
-                                                voluptas
-                                                culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
-                                                corporis.”</p>
-                                        </blockquote>
-                                        <figcaption class="mt-10">
-                                            <img class="mx-auto h-10 w-10 rounded-full"
-                                                src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
-                                                alt="">
-                                            <div class="mt-4 flex items-center justify-center space-x-3 text-base">
-                                                <div class="font-semibold text-gray-900">Judith Black</div>
-                                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
-                                                    class="fill-gray-900">
-                                                    <circle cx="1" cy="1" r="1" />
-                                                </svg>
-                                                <div class="text-gray-600">CEO of Workcation</div>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div
-                                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
-                                </div>
-                                <div
-                                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
-                                </div>
-                            </section>
-                        </div>
-                        <div class="scroll-item bg-white p-4 shadow-lg">
-                            <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-                                <div class="mx-auto max-w-2xl lg:max-w-4xl">
-                                    <figure class="mt-10">
-                                        <blockquote
-                                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita
-                                                voluptassssss
-                                                culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
-                                                corporis.”</p>
-                                        </blockquote>
-                                        <figcaption class="mt-10">
-                                            <img class="mx-auto h-10 w-10 rounded-full"
-                                                src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
-                                                alt="">
-                                            <div class="mt-4 flex items-center justify-center space-x-3 text-base">
-                                                <div class="font-semibold text-gray-900">Judith Black</div>
-                                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
-                                                    class="fill-gray-900">
-                                                    <circle cx="1" cy="1" r="1" />
-                                                </svg>
-                                                <div class="text-gray-600">CEO of Worksscation</div>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div
-                                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
-                                </div>
-                                <div
-                                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
-                                </div>
-                            </section>
-                        </div>
-                        <div class="scroll-item bg-white p-4 shadow-lg">
-                            <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-                                <div class="mx-auto max-w-2xl lg:max-w-4xl">
-                                    <figure class="mt-10">
-                                        <blockquote
-                                            class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                                            <p>“Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita
-                                                voluptas
-                                                culpa sapiente alias molestiae. Numquam corrupti in laborum sed rerum et
-                                                corporis.”</p>
-                                        </blockquote>
-                                        <figcaption class="mt-10">
-                                            <img class="mx-auto h-10 w-10 rounded-full"
-                                                src="https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg"
-                                                alt="">
-                                            <div class="mt-4 flex items-center justify-center space-x-3 text-base">
-                                                <div class="font-semibold text-gray-900">Judithss Black</div>
-                                                <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
-                                                    class="fill-gray-900">
-                                                    <circle cx="1" cy="1" r="1" />
-                                                </svg>
-                                                <div class="text-gray-600">CEO of Workcation</div>
-                                            </div>
-                                        </figcaption>
-                                    </figure>
-                                </div>
-                                <div
-                                    class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
-                                </div>
-                                <div
-                                    class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
-                                </div>
-                            </section>
-                        </div>
+                        @foreach ($testimonials as $testimonial)
+                            <div class="scroll-item bg-white p-4 shadow-lg flex-auto w-full mr-4">
+                                <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
+                                    <div class="mx-auto max-w-2xl lg:max-w-4xl">
+                                        <figure class="mt-10">
+                                            <blockquote
+                                                class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
+                                                <p>“{{ $testimonial->description_testimonial }}”</p>
+                                            </blockquote>
+                                            <figcaption class="mt-10">
+                                                <img class="mx-auto h-10 w-10 rounded-full"
+                                                    src="uploads/{{ $testimonial->customer_pictures }}" alt="">
+                                                <div class="mt-4 flex items-center justify-center space-x-3 text-base">
+                                                    <div class="font-semibold text-gray-900">
+                                                        {{ $testimonial->customer_name }}</div>
+                                                    <svg viewBox="0 0 2 2" width="3" height="3" aria-hidden="true"
+                                                        class="fill-gray-900">
+                                                        <circle cx="1" cy="1" r="1" />
+                                                    </svg>
+                                                    <div class="text-gray-600">Rating {{ $testimonial->rating }}/5</div>
+                                                </div>
+                                            </figcaption>
+                                        </figure>
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
+                                    </div>
+                                    <div
+                                        class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
+                                    </div>
+                                </section>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

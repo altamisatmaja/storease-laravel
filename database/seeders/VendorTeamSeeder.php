@@ -17,7 +17,7 @@ class VendorTeamSeeder extends Seeder
         $vendors = Vendor::all();
 
         foreach ($vendors as $vendor) {
-            for ($i = 1; $i <= 5; $i++) {
+            for ($i = 1; $i <= 3; $i++) {
                 VendorTeam::create([
                     'owner_vendor_name' => "Owner {$vendor->id} {$i}",
                     'about_the_team' => "About The Team {$i}",
