@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->string('kecamatan_vendor')->nullable();
             $table->string('kelurahan_vendor')->nullable();
             $table->string('detail_alamat_vendor')->nullable();
-            $table->string('about_vendor')->nullable();
+            $table->text('about_vendor')->nullable();
             $table->string('link_instagram_vendor')->nullable();
             $table->string('link_website_vendor')->nullable();
             $table->string('link_facebook_vendor')->nullable();

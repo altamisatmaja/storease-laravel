@@ -59,9 +59,11 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard/kategori/partner', [CategoryVendorAdminController::class, 'index'])->name('admin.dashboard.category');
     Route::get('admin/dashboard/kategori/partner/tambah', [CategoryVendorAdminController::class, 'create'])->name('admin.dashboard.partner.category.create');
     Route::post('admin/dashboard/kategori/partner/store', [CategoryVendorAdminController::class, 'store'])->name('admin.dashboard.partner.category.store');
+    Route::get('admin/dashboard/kategori/partner/edit/{slug}', [CategoryVendorAdminController::class, 'edit'])->name('admin.dashboard.partner.category.edit');
+    Route::post('admin/dashboard/kategori/partner/update/{slug}', [CategoryVendorAdminController::class, 'update'])->name('admin.dashboard.partner.category.update');
+    Route::delete('admin/dashboard/kategori/partner/destroy', [CategoryVendorAdminController::class, 'destroy'])->name('admin.dashboard.partner.category.destroy');
 
     Route::get('admin/dashboard/partner', [PartnerAdminController::class, 'index'])->name('admin.dashboard.partner');
-    // Route::get('admin/dashboard/partner/pengajuan', [PartnerAdminController::class, 'list_store'])->name('admin.dashboard.partner.pengajuan');
     Route::get('admin/dashboard/partner/pengajuan/tambah', [PartnerAdminController::class, 'create'])->name('admin.dashboard.partner.pengajuan.tambah');
     Route::post('admin/dashboard/partner/pengajuan/store', [PartnerAdminController::class, 'store'])->name('admin.dashboard.partner.pengajuan.store');
     Route::get('admin/dashboard/partner/pengajuan/ubah/{id}', [PartnerAdminController::class, 'update'])->name('admin.dashboard.partner.pengajuan.ubah');

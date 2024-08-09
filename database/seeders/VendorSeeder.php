@@ -25,7 +25,7 @@ class VendorSeeder extends Seeder
                     'kecamatan_vendor' => "Kecamatan {$i}",
                     'kelurahan_vendor' => "Kelurahan {$i}",
                     'detail_alamat_vendor' => "Detail Alamat Vendor {$i}",
-                    'about_vendor' => "About Vendor {$i}_{$category->id}",
+                    'about_vendor' => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel egestas dolor, nec dignissim metus. Donec augue elit, rhoncus ac sodales id, porttitor vitae est. Donec laoreet rutrum libero sed pharetra.  Donec vel egestas dolor, nec dignissim metus. Donec augue elit, rhoncus ac sodales id, porttitor vitae est. Donec laoreet rutrum libero sed pharetra. Duis a arcu convallis, gravida purus eget, mollis diam. {$i}",
                     'link_instagram_vendor' => "https://instagram.com/vendor_{$i}_{$category->id}",
                     'link_website_vendor' => "https://vendor{$i}_{$category->id}.com",
                     'link_facebook_vendor' => "https://facebook.com/vendor_{$i}_{$category->id}",

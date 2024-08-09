@@ -44,6 +44,65 @@ class CategoryVendorAdminController extends Controller
         }
     }
 
+    public function edit($slug){
+        $category = VendorCategoryServices::where('slug', $slug)->first();
+
+        if (!$category) {
+            return redirect()->route('admin.dashboard.category')->with('error', 'Kategori tidak ditemukan.');
+        }
+
+        return view('pages.dashboard.admin.partner.category.update', compact('category'));
+    }
+
+    public function update(Request $request, $slug){
+        try {
+            $validator = Validator::make($request->all(), [
+                'category_name' => 'required',
+            ], [
+                'category_name.required' => 'Nama kategori wajib diisi.',
+            ]);
+
+            if ($validator->fails()) {
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $category = VendorCategoryServices::where('slug', $slug)->first();
+
+            if (!$category) {
+                return redirect()->route('admin.dashboard.category')->with('error', 'Kategori tidak ditemukan.');
+            }
+
+            $input = $request->all();
+
+            $slug = $this->generateSlug($input['category_name']);
+            $input['slug'] = $slug;
+
+            $category->update($input);
+
+            return redirect()->route('admin.dashboard.category')->with('success', 'Data kategori vendor berhasil diperbarui');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.dashboard.category')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+
+    }
+
+    public function destroy(Request $request){
+        try {
+            $category = VendorCategoryServices::find($request->id);
+
+            if (!$category) {
+                return redirect()->route('admin.dashboard.category')->with('error', 'Kategori tidak ditemukan.');
+            }
+
+            $category->delete();
+
+            return redirect()->route('admin.dashboard.category')->with('success', 'Data kategori vendor berhasil dihapus');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.dashboard.category')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+
+    }
+
     public function generateSlug($raw)
     {
         $slug = strtolower($raw);

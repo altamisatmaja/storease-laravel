@@ -24,8 +24,6 @@
             </div>
         </div>
 
-        <!-- Cards -->
-        <!-- component -->
         <section class="container px-4 mx-auto">
             <div class="flex flex-col">
                 <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -71,15 +69,22 @@
                                                 {{ $data->slug }}</td>
                                             <td class="px-4 py-4 text-sm">
                                                 <div class="flex items-center gap-x-6">
-                                                    <button
-                                                        class="text-gray-500 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
+                                                    <a href="{{ route('admin.dashboard.partner.category.edit', $data->slug) }}"
+                                                        class="text-gray-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
                                                         Edit
-                                                    </button>
+                                                    </a>
 
-                                                    <button
-                                                        class="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
-                                                        Hapus
-                                                    </button>
+                                                    <form action="{{ route('admin.dashboard.partner.category.destroy') }}"
+                                                        method="POST"
+                                                        onsubmit="return confirm('Apakah Anda yakin ingin menghapus kategori ini?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <input type="hidden" name="id" value="{{ $data->id }}">
+                                                        <button type="submit"
+                                                            class="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
+                                                            Hapus
+                                                        </button>
+                                                    </form>
                                                 </div>
                                             </td>
                                         </tr>
