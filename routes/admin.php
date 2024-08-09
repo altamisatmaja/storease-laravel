@@ -36,10 +36,16 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard/cms/portofolio', [PortofolioAdminController::class, 'index'])->name('admin.dashboard.cms.portofolio');
     Route::get('admin/dashboard/cms/testimoni', [TestimoniAdminController::class, 'index'])->name('admin.dashboard.cms.testimoni');
 
+    Route::put('admin/dashboard/cms/about/update', [AboutAdminController::class, 'update'])->name('admin.dashboard.cms.about.update');
+
     Route::get('admin/dashboard/kategori/partner', [CategoryVendorAdminController::class, 'index'])->name('admin.dashboard.category');
+    Route::get('admin/dashboard/kategori/partner/tambah', [CategoryVendorAdminController::class, 'create'])->name('admin.dashboard.partner.category.create');
+    Route::post('admin/dashboard/kategori/partner/store', [CategoryVendorAdminController::class, 'store'])->name('admin.dashboard.partner.category.store');
+
     Route::get('admin/dashboard/partner', [PartnerAdminController::class, 'index'])->name('admin.dashboard.partner');
-    Route::get('admin/dashboard/partner/pengajuan', [PartnerAdminController::class, 'list_store'])->name('admin.dashboard.partner.pengajuan');
-    Route::get('admin/dashboard/partner/pengajuan/tambah', [PartnerAdminController::class, 'store'])->name('admin.dashboard.partner.pengajuan.tambah');
+    // Route::get('admin/dashboard/partner/pengajuan', [PartnerAdminController::class, 'list_store'])->name('admin.dashboard.partner.pengajuan');
+    Route::get('admin/dashboard/partner/pengajuan/tambah', [PartnerAdminController::class, 'create'])->name('admin.dashboard.partner.pengajuan.tambah');
+    Route::post('admin/dashboard/partner/pengajuan/store', [PartnerAdminController::class, 'store'])->name('admin.dashboard.partner.pengajuan.store');
     Route::get('admin/dashboard/partner/pengajuan/ubah/{id}', [PartnerAdminController::class, 'update'])->name('admin.dashboard.partner.pengajuan.ubah');
 
     Route::get('admin/dashboard/auth', [ChangePasswordAdminController::class, 'index'])->name('admin.dashboard.auth.changepassword');

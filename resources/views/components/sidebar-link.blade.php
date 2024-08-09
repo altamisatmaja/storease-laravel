@@ -23,7 +23,7 @@
                         <path class="hover:text-white" fill-rule="evenodd" clip-rule="evenodd"
                             d="M229.41-160.67q-49.41 0-84.08-34.61-34.66-34.61-34.66-84.05H73.33q-14.16 0-23.75-9.59Q40-298.5 40-312.67v-420.66q0-27 19.83-46.84Q79.67-800 106.67-800h506q27.5 0 47.08 19.58 19.58 19.59 19.58 47.09v98H756q15.83 0 30 7.08t23.33 19.58l104 138.34q3.34 4.16 5 9.16 1.67 5 1.67 10.84v137.66q0 14.17-9.58 23.75-9.59 9.59-23.75 9.59H846q0 49.33-34.59 84-34.59 34.66-84 34.66t-84.08-34.61q-34.66-34.61-34.66-84.05H348q0 49.33-34.59 84-34.59 34.66-84 34.66Zm-.08-66.66q21.67 0 36.84-15.17 15.16-15.17 15.16-36.83 0-21.67-15.16-36.84-15.17-15.16-36.84-15.16-21.66 0-36.83 15.16-15.17 15.17-15.17 36.84 0 21.66 15.17 36.83 15.17 15.17 36.83 15.17ZM106.67-346H132q17-24 41.69-38.33 24.7-14.34 55-14.34Q259-398.67 284-384q25 14.67 42 38h286.67v-387.33h-506V-346Zm620.66 118.67q21.67 0 36.84-15.17 15.16-15.17 15.16-36.83 0-21.67-15.16-36.84-15.17-15.16-36.84-15.16-21.66 0-36.83 15.16-15.17 15.17-15.17 36.84 0 21.66 15.17 36.83 15.17 15.17 36.83 15.17Zm-48-202.67H860L756-568.67h-76.67V-430ZM360-540Z" />
                     </svg>
-                    <span class="text-lg font-medium ml-4">Partner</span>
+                    <span class="text-lg font-medium ml-4">Vendor</span>
                 </div>
                 <div class="flex shrink-0 ml-2 lg:opacity-0 lg:sidebar-expanded:opacity-100 2xl:opacity-100">
                     <svg class="w-3 h-3 shrink-0 ml-1 fill-current   @if (in_array(Request::segment(1), ['pengajuan'])) {{ 'rotate-180' }} @endif"
@@ -37,7 +37,20 @@
             <ul class="pl-8 mt-2 " :class="open ? '!block' : 'hidden'">
                 <li class="mb-5 last:mb-0">
                     <a class="block pl-3 text-gray-500  hover:text-gray-700  transition truncate"
-                        href="{{ route('admin.dashboard.partner.pengajuan') }}">
+                        href="{{ route('admin.dashboard.category') }}">
+                        <div class="flex items-center ">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
+                                width="20px" fill="#6b7280">
+                                <path
+                                    d="M440-440H240q-17 0-28.5-11.5T200-480q0-17 11.5-28.5T240-520h200v-200q0-17 11.5-28.5T480-760q17 0 28.5 11.5T520-720v200h200q17 0 28.5 11.5T760-480q0 17-11.5 28.5T720-440H520v200q0 17-11.5 28.5T480-200q-17 0-28.5-11.5T440-240v-200Z" />
+                            </svg>
+                            <span class="text-lg font-medium ml-2">Kategori</span>
+                        </div>
+                    </a>
+                </li>
+                <li class="mb-5 last:mb-0">
+                    <a class="block pl-3 text-gray-500  hover:text-gray-700  transition truncate"
+                        href="{{ route('admin.dashboard.partner.pengajuan.tambah') }}">
                         <div class="flex items-center ">
                             <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960"
                                 width="20px" fill="#6b7280">

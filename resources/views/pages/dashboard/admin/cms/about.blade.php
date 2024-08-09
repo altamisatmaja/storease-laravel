@@ -22,12 +22,14 @@
             </div>
         </div>
 
-        <form action="">
+        <form action="{{ route('admin.dashboard.cms.about.update') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
             <div class="">
                 <div class="my-4">
                     <label for="about_images" class="block text-gray-800 text-lg font-semibold mb-2">Gambar tentang</label>
                     <label
-                        class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-10 group text-center cursor-pointer">
+                        class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
                             <div class="relative w-full h-full flex items-center justify-center">
                                 <img id="image-preview" class=" w-96 h-full object-cover rounded-lg"
@@ -48,24 +50,35 @@
                     </label>
                     <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
                 </div>
-
             </div>
+            @error('about_images')
+                <span class="text-red-500">{{ $message }}</span>
+            @enderror
             <div>
                 <div class="my-4">
                     <label for="about_section_description" class="block text-gray-800 text-lg font-semibold mb-2">Deskripsi
                         tentang</label>
                     <textarea name="about_section_description" id="about_section_description">{{ $about['about_section_description'] }}</textarea>
                 </div>
+                @error('about_section_description')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
                 <div class="my-4">
                     <label for="our_vision" class="block text-gray-800 text-lg font-semibold mb-2">Deskripsi
                         <span class="italic">our vision</span></label>
                     <textarea name="our_vision" id="our_vision">{{ $about['our_vision'] }}</textarea>
                 </div>
+                @error('our_vision')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
                 <div class="my-4">
                     <label for="our_mission" class="block text-gray-800 text-lg font-semibold mb-2">Deskripsi
                         <span class="italic">our mission</span></label></label>
                     <textarea name="our_mission" id="our_mission">{{ $about['our_mission'] }}</textarea>
                 </div>
+                @error('our_mission')
+                    <span class="text-red-500">{{ $message }}</span>
+                @enderror
                 <button
                     class="w-full mt-4 text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-100 focus:ring-orange-600 bg-primarybase"
                     type="submit">Simpan</button>
