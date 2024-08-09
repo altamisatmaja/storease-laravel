@@ -34,7 +34,13 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/dashboard/cms/footer/update', [FooterAdminController::class, 'update'])->name('admin.dashboard.cms.footer.update');
 
     Route::get('admin/dashboard/cms/our-service', [OurServiceAdminController::class, 'index'])->name('admin.dashboard.cms.ourservice');
+
     Route::get('admin/dashboard/cms/portofolio', [PortofolioAdminController::class, 'index'])->name('admin.dashboard.cms.portofolio');
+    Route::get('admin/dashboard/cms/portofolio/tambah', [PortofolioAdminController::class, 'create'])->name('admin.dashboard.cms.portofolio.create');
+    Route::post('admin/dashboard/cms/portofolio/store', [PortofolioAdminController::class, 'store'])->name('admin.dashboard.cms.portofolio.store');
+    Route::get('admin/dashboard/cms/portofolio/{id}', [PortofolioAdminController::class, 'edit'])->name('admin.dashboard.cms.portofolio.edit');
+    Route::put('admin/dashboard/cms/portofolio/{id}', [PortofolioAdminController::class, 'update'])->name('admin.dashboard.cms.portofolio.update');
+    Route::delete('admin/dashboard/cms/portofolio/{id}', [PortofolioAdminController::class, 'destroy'])->name('admin.dashboard.cms.portofolio.destroy');
 
     Route::get('admin/dashboard/cms/testimoni', [TestimoniAdminController::class, 'index'])->name('admin.dashboard.cms.testimoni');
     Route::get('admin/dashboard/cms/testimoni/tambah', [TestimoniAdminController::class, 'create'])->name('admin.dashboard.cms.testimoni.create');
