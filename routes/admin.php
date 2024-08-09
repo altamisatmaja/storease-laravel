@@ -31,7 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard/cms/about', [AboutAdminController::class, 'index'])->name('admin.dashboard.cms.about');
     Route::get('admin/dashboard/cms/footer', [FooterAdminController::class, 'index'])->name('admin.dashboard.cms.footer');
     Route::get('admin/dashboard/cms/general', [GeneralAdminController::class, 'index'])->name('admin.dashboard.cms.general');
-    Route::get('admin/dashboard/cms/hero', [HeroAdminController::class, 'index'])->name('admin.dashboard.cms.hero');
+
+
     Route::get('admin/dashboard/cms/our-service', [OurServiceAdminController::class, 'index'])->name('admin.dashboard.cms.ourservice');
     Route::get('admin/dashboard/cms/portofolio', [PortofolioAdminController::class, 'index'])->name('admin.dashboard.cms.portofolio');
 
@@ -58,6 +59,8 @@ Route::middleware('auth')->group(function () {
 
     Route::post('admin/dashboard/general/judul/ubah', [GeneralAdminController::class, 'change_title'])->name('admin.dashboard.general.title.change');
 
-    Route::post('admin/dashboard/hero/judul/home/ubah', [HeroAdminController::class, 'change_title_home'])->name('admin.dashboard.hero.home.title.change');
-    Route::post('admin/dashboard/hero/gambar/home/ubah', [HeroAdminController::class, 'change_image_home'])->name('admin.dashboard.hero.home.image.change');
+    Route::get('admin/dashboard/cms/hero', [HeroAdminController::class, 'index'])->name('admin.dashboard.cms.hero');
+    Route::post('admin/dashboard/cms/hero/home/welcome/ubah', [HeroAdminController::class, 'hero_welcome'])->name('admin.dashboard.hero.welcome.update');
+    Route::post('admin/dashboard/cms/hero/home/contact-us/ubah', [HeroAdminController::class, 'hero_contact_us'])->name('admin.dashboard.hero.contactus.update');
+    Route::post('admin/dashboard/cms/hero/home/partner/ubah', [HeroAdminController::class, 'hero_partner'])->name('admin.dashboard.hero.partner.update');
 });
