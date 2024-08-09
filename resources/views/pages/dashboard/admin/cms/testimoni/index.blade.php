@@ -10,15 +10,17 @@
                 <h1 class="text-2xl md:text-3xl text-gray-800 font-bold">List Vendor</h1>
             </div>
 
-            <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2 invisible">
-                <button
-                    class="px-3 lg:gap-x-2 font-medium text-md inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-400 ">
-                    <svg class="fill-current shrink-0 xs:hidden" width="16" height="16" viewBox="0 0 16 16">
-                        <path
-                            d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
-                    </svg>
-                    <span class="hidden lg:block p-2 ">Tambah partner</span>
-                </button>
+            <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
+                <a href="{{ route('admin.dashboard.cms.testimoni.create') }}">
+                    <button
+                        class="px-3 lg:gap-x-2 font-medium text-md inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-400 ">
+                        <svg class="fill-current shrink-0 xs:hidden" width="16" height="16" viewBox="0 0 16 16">
+                            <path
+                                d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
+                        </svg>
+                        <span class="hidden lg:block p-2 ">Tambah partner</span>
+                    </button>
+                </a>
             </div>
         </div>
 
@@ -68,7 +70,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200  ">
-                                    @foreach ($vendors as $vendor)
+                                    @foreach ($testimonials as $testimonial)
                                         <tr>
                                             <td class="px-4 py-4 text-sm font-medium text-gray-700  whitespace-nowrap">
                                                 <div class="inline-flex items-center gap-x-3">

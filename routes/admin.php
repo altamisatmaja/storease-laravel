@@ -34,7 +34,13 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard/cms/hero', [HeroAdminController::class, 'index'])->name('admin.dashboard.cms.hero');
     Route::get('admin/dashboard/cms/our-service', [OurServiceAdminController::class, 'index'])->name('admin.dashboard.cms.ourservice');
     Route::get('admin/dashboard/cms/portofolio', [PortofolioAdminController::class, 'index'])->name('admin.dashboard.cms.portofolio');
+
     Route::get('admin/dashboard/cms/testimoni', [TestimoniAdminController::class, 'index'])->name('admin.dashboard.cms.testimoni');
+    Route::get('admin/dashboard/cms/testimoni/tambah', [TestimoniAdminController::class, 'create'])->name('admin.dashboard.cms.testimoni.create');
+    Route::post('admin/dashboard/cms/testimoni/store', [TestimoniAdminController::class, 'store'])->name('admin.dashboard.cms.testimoni.store');
+    Route::get('admin/dashboard/cms/testimoni/{slug}', [TestimoniAdminController::class, 'edit'])->name('admin.dashboard.cms.testimoni.edit');
+    Route::put('admin/dashboard/cms/testimoni/update/{slug}', [TestimoniAdminController::class, 'update'])->name('admin.dashboard.cms.testimoni.update');
+    Route::delete('admin/dashboard/cms/testimoni/destroy/{slug}', [TestimoniAdminController::class, 'destroy'])->name('admin.dashboard.cms.testimoni.destroy');
 
     Route::put('admin/dashboard/cms/about/update', [AboutAdminController::class, 'update'])->name('admin.dashboard.cms.about.update');
 

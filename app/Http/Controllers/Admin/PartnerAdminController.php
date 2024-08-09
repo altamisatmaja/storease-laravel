@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Validator;
 class PartnerAdminController extends Controller
 {
     public function index(){
-        return view('pages.dashboard.admin.partner.list');
+        $vendors = Vendor::all();
+        return view('pages.dashboard.admin.partner.list', compact('vendors'));
     }
 
     public function create(){
@@ -58,15 +59,6 @@ class PartnerAdminController extends Controller
                 return redirect()->back()->withErrors($validatedData)->withInput();
             }
 
-            if ($request->hasFile('thumbnail_vendor')) {
-                $gambar = $request->file('thumbnail_vendor');
-                $nama_gambar = time() . rand(1, 9) . '.' . $gambar->getClientOriginalExtension();
-                $gambar->move('uploads', $nama_gambar);
-                $inputVendor['thumbnail_vendor'] = $nama_gambar;
-            } else {
-                unset($inputVendor['thumbnail_vendor']);
-            }
-
             $inputVendor = [
                 'vendor_name' => $request['vendor_name'],
                 'provinsi_vendor' => $request['provinsi_vendor'],
@@ -82,6 +74,14 @@ class PartnerAdminController extends Controller
                 'vendor_category_services_id' => $request['vendor_category_services_id'],
                 'slug' => $this->generateSlug($request['vendor_name']),
             ];
+
+
+            if ($request->hasFile('thumbnail_vendor')) {
+                $gambar = $request->file('thumbnail_vendor');
+                $nama_gambar = time() . rand(1, 9) . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move('uploads', $nama_gambar);
+                $inputVendor['thumbnail_vendor'] = $nama_gambar;
+            }
 
             $vendor = Vendor::create($inputVendor);
 
@@ -139,7 +139,6 @@ class PartnerAdminController extends Controller
                 }
             }
         } catch (\Exception $e) {
-            dd($e);
             return redirect()->route('admin.dashboard.partner.pengajuan.tambah')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }
