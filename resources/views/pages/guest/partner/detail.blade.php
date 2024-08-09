@@ -25,7 +25,6 @@
                         <p class="text-gray-500 font-medium text-xl md:block my-2">{{ $vendor->provinsi_vendor }},
                             {{ $vendor->kabupaten_vendor }}, {{ $vendor->kecamatan_vendor }},
                             {{ $vendor->kelurahan_vendor }}, {{ $vendor->detail_alamat_vendor }}</p>
-                        <p class="text-gray-500 font-medium text-xl md:block my-2">{{ $vendor->about_vendor }}</p>
 
                         <div class="w-full bg-white rounded-lg">
                             <div x-data="setup()" class="w-full">
@@ -39,13 +38,108 @@
 
                                 <div class="w-full bg-white  border">
                                     <div x-show="activeTab===0">
-                                        {{ $vendor }}
+                                        <div class="flex flex-col h-full">
+                                            <div
+                                                class="relative flex flex-col rounded-[20px] w-full mx-auto bg-white bg-clip-border shadow-3xl shadow-shadow-500 ">
+                                                <div class="mt-2 mb-8 w-full">
+                                                    <h4 class="px-2 text-xl font-bold text-navy-700 ">
+                                                        Tentang
+                                                    </h4>
+                                                    <p class="mt-2 px-2 text-base text-gray-600">
+                                                        {{ $vendor->about_vendor }}
+                                                    </p>
+                                                </div>
+                                                <div class="grid grid-cols-2 gap-4 px-2 w-full">
+                                                    <div
+                                                        class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
+                                                        <p class="text-sm text-gray-600">Provinsi</p>
+                                                        <p class="text-base font-medium text-navy-700 ">
+                                                            {{ $vendor->provinsi_vendor }}
+                                                        </p>
+                                                    </div>
+
+                                                    <div
+                                                        class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
+                                                        <p class="text-sm text-gray-600">Kabupaten</p>
+                                                        <p class="text-base font-medium text-navy-700 ">
+                                                            {{ $vendor->kabupaten_vendor }}
+                                                        </p>
+                                                    </div>
+
+                                                    <div
+                                                        class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
+                                                        <p class="text-sm text-gray-600">Kecamatan</p>
+                                                        <p class="text-base font-medium text-navy-700 ">
+                                                            {{ $vendor->kecamatan_vendor }}
+                                                        </p>
+                                                    </div>
+
+                                                    <div
+                                                        class="flex flex-col justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
+                                                        <p class="text-sm text-gray-600">Kelurahan</p>
+                                                        <p class="text-base font-medium text-navy-700 ">
+                                                            {{ $vendor->kelurahan_vendor }}
+                                                        </p>
+                                                    </div>
+
+                                                </div>
+                                                <div class="px-2">
+                                                    <div
+                                                        class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
+                                                        <p class="text-sm text-gray-600">Detail alamat</p>
+                                                        <p class="text-base font-medium text-navy-700 ">
+                                                            {{ $vendor->detail_alamat_vendor }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="px-2">
+                                                    <div
+                                                        class="flex flex-col items-start justify-center rounded-2xl bg-white bg-clip-border px-3 py-4 shadow-3xl shadow-shadow-500  ">
+                                                        <p class="text-sm text-gray-600">Sosial media</p>
+                                                        <p class="text-base font-medium text-navy-700 ">
+                                                            {{ $vendor->link_instagram_vendor }}
+                                                        </p>
+                                                        <p class="text-base font-medium text-navy-700 ">
+                                                            {{ $vendor->link_website_vendor }}
+                                                        </p>
+                                                        <p class="text-base font-medium text-navy-700 ">
+                                                            {{ $vendor->link_facebook_vendor }}
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div x-show="activeTab===1">
-                                        {{ $vendorService }}
+                                        <div
+                                            class="relative flex flex-col md:flex-row md:space-x-5 space-y-3 md:space-y-0 rounded-xl w-full mx-auto bg-white">
+                                            <div class="w-full md:w-1/3 bg-white grid place-items-center">
+                                                <img src="{{ asset('uploads/' . $vendorService->thumbnail_service) }}"
+                                                    alt="tailwind logo" class="rounded-xl" />
+                                            </div>
+                                            <div class="w-full md:w-2/3 bg-white flex flex-col space-y-2 p-3">
+                                                <h3 class="font-black text-gray-800 md:text-3xl text-xl">
+                                                    {{ $vendorService->service_name }}</h3>
+                                                <p class="md:text-lg text-gray-500 text-base">
+                                                    {{ $vendorService->service_description }}</p>
+                                                <p class="text-xl font-black text-gray-800">
+                                                    Mulai dari
+                                                    Rp{{ number_format($vendorService->start_price_at, 0, ',', '.') }}
+                                                </p>
+                                                <p class="md:text-lg text-gray-500 text-base">
+                                                    Tersedia di wilayah {{ $vendorService->location_available }}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div x-show="activeTab===2">
-                                        {{ $vendorTeam }}
+                                        <h2
+                                            class="mb-8 text-xs font-semibold tracking-widest text-black uppercase title-font">
+                                            Owner</h2>
+                                        <h1
+                                            class="mb-8 text-2xl font-black tracking-tighter text-black md:text-5xl title-font">
+                                            {{ $vendorTeam->owner_vendor_name }}</h1>
+                                        <p class="mb-8 text-base leading-relaxed text-left text-blueGray-600 ">
+                                            {{ $vendorTeam->about_the_team }}</p>
                                     </div>
                                 </div>
                             </div>
