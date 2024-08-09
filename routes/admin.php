@@ -34,6 +34,11 @@ Route::middleware('auth')->group(function () {
     Route::post('admin/dashboard/cms/footer/update', [FooterAdminController::class, 'update'])->name('admin.dashboard.cms.footer.update');
 
     Route::get('admin/dashboard/cms/our-service', [OurServiceAdminController::class, 'index'])->name('admin.dashboard.cms.ourservice');
+    Route::get('admin/dashboard/cms/our-service/tambah', [OurServiceAdminController::class, 'create'])->name('admin.dashboard.cms.ourservice.create');
+    Route::post('admin/dashboard/cms/our-service/store', [OurServiceAdminController::class, 'store'])->name('admin.dashboard.cms.ourservice.store');
+    Route::get('admin/dashboard/cms/our-service/{id}', [OurServiceAdminController::class, 'edit'])->name('admin.dashboard.cms.ourservice.edit');
+    Route::put('admin/dashboard/cms/our-service/update/{id}', [OurServiceAdminController::class, 'update'])->name('admin.dashboard.cms.ourservice.update');
+    Route::delete('admin/dashboard/cms/our-service/destroy/{id}', [OurServiceAdminController::class, 'destroy'])->name('admin.dashboard.cms.ourservice.destroy');
 
     Route::get('admin/dashboard/cms/portofolio', [PortofolioAdminController::class, 'index'])->name('admin.dashboard.cms.portofolio');
     Route::get('admin/dashboard/cms/portofolio/tambah', [PortofolioAdminController::class, 'create'])->name('admin.dashboard.cms.portofolio.create');

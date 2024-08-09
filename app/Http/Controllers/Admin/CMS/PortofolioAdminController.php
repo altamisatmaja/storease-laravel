@@ -19,48 +19,48 @@ class PortofolioAdminController extends Controller
         return view('pages.dashboard.admin.cms.portofolio.create');
     }
 
-    public function store(Request $request){
-        try {
-            $validator = Validator::make($request->all(), [
-                'thumbnail_portofolio' => 'required',
-                'hover_portofolio' => 'required',
-                'link_social_media_portofolio' => 'required',
-            ]);
+    public function store(Request $request)
+{
+    try {
+        $validator = Validator::make($request->all(), [
+            'thumbnail_portofolio' => 'required',
+            'hover_portofolio' => 'required',
+            'link_social_media_portofolio' => 'required|string',
+        ]);
 
-            if($validator->fails()){
-                return redirect()->back()->withErrors($validator)->withInput();
-            }
-
-            $input['link_social_media_portofolio'] = $request['link_social_media_portofolio'];
-
-            if ($request->hasFile('thumbnail_portofolio')) {
-                $gambar = $request->file('thumbnail_portofolio');
-                $nama_gambar = time() . rand(1, 9) . '.' . $gambar->getClientOriginalExtension();
-                $gambar->move('uploads', $nama_gambar);
-                $input['thumbnail_portofolio'] = $nama_gambar;
-            } else {
-                unset($input['thumbnail_portofolio']);
-            }
-
-            if ($request->hasFile('hover_portofolio')) {
-                $gambar = $request->file('hover_portofolio');
-                $nama_gambar = time() . rand(1, 9) . '.' . $gambar->getClientOriginalExtension();
-                $gambar->move('uploads', $nama_gambar);
-                $input['hover_portofolio'] = $nama_gambar;
-            } else {
-                unset($input['hover_portofolio']);
-            }
-
-            $portofolio = PortofolioHomePages::create($input);
-
-            if($portofolio){
-                return redirect()->route('admin.dashboard.cms.portofolio')->with('success', 'Portofolio baru berhasil ditambahkan!');
-            }
-            return redirect()->route('admin.dashboard.cms.portofolio')->with('errors', 'Portofolio baru gagal ditambahkan!');
-        } catch (\Exception $e) {
-            dd($e);
+        if ($validator->fails()) {
+                dd($validator->errors());
+            return redirect()->back()->withErrors($validator)->withInput();
         }
+
+        $input['link_social_media_portofolio'] = $request->input('link_social_media_portofolio');
+
+        if ($request->hasFile('thumbnail_portofolio')) {
+            $thumbnail = $request->file('thumbnail_portofolio');
+            $thumbnail_name = time() . rand(1, 9) . '_thumbnail.' . $thumbnail->getClientOriginalExtension();
+            $thumbnail->move(public_path('uploads'), $thumbnail_name);
+            $input['thumbnail_portofolio'] = $thumbnail_name;
+        }
+
+        if ($request->hasFile('hover_portofolio')) {
+            $hover = $request->file('hover_portofolio');
+            $hover_name = time() . rand(1, 9) . '_hover.' . $hover->getClientOriginalExtension();
+            $hover->move(public_path('uploads'), $hover_name);
+            $input['hover_portofolio'] = $hover_name;
+        }
+
+        $portofolio = PortofolioHomePages::create($input);
+
+        if ($portofolio) {
+            return redirect()->route('admin.dashboard.cms.portofolio')->with('success', 'Portofolio baru berhasil ditambahkan!');
+        }
+
+        return redirect()->route('admin.dashboard.cms.portofolio')->with('error', 'Portofolio baru gagal ditambahkan!');
+    } catch (\Exception $e) {
+        return redirect()->back()->with('error', $e->getMessage());
     }
+}
+
 
     public function edit($id){
         return view('pages.dashboard.admin.cms.portofolio.update');
