@@ -17,15 +17,14 @@
     @section('content')
         <section class="relative flex flex-col w-full h-[550px] bg-cover bg-fixed bg-center justify-center items-center"
             style="
-        background-image: url(https://blog-cdn.kitalulus.com/blog/wp-content/uploads/2024/02/20095813/62b5a64282c88e5dfa3b85de_Peluang-usaha-wedding-organizer.jpg);
+        background-image: url('{{ asset('uploads/' . $heroWelcome->image) }}');
     ">
             <div class="absolute inset-0 bg-sekunderbase opacity-50"></div>
             <h1 class="text-white text-5xl font-semibold mb-10 relative z-10">
                 Tentang storease
             </h1>
-            <a href="https://egoistdeveloper.github.io/twcss-to-sass-playground/" target="_blank"
-                class="text-white/90 hover:text-white relative z-10">
-                Who we are?
+            <a href="" target="_blank" class="text-white/90 hover:text-white relative z-10">
+                {{ $heroWelcome->title }}
             </a>
         </section>
 

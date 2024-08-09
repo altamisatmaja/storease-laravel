@@ -81,19 +81,6 @@
     <div class="space-y-2">
         <li
             class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-hoverbase hover:text-white duration-200">
-            <a href="{{ route('admin.dashboard.cms.general') }}" class="block text-textbase  truncate transition">
-                <div class="flex items-center hover:text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
-                        fill="currentColor" class="hover:text-white">
-                        <path class="hover:text-white"
-                            d="M240-320h280v-120H240v120Zm360 0h120v-320H600v320ZM240-520h280v-120H240v120Zm-80 360q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-480H160v480Zm0 0v-480 480Z" />
-                    </svg>
-                    <span class="text-lg font-medium ml-4">General</span>
-                </div>
-            </a>
-        </li>
-        <li
-            class="pl-3 pr-3 py-2 rounded-lg mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))] hover:bg-hoverbase hover:text-white duration-200">
             <a href="{{ route('admin.dashboard.cms.hero') }}"
                 class="block text-textbase hover:text-white truncate transition">
                 <div class="flex items-center hover:text-white">

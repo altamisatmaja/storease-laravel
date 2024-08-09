@@ -29,9 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard', [DashboardAdminController::class, 'index'])->name('admin.dashboard');
 
     Route::get('admin/dashboard/cms/about', [AboutAdminController::class, 'index'])->name('admin.dashboard.cms.about');
-    Route::get('admin/dashboard/cms/footer', [FooterAdminController::class, 'index'])->name('admin.dashboard.cms.footer');
-    Route::get('admin/dashboard/cms/general', [GeneralAdminController::class, 'index'])->name('admin.dashboard.cms.general');
 
+    Route::get('admin/dashboard/cms/footer', [FooterAdminController::class, 'index'])->name('admin.dashboard.cms.footer');
+    Route::post('admin/dashboard/cms/footer/update', [FooterAdminController::class, 'update'])->name('admin.dashboard.cms.footer.update');
 
     Route::get('admin/dashboard/cms/our-service', [OurServiceAdminController::class, 'index'])->name('admin.dashboard.cms.ourservice');
     Route::get('admin/dashboard/cms/portofolio', [PortofolioAdminController::class, 'index'])->name('admin.dashboard.cms.portofolio');
@@ -56,8 +56,6 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard/partner/pengajuan/ubah/{id}', [PartnerAdminController::class, 'update'])->name('admin.dashboard.partner.pengajuan.ubah');
 
     Route::get('admin/dashboard/auth', [ChangePasswordAdminController::class, 'index'])->name('admin.dashboard.auth.changepassword');
-
-    Route::post('admin/dashboard/general/judul/ubah', [GeneralAdminController::class, 'change_title'])->name('admin.dashboard.general.title.change');
 
     Route::get('admin/dashboard/cms/hero', [HeroAdminController::class, 'index'])->name('admin.dashboard.cms.hero');
     Route::post('admin/dashboard/cms/hero/home/welcome/ubah', [HeroAdminController::class, 'hero_welcome'])->name('admin.dashboard.hero.welcome.update');
