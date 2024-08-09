@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [GuestHomePagesController::class, 'index']);
 Route::get('/kontak', [GuestContactUsPagesController::class, 'index']);
 Route::get('/partner', [GuestPartnerPagesController::class, 'index'])->name('partner');
-Route::get('/partner/detail', [GuestPartnerPagesController::class, 'show'])->name('partner.detail');
+Route::get('/partner/{slug}', [GuestPartnerPagesController::class, 'show'])->name('partner.detail');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

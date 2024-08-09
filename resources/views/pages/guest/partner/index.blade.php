@@ -30,90 +30,62 @@
         </section>
 
 
-        <section class="bg-white py-8 w-full px-4" id="portofolio">
-            <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-4xl text-center">Portofolio
-            </h2>
+        @foreach ($categories as $category)
+            <section class="bg-white py-8 max-w-7xl mx-auto px-4" id="portofolio">
+                <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-4xl">
+                    {{ $category->category_name }}
+                </h2>
 
-            <div class="relative w-sceen overflow-hidden">
-                <div class="absolute inset-y-0 left-0 flex items-center z-40">
-                    <button id="prev" class="bg-blue-500 text-white p-2 rounded focus:outline-none">
-                        &larr;
-                    </button>
-                </div>
-                <div class="carousel-container flex space-x-4 p-4">
-                    <!-- Card 1 -->
-                    <a href="{{ route('partner.detail') }}">
-                        <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg">
-                            <div
-                                class="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
-                                <div
-                                    class="absolute inset-0 m-0 h-full w-full overflow-hidden rounded-none bg-transparent bg-[url('https://images.unsplash.com/photo-1552960562-daf630e9278b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80')] bg-cover bg-clip-border bg-center text-gray-700 shadow-none">
-                                    <div
-                                        class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50">
+                <div class="relative w-sceen overflow-hidden">
+                    <div class="absolute inset-y-0 left-0 flex items-center z-40">
+                        <button id="prev" class="bg-blue-500 text-white p-2 rounded focus:outline-none">
+                            &larr;
+                        </button>
+                    </div>
+                    <div class="carousel-container flex space-x-4">
+                        @foreach ($category->vendors as $vendor)
+                            <a href="{{ route('partner.detail', $vendor->slug) }}">
+                                <div class="carousel-item block rounded-lg bg-white w-96 mt-10">
+                                    <div class="relative overflow-hidden bg-cover bg-no-repeat h-64" data-te-ripple-init
+                                        data-te-ripple-color="light">
+                                        <img class="rounded-lg w-full h-full object-cover"
+                                            src="{{ asset('uploads/' . $vendor->thumbnail_vendor) }}" alt="" />
+                                        <a href="{{ route('partner.detail', $vendor->slug) }}">
+                                            <div
+                                                class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
+                                            </div>
+                                        </a>
+                                    </div>
+
+                                    <div class="p-2">
+                                        <div class="flex justify-between">
+                                            <h5 class="mb-2 text-sm font-bold leading-tight text-neutral-800">
+                                                {{ $vendor->vendor_name }}
+                                            </h5>
+                                        </div>
+                                        <p class="mb-1 text-sm text-neutral-600">
+                                            {{ $vendor->kabupaten_vendor }}, {{ $vendor->provinsi_vendor }}
+                                        </p>
+
+                                        <p class="mb-4 text-base text-neutral-600">
+                                            {{ $vendor->about_vendor }}
+                                        </p>
+                                        <h5 class="mb-2 text-sm font-bold leading-tight text-neutral-800">
+                                            {{ $vendor->detail_alamat_vendor }}
+                                        </h5>
                                     </div>
                                 </div>
-                                <div class="relative p-6 py-14 px-6 md:px-12">
-                                    <h2
-                                        class="mb-6 block font-sans text-4xl font-medium leading-[1.5] tracking-normal text-white antialiased">
-                                        How we design and code open-source projects?
-                                    </h2>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                    <!-- Card 2 -->
-                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold">Card 2</h2>
-                        <p class="text-gray-600">This is card number 2.</p>
+                            </a>
+                        @endforeach
                     </div>
-                    <!-- Card 3 -->
-                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold">Card 3</h2>
-                        <p class="text-gray-600">This is card number 3.</p>
-                    </div>
-                    <!-- Card 4 -->
-                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold">Card 4</h2>
-                        <p class="text-gray-600">This is card number 4.</p>
-                    </div>
-                    <!-- Card 5 -->
-                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold">Card 5</h2>
-                        <p class="text-gray-600">This is card number 5.</p>
-                    </div>
-                    <!-- Card 6 -->
-                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold">Card 6</h2>
-                        <p class="text-gray-600">This is card number 6.</p>
-                    </div>
-                    <!-- Card 7 -->
-                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold">Card 7</h2>
-                        <p class="text-gray-600">This is card number 7.</p>
-                    </div>
-                    <!-- Card 8 -->
-                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold">Card 8</h2>
-                        <p class="text-gray-600">This is card number 8.</p>
-                    </div>
-                    <!-- Card 9 -->
-                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold">Card 9</h2>
-                        <p class="text-gray-600">This is card number 9.</p>
-                    </div>
-                    <!-- Card 10 -->
-                    <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg shadow-md">
-                        <h2 class="text-xl font-bold">Card 10</h2>
-                        <p class="text-gray-600">This is card number 10.</p>
+                    <div class="absolute inset-y-0 right-0 flex items-center">
+                        <button id="next" class="bg-blue-500 text-white p-2 rounded-full focus:outline-none">
+                            &rarr;
+                        </button>
                     </div>
                 </div>
-                <div class="absolute inset-y-0 right-0 flex items-center">
-                    <button id="next" class="bg-blue-500 text-white p-2 rounded-full focus:outline-none">
-                        &rarr;
-                    </button>
-                </div>
-            </div>
-        </section>
+            </section>
+        @endforeach
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>

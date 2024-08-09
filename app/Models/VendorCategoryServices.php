@@ -15,4 +15,9 @@ class VendorCategoryServices extends Model
         'category_name',
         'slug',
     ];
+
+        public function vendors(){
+        return $this->hasMany(Vendor::class, 'vendor_category_services_id', 'id');
+    }
+
 }
