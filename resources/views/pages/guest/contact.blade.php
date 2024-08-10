@@ -57,7 +57,8 @@
                 </div>
             </div>
 
-            <form class="ml-auto space-y-4">
+            <form class="ml-auto space-y-4" action="{{ route('contact_us.store') }}" method="POST">
+                @csrf
                 <h1 class="text-3xl font-extrabold">Ingin Menghubungi Kami?
                 </h1>
                 <p class="text-md text-gray-400 mt-3">Gunakan form dibawah ini, Customer Service kami akan segera merespond
@@ -66,38 +67,39 @@
                 <div class="grid grid-cols-2 gap-x-2">
                     <div>
                         <label for="name" class="text-md text-primarybase">Nama Lengkap</label>
-                        <input type='text' placeholder='Name Lengkap'
+                        <input type='text' name="name" placeholder='Name Lengkap'
                             class="w-full
                         rounded-md py-2.5 px-4 border text-sm outline-primarybase" />
                     </div>
                     <div>
-                        <label for="name" class="text-md text-primarybase">Alamat</label>
-                        <input type='text' placeholder='Alamat'
+                        <label for="address" class="text-md text-primarybase">Alamat</label>
+                        <input type='text' name="address" placeholder='Alamat'
                             class="w-full rounded-md py-2.5 px-4 border text-sm outline-primarybase" />
                     </div>
                 </div>
                 <div class="grid grid-cols-2 gap-x-2">
                     <div>
-                        <label for="name" class="text-md text-primarybase">Nomor Hp</label>
-                        <input type='text' placeholder='No HP'
+                        <label for="nohp" class="text-md text-primarybase">Nomor Hp</label>
+                        <input type='text' name="nohp" placeholder='No HP'
                             class="w-full rounded-md py-2.5 px-4 border text-sm outline-primarybase" />
                     </div>
                     <div>
-                        <label for="name" class="text-md text-primarybase">Email</label>
-                        <input type='text' placeholder=' Email'
+                        <label for="email" class="text-md text-primarybase">Email</label>
+                        <input type='text' name="email" placeholder=' Email'
                             class="w-full rounded-md py-2.5 px-4 border text-sm outline-primarybase" />
                     </div>
                 </div>
                 <div>
-                    <label for="name" class="text-md text-primarybase">Subjek</label>
-                    <input type='text' placeholder='Subject'
+                    <label for="subject" class="text-md text-primarybase">Subjek</label>
+                    <input type='text' name="subject" placeholder='Subject'
                         class="w-full rounded-md py-2.5 px-4 border text-sm outline-primarybase" />
                 </div>
                 <div>
-                    <label for="name" class="text-md text-primarybase">Pesan</label>
-                    <textarea placeholder='Message' rows="6" class="w-full rounded-md px-4 border text-sm pt-2.5 outline-primarybase"></textarea>
+                    <label for="message" class="text-md text-primarybase">Pesan</label>
+                    <textarea placeholder='Message' name="message" rows="6"
+                        class="w-full rounded-md px-4 border text-sm pt-2.5 outline-primarybase"></textarea>
                 </div>
-                <button type='button'
+                <button type='submit'
                     class="text-white bg-primarybase hover:bg-blue-600 font-semibold rounded-md text-sm px-4 py-2.5 w-full">Kirim</button>
             </form>
         </div>

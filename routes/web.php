@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\Guest\GuestContactUsPagesController;
 use App\Http\Controllers\Guest\GuestHomePagesController;
 use App\Http\Controllers\Guest\GuestPartnerPagesController;
@@ -21,6 +22,8 @@ Route::get('/', [GuestHomePagesController::class, 'index']);
 Route::get('/kontak', [GuestContactUsPagesController::class, 'index']);
 Route::get('/partner', [GuestPartnerPagesController::class, 'index'])->name('partner');
 Route::get('/partner/{slug}', [GuestPartnerPagesController::class, 'show'])->name('partner.detail');
+
+Route::post('/kontak/kami/store', [ContactFormController::class, 'store'])->name('contact_us.store');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
