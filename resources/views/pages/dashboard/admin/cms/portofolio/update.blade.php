@@ -23,13 +23,14 @@
         </div>
 
         <div class="">
-            <form action="{{ route('admin.dashboard.cms.portofolio.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.dashboard.cms.portofolio.update', $portofolios->id) }}" method="POST"
+                enctype="multipart/form-data">
                 @csrf
                 <div class="my-2">
                     <label for="link_social_media_portofolio"
                         class="block text-gray-800 text-lg font-semibold mb-2">link_social_media_portofolio</label>
                     <input type="text" name="link_social_media_portofolio" id="link_social_media_portofolio" required
-                        placeholder="Masukkan jumlah penyetuju"
+                        placeholder="Masukkan jumlah penyetuju" value="{{ $portofolios->link_social_media_portofolio }}"
                         class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
                     <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">link_social_media_portofolio</span>
                         website!</p>
@@ -42,8 +43,7 @@
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
                             <div class="relative w-full h-full flex items-center justify-center">
                                 <img id="image-preview-thumb-pictures" class="w-96 h-full object-cover rounded-lg"
-                                    src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
-                                    alt="Preview Image">
+                                    src="{{ asset('uploads/' . $portofolios->thumbnail_portofolio) }}" alt="Preview Image">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black bg-opacity-50 rounded-lg">
                                     <svg class="w-12 h-12 text-white" xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +67,7 @@
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
                             <div class="relative w-full h-full flex items-center justify-center">
                                 <img id="image-preview-hover-pictures" class="w-96 h-full object-cover rounded-lg"
-                                    src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
-                                    alt="Preview Image">
+                                    src="{{ asset('uploads/' . $portofolios->hover_portofolio) }}" alt="Preview Image">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black bg-opacity-50 rounded-lg">
                                     <svg class="w-12 h-12 text-white" xmlns="http://www.w3.org/2000/svg"

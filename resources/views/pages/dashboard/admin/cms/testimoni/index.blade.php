@@ -50,17 +50,17 @@
 
                                         <th scope="col"
                                             class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
-                                            Layanan
+                                            Deskripsi testimoni
                                         </th>
 
                                         <th scope="col"
                                             class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
-                                            Owner
+                                            Foto Customer
                                         </th>
 
                                         <th scope="col"
                                             class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
-                                            Provinsi Vendor
+                                            Rating
                                         </th>
 
                                         <th scope="col"
@@ -77,53 +77,43 @@
                                                     <span>{{ $loop->iteration }}</span>
                                                 </div>
                                             </td>
-                                            <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">Jan
-                                                6, 2022</td>
-                                            <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
-                                                <div
-                                                    class="inline-flex items-center px-3 py-1 rounded-full gap-x-2 text-emerald-500 bg-emerald-100/60 ">
-                                                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"
-                                                        xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M10 3L4.5 8.5L2 6" stroke="currentColor" stroke-width="1.5"
-                                                            stroke-linecap="round" stroke-linejoin="round" />
-                                                    </svg>
-
-                                                    <h2 class="text-sm font-normal">Paid</h2>
-                                                </div>
-                                            </td>
+                                            <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                                                {{ $testimonial->customer_name }}</td>
+                                            <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
+                                                {{ $testimonial->description_testimonial }}</td>
                                             <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                                                 <div class="flex items-center gap-x-2">
                                                     <img class="object-cover w-8 h-8 rounded-full"
-                                                        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
+                                                        src="{{ asset('uploads/' . $testimonial->customer_pictures) }}"
                                                         alt="">
-                                                    <div>
-                                                        <h2 class="text-sm font-medium text-gray-800  ">Arthur
-                                                            Melo</h2>
-                                                        <p class="text-xs font-normal text-gray-600 ">
-                                                            authurmelo@example.com</p>
-                                                    </div>
                                                 </div>
                                             </td>
-                                            <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
-                                                Monthly subscription</td>
-                                            <a href="{{ route('admin.dashboard.cms.testimoni.edit', $testimonial->id) }}">
-                                                <button
-                                                    class="text-gray-500 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
-                                                    Ubah
-                                                </button>
-                                            </a>
+                                            <td class="px-4 py-4 text-sm font-medium text-gray-700  whitespace-nowrap">
+                                                <div class="inline-flex items-center gap-x-3">
+                                                    <span>{{ $testimonial->rating }}</span>
+                                                </div>
+                                            </td>
+                                            <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap flex gap-x-2">
+                                                <a
+                                                    href="{{ route('admin.dashboard.cms.testimoni.edit', $testimonial->id) }}">
+                                                    <button
+                                                        class="text-gray-500 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
+                                                        Ubah
+                                                    </button>
+                                                </a>
 
-                                            <form
-                                                action="{{ route('admin.dashboard.cms.testimoni.destroy', $testimonial->id) }}"
-                                                method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit"
-                                                    class="text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none"
-                                                    onclick="return confirm('Are you sure you want to delete this vendor?')">
-                                                    Hapus
-                                                </button>
-                                            </form>
+                                                <form
+                                                    action="{{ route('admin.dashboard.cms.testimoni.destroy', $testimonial->id) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit"
+                                                        class="text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none"
+                                                        onclick="return confirm('Are you sure you want to delete this vendor?')">
+                                                        Hapus
+                                                    </button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

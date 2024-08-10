@@ -69,10 +69,53 @@ class PortofolioAdminController extends Controller
     }
 
     public function update(Request $request, $id){
-        return view('pages.dashboard.admin.cms.portofolio.create');
+        try {
+            $portofolios = PortofolioHomePages::findOrFail($id);
+
+            $validator = Validator::make($request->all(), [
+                'thumbnail_portofolio' => 'nullable',
+                'hover_portofolio' => 'nullable',
+                'link_social_media_portofolio' => 'required',
+            ]);
+
+            if ($validator->fails()) {
+                    dd($validator->errors());
+                return redirect()->back()->withErrors($validator)->withInput();
+            }
+
+            $input['link_social_media_portofolio'] = $request->input('link_social_media_portofolio');
+
+            if ($request->hasFile('thumbnail_portofolio')) {
+                $thumbnail = $request->file('thumbnail_portofolio');
+                $thumbnail_name = time() . rand(1, 9) . '_thumbnail.' . $thumbnail->getClientOriginalExtension();
+                $thumbnail->move(public_path('uploads'), $thumbnail_name);
+                $input['thumbnail_portofolio'] = $thumbnail_name;
+            }
+
+            if ($request->hasFile('hover_portofolio')) {
+                $hover = $request->file('hover_portofolio');
+                $hover_name = time() . rand(1, 9) . '_hover.' . $hover->getClientOriginalExtension();
+                $hover->move(public_path('uploads'), $hover_name);
+                $input['hover_portofolio'] = $hover_name;
+            }
+
+            $portofolios->update($input);
+
+            return redirect()->route('admin.dashboard.cms.portofolio')->with('success', 'Portofolio baru berhasil diubah!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', $e->getMessage());
+        }
     }
 
     public function destroy($id){
-        //
+        try {
+            $portofolios = PortofolioHomePages::findOrFail($id);
+
+            $portofolios->delete();
+
+            return redirect()->route('admin.dashboard.cms.portofolio')->with('success', 'Portofolio berhasil dihapus!');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.dashboard.cms.portofolio')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 }
