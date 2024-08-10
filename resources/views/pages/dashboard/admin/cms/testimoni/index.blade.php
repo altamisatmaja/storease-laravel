@@ -106,19 +106,24 @@
                                             </td>
                                             <td class="px-4 py-4 text-sm text-gray-500  whitespace-nowrap">
                                                 Monthly subscription</td>
-                                            <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                                <div class="flex items-center gap-x-6">
-                                                    <button
-                                                        class="text-gray-500 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
-                                                        Archive
-                                                    </button>
+                                            <a href="{{ route('admin.dashboard.cms.testimoni.edit', $testimonial->id) }}">
+                                                <button
+                                                    class="text-gray-500 transition-colors duration-200   hover:text-indigo-500 focus:outline-none">
+                                                    Ubah
+                                                </button>
+                                            </a>
 
-                                                    <button
-                                                        class="text-blue-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none">
-                                                        Download
-                                                    </button>
-                                                </div>
-                                            </td>
+                                            <form
+                                                action="{{ route('admin.dashboard.cms.testimoni.destroy', $testimonial->id) }}"
+                                                method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit"
+                                                    class="text-red-500 transition-colors duration-200 hover:text-red-700 focus:outline-none"
+                                                    onclick="return confirm('Are you sure you want to delete this vendor?')">
+                                                    Hapus
+                                                </button>
+                                            </form>
                                         </tr>
                                     @endforeach
                                 </tbody>

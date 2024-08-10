@@ -63,7 +63,9 @@ class PortofolioAdminController extends Controller
 
 
     public function edit($id){
-        return view('pages.dashboard.admin.cms.portofolio.update');
+        $portofolios = PortofolioHomePages::findOrFail($id);
+
+        return view('pages.dashboard.admin.cms.portofolio.update', compact('portofolios'));
     }
 
     public function update(Request $request, $id){

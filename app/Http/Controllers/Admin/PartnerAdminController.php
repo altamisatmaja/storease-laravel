@@ -51,7 +51,6 @@ class PartnerAdminController extends Controller
                 'vendor_category_services_id' => 'required',
             ]);
 
-
             if($validatedData->fails()){
                 return redirect()->back()->withErrors($validatedData)->withInput();
             }
@@ -227,15 +226,15 @@ class PartnerAdminController extends Controller
         try {
             $vendor = Vendor::where('slug', $slug)->firstOrFail();
 
-            $vendor->vendor_images()->delete();
-            $vendor->vendor_services()->delete();
-            $vendor->vendor_team()->delete();
+            // $vendor->vendor_images()->delete();
+            // $vendor->vendor_services()->delete();
+            // $vendor->vendor_team()->delete();
 
             $vendor->delete();
 
-            return redirect()->route('admin.dashboard.partner.pengajuan')->with('success', 'Vendor successfully deleted.');
+            return redirect()->route('admin.dashboard.partner')->with('success', 'Vendor successfully deleted.');
         } catch (\Exception $e) {
-            return redirect()->route('admin.dashboard.partner.pengajuan')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+            return redirect()->route('admin.dashboard.partner')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
         }
 
     }

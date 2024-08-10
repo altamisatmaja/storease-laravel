@@ -287,15 +287,6 @@
                 @error('thumbnail_service')
                     <span class="text-red-500">{{ $message }}</span>
                 @enderror
-                <div>
-                    <label class="text-lg font-medium text-textbase" for="start_price_at">Harga layanan
-                        *</label>
-                    <input name="start_price_at" id="start_price_at" type="number" placeholder="Masukkan harga layanan"
-                        class="border p-2 rounded w-full">
-                    @error('start_price_at')
-                        <span class="text-red-500">{{ $message }}</span>
-                    @enderror
-                </div>
                 <div class="mb-4 sm:mb-0">
                     <h1 class="text-xl md:text-2xl text-gray-800 font-semibold">Formulir utama vendor</h1>
                 </div>

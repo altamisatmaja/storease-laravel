@@ -23,7 +23,7 @@
         </div>
 
         <div class="mx-auto w-full max-w-full">
-            <form action="{{ route('admin.dashboard.partner.pengajuan.store') }}" method="POST"
+            <form action="{{ route('admin.dashboard.partner.pengajuan.update', $vendor->slug) }}" method="POST"
                 enctype="multipart/form-data">
                 @csrf
                 <div class="mb-4 sm:mb-0">
@@ -70,16 +70,16 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
                         <label class="text-lg font-medium text-textbase" for="vendor_name">Nama Vendor *</label>
-                        <input name="vendor_name" id="vendor_name" type="text" placeholder="Masukkan Nama Vendor"
-                            class="border p-2 rounded w-full">
+                        <input value="{{ $vendor->vendor_name }}" name="vendor_name" id="vendor_name" type="text"
+                            placeholder="Masukkan Nama Vendor" class="border p-2 rounded w-full">
                         @error('vendor_name')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
                     </div>
                     <div>
                         <label class="text-lg font-medium text-textbase" for="provinsi_vendor">Provinsi vendor *</label>
-                        <input name="provinsi_vendor" id="provinsi_vendor" type="text"
-                            placeholder="Masukkan provinsi_vendor" class="border p-2 rounded w-full">
+                        <input value="{{ $vendor->provinsi_vendor }}" name="provinsi_vendor" id="provinsi_vendor"
+                            type="text" placeholder="Masukkan provinsi_vendor" class="border p-2 rounded w-full">
                         @error('provinsi_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -88,16 +88,16 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
                         <label class="text-lg font-medium text-textbase" for="kabupaten_vendor">Kabupaten vendor *</label>
-                        <input name="kabupaten_vendor" id="kabupaten_vendor" type="text" placeholder="Masukkan Kabupaten"
-                            class="border p-2 rounded w-full">
+                        <input value="{{ $vendor->kabupaten_vendor }}" name="kabupaten_vendor" id="kabupaten_vendor"
+                            type="text" placeholder="Masukkan Kabupaten" class="border p-2 rounded w-full">
                         @error('kabupaten_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
                     </div>
                     <div>
                         <label class="text-lg font-medium text-textbase" for="kecamatan_vendor">Kecamatan vendor *</label>
-                        <input name="kecamatan_vendor" id="kecamatan_vendor" type="text"
-                            placeholder="Masukkan kecamatan vendor" class="border p-2 rounded w-full">
+                        <input value="{{ $vendor->kecamatan_vendor }}" name="kecamatan_vendor" id="kecamatan_vendor"
+                            type="text" placeholder="Masukkan kecamatan vendor" class="border p-2 rounded w-full">
                         @error('kecamatan_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -106,8 +106,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
                         <label class="text-lg font-medium text-textbase" for="kelurahan_vendor">Kelurahan vendor *</label>
-                        <input name="kelurahan_vendor" id="kelurahan_vendor" type="text" placeholder="Masukkan Kelurahan"
-                            class="border p-2 rounded w-full">
+                        <input value="{{ $vendor->kelurahan_vendor }}" name="kelurahan_vendor" id="kelurahan_vendor"
+                            type="text" placeholder="Masukkan Kelurahan" class="border p-2 rounded w-full">
                         @error('kelurahan_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -115,8 +115,9 @@
                     <div>
                         <label class="text-lg font-medium text-textbase" for="detail_alamat_vendor">Detail Alamat vendor
                             *</label>
-                        <input name="detail_alamat_vendor" id="detail_alamat_vendor" type="text"
-                            placeholder="Masukkan detail alamat vendor" class="border p-2 rounded w-full">
+                        <input value="{{ $vendor->detail_alamat_vendor }}" name="detail_alamat_vendor"
+                            id="detail_alamat_vendor" type="text" placeholder="Masukkan detail alamat vendor"
+                            class="border p-2 rounded w-full">
                         @error('detail_alamat_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -126,7 +127,7 @@
                     <div>
                         <label class="text-lg font-medium text-textbase" for="about_vendor">Tentang vendor *</label>
                         <textarea type="about_vendor" name="about_vendor" id="about_vendor" placeholder="Masukkan deskripsi vendor"
-                            class="border p-2 rounded w-full h-20"></textarea>
+                            class="border p-2 rounded w-full h-20">{{ $vendor->about_vendor }}</textarea>
                         @error('about_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -136,8 +137,9 @@
                     <div>
                         <label class="text-lg font-medium text-textbase" for="link_instagram_vendor">Link instagram vendor
                             *</label>
-                        <input name="link_instagram_vendor" id="link_instagram_vendor" type="text"
-                            placeholder="Masukkan link instagram vendor" class="border p-2 rounded w-full">
+                        <input name="link_instagram_vendor" value="{{ $vendor->link_instagram_vendor }}"
+                            id="link_instagram_vendor" type="text" placeholder="Masukkan link instagram vendor"
+                            class="border p-2 rounded w-full">
                         @error('link_instagram_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -145,8 +147,9 @@
                     <div>
                         <label class="text-lg font-medium text-textbase" for="link_website_vendor">Link website vendor
                             *</label>
-                        <input name="link_website_vendor" id="link_website_vendor" type="text"
-                            placeholder="Masukkan link facebook" class="border p-2 rounded w-full">
+                        <input name="link_website_vendor" value="{{ $vendor->link_website_vendor }}"
+                            id="link_website_vendor" type="text" placeholder="Masukkan link facebook"
+                            class="border p-2 rounded w-full">
                         @error('link_website_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -154,8 +157,9 @@
                     <div>
                         <label class="text-lg font-medium text-textbase" for="link_facebook_vendor">Link facebook vendor
                             *</label>
-                        <input name="link_facebook_vendor" id="link_facebook_vendor" type="text"
-                            placeholder="Masukkan link facebook" class="border p-2 rounded w-full">
+                        <input name="link_facebook_vendor" value="{{ $vendor->link_facebook_vendor }}"
+                            id="link_facebook_vendor" type="text" placeholder="Masukkan link facebook"
+                            class="border p-2 rounded w-full">
                         @error('link_facebook_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -165,8 +169,8 @@
                     <div>
                         <label class="text-lg font-medium text-textbase" for="location_by_gmaps">Location by gmaps kos
                             *</label>
-                        <input name="location_by_gmaps" id="location_by_gmaps" type="text"
-                            placeholder="location_by_gmaps kos" class="border p-2 rounded w-full">
+                        <input name="location_by_gmaps" value="{{ $vendor->location_by_gmaps }}" id="location_by_gmaps"
+                            type="text" placeholder="location_by_gmaps kos" class="border p-2 rounded w-full">
                         @error('location_by_gmaps')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -174,13 +178,13 @@
                 </div>
                 <div class="my-4">
                     <label for="thumbnail_vendor" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                        tentang</label>
+                        thumbnail vendor</label>
                     <label
                         class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
                             <div class="relative w-full h-full flex items-center justify-center">
                                 <img id="image-preview-thumbnail-vendor" class="w-96 h-full object-cover rounded-lg"
-                                    src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
+                                    src="{{ $vendor['thumbnail_vendor'] ? asset('uploads/' . $vendor['thumbnail_vendor']) : 'https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg' }}"
                                     alt="Preview Image">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black bg-opacity-50 rounded-lg">
@@ -204,7 +208,9 @@
                         class="border p-2 rounded w-full">
                         <option value="" disabled selected>Pilih kategori vendor</option>
                         @foreach ($categories as $category)
-                            <option value="{{ $category->id }}">{{ $category->category_name }}</option>
+                            <option value="{{ $category->id }}"
+                                {{ $category->id == $vendor->vendor_category_services_id ? 'selected' : '' }}>
+                                {{ $category->category_name }}</option>
                         @endforeach
                     </select>
                     @error('vendor_category_services_id')
@@ -218,8 +224,8 @@
                     <div>
                         <label class="text-lg font-medium text-textbase" for="service_name">Nama layanan
                             *</label>
-                        <input name="service_name" id="service_name" type="text" placeholder="Masukkan nama layanan"
-                            class="border p-2 rounded w-full">
+                        <input name="service_name" value="{{ $vendorService->service_name }}" id="service_name"
+                            type="text" placeholder="Masukkan nama layanan" class="border p-2 rounded w-full">
                         @error('service_name')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -228,7 +234,8 @@
                         <label class="text-lg font-medium text-textbase" for="start_price_at">Harga layanan
                             *</label>
                         <input name="start_price_at" id="start_price_at" type="text"
-                            placeholder="Masukkan harga layanan" class="border p-2 rounded w-full">
+                            placeholder="Masukkan harga layanan" value="{{ $vendorService->start_price_at }}"
+                            class="border p-2 rounded w-full">
                         @error('start_price_at')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -238,12 +245,24 @@
                             *</label>
                         <select name="location_available" id="location_available" class="border p-2 rounded w-full">
                             <option value="" disabled selected>Pilih lokasi tersedia</option>
-                            <option value="Nasional">Nasional</option>
-                            <option value="Jawa">Jawa</option>
-                            <option value="Sumatera">Sumatera</option>
-                            <option value="Kalimantan">Kalimantan</option>
-                            <option value="Bali">Bali</option>
-                            <option value="Papua">Papua</option>
+                            <option value="Nasional"
+                                {{ $vendorService->location_available == 'Nasional' ? 'selected' : '' }}>
+                                Nasional</option>
+                            <option value="Jawa" {{ $vendorService->location_available == 'Jawa' ? 'selected' : '' }}>
+                                Jawa
+                            </option>
+                            <option value="Sumatera"
+                                {{ $vendorService->location_available == 'Sumatera' ? 'selected' : '' }}>
+                                Sumatera</option>
+                            <option value="Kalimantan"
+                                {{ $vendorService->location_available == 'Kalimantan' ? 'selected' : '' }}>Kalimantan
+                            </option>
+                            <option value="Bali" {{ $vendorService->location_available == 'Bali' ? 'selected' : '' }}>
+                                Bali
+                            </option>
+                            <option value="Papua" {{ $vendorService->location_available == 'Papua' ? 'selected' : '' }}>
+                                Papua
+                            </option>
                         </select>
                         @error('location_available')
                             <span class="text-red-500">{{ $message }}</span>
@@ -254,7 +273,7 @@
                     <div class="">
                         <label class="text-lg font-medium text-textbase" for="service_description">Tentang Service Vendor
                             *</label>
-                        <textarea name="service_description" id="service_description"></textarea>
+                        <textarea name="service_description" id="service_description">{{ $vendorService->service_description }}</textarea>
                         @error('service_description')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -268,7 +287,7 @@
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
                             <div class="relative w-full h-full flex items-center justify-center">
                                 <img id="image-preview-thumbnail" class="w-96 h-full object-cover rounded-lg"
-                                    src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
+                                    src="{{ $vendorService['thumbnail_service'] ? asset('uploads/' . $vendorService['thumbnail_service']) : 'https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg' }}"
                                     alt="Preview Image">
                                 <div
                                     class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black bg-opacity-50 rounded-lg">
@@ -289,15 +308,6 @@
                 @error('thumbnail_service')
                     <span class="text-red-500">{{ $message }}</span>
                 @enderror
-                <div>
-                    <label class="text-lg font-medium text-textbase" for="start_price_at">Harga layanan
-                        *</label>
-                    <input name="start_price_at" id="start_price_at" type="number" placeholder="Masukkan harga layanan"
-                        class="border p-2 rounded w-full">
-                    @error('start_price_at')
-                        <span class="text-red-500">{{ $message }}</span>
-                    @enderror
-                </div>
                 <div class="mb-4 sm:mb-0">
                     <h1 class="text-xl md:text-2xl text-gray-800 font-semibold">Formulir utama vendor</h1>
                 </div>
@@ -305,7 +315,8 @@
                     <label class="text-lg font-medium text-textbase" for="owner_vendor_name">Nama owner
                         *</label>
                     <input name="owner_vendor_name" id="owner_vendor_name" type="text"
-                        placeholder="Masukkan harga layanan" class="border p-2 rounded w-full">
+                        placeholder="Masukkan harga layanan" value="{{ $vendorTeam->owner_vendor_name }}"
+                        class="border p-2 rounded w-full">
                     @error('owner_vendor_name')
                         <span class="text-red-500">{{ $message }}</span>
                     @enderror
@@ -314,7 +325,7 @@
                     <div class="">
                         <label class="text-lg font-medium text-textbase" for="about_the_team">Tentang Tim Vendor
                             *</label>
-                        <textarea name="about_the_team" id="about_the_team"></textarea>
+                        <textarea name="about_the_team" id="about_the_team">{{ $vendorTeam->about_the_team }}</textarea>
                         @error('about_the_team')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror

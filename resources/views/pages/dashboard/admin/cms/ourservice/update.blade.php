@@ -24,32 +24,42 @@
 
         <!-- Cards -->
         <div class="">
-            <form action="">
+            <form action="{{ route('admin.dashboard.cms.ourservice.update', $ourservices->id) }}" method="POST"
+                enctype="multipart/form-data">
+                @csrf
                 <div class="my-2">
-                    <label for="title" class="block text-gray-800 text-lg font-semibold mb-2">Judul website</label>
-                    <input type="text" name="title" id="title" required placeholder="Masukkan jumlah penyetuju"
+                    <label for="vendor_name" class="block text-gray-800 text-lg font-semibold mb-2">nama vendor</label>
+                    <input type="text" value="{{ $ourservices->vendor_name }}" name="vendor_name" id="vendor_name"
+                        required placeholder="Masukkan jumlah penyetuju"
                         class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">title</span> website!</p>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">vendor_name</span> website!</p>
                 </div>
-                <div class="my-2">
-                    <label for="title" class="block text-gray-800 text-lg font-semibold mb-2">Gambar</label>
-                    <label
-                        class="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center cursor-pointer">
-                        <div class="h-full w-full text-center flex flex-col items-center justify-center">
-                            <div class="flex max-h-48  -mt-10">
-                                <img class="has-mask h-36 object-center"
-                                    src="https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg"
-                                    alt="freepik image">
+                <div class="">
+                    <div class="my-4">
+                        <label for="image" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
+                            tentang</label>
+                        <label
+                            class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
+                            <div class="h-full w-full text-center flex flex-col items-center justify-center">
+                                <div class="relative w-full h-full flex items-center justify-center">
+                                    <img id="image-preview" class=" w-96 h-full object-cover rounded-lg"
+                                        src="{{ $ourservices['vendor_image'] ? asset('uploads/' . $ourservices['vendor_image']) : 'https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg' }}"
+                                        alt="Preview Image">
+                                    <div
+                                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black bg-opacity-50 rounded-lg">
+                                        <svg class="w-12 h-12 text-white" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 -960 960 960" fill="currentColor">
+                                            <path
+                                                d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z" />
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
-                            <p class="pointer-none text-gray-500 "><span class="text-sm">Drag and drop</span> files here
-                                <br /> or <a href="" id="" class="text-blue-600 hover:underline">select
-                                    a
-                                    file</a> from your computer
-                            </p>
-                        </div>
-                        <input type="file" class="hidden">
-                    </label>
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                            <input type="file" name="vendor_image" id="vendor_image" class="hidden"
+                                onchange="previewImage(event)">
+                        </label>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                    </div>
                 </div>
                 <button
                     class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-100 focus:ring-orange-600 bg-primarybase"
@@ -57,4 +67,14 @@
             </form>
         </div>
     </div>
+    <script>
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                const output = document.getElementById('image-preview');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
 @endsection
