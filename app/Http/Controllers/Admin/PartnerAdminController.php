@@ -26,7 +26,6 @@ class PartnerAdminController extends Controller
 
     public function store(Request $request){
         try {
-            // dd($request->all());
             $validatedData = Validator::make($request->all(), [
                 'vendor_name' => 'required|string|max:255',
                 'provinsi_vendor' => 'required|string|max:255',
@@ -49,11 +48,9 @@ class PartnerAdminController extends Controller
                 'owner_vendor_name' => 'required',
                 'about_the_team' => 'required',
                 'service_description' => 'required',
-                // 'thumbnail_service' => 'required',
                 'vendor_category_services_id' => 'required',
             ]);
 
-            // dd($validatedData->fails());
 
             if($validatedData->fails()){
                 return redirect()->back()->withErrors($validatedData)->withInput();
@@ -143,8 +140,104 @@ class PartnerAdminController extends Controller
         }
     }
 
-    public function update(){
-        return view('pages.dashboard.admin.partner.pengajuan.update');
+    public function edit($slug){
+        $categories = VendorCategoryServices::get();
+        $vendor = Vendor::where('slug', $slug)->firstOrFail();
+        $vendorId = $vendor->id;
+
+        $vendorService = VendorServices::where('vendor_id', $vendorId)->first();
+        $vendorTeam = VendorTeam::where('vendor_id', $vendorId)->first();
+        $vendorImages = VendorImages::where('vendor_id', $vendorId)->get();
+
+
+        return view('pages.dashboard.admin.partner.pengajuan.update', compact('vendor', 'categories', 'vendorService', 'vendorTeam', 'vendorImages'));
+    }
+
+    public function update(Request $request, $slug){
+        try {
+        $validatedData = $request->validate([
+            'vendor_name' => 'required|string|max:255',
+            'provinsi_vendor' => 'required|string|max:255',
+            'kabupaten_vendor' => 'required|string|max:255',
+            'kecamatan_vendor' => 'required|string|max:255',
+            'kelurahan_vendor' => 'required|string|max:255',
+            'detail_alamat_vendor' => 'required|string|max:255',
+            'about_vendor' => 'required|string',
+            'link_instagram_vendor' => 'nullable|string|max:255',
+            'link_facebook_vendor' => 'nullable|string|max:255',
+            'location_by_gmaps' => 'required|string|max:255',
+            'vendor_category_services_id' => 'required',
+            'thumbnail_vendor' => 'nullable|image|max:2048',
+            'service_name' => 'required|string|max:255',
+            'start_price_at' => 'required|numeric',
+            'location_available' => 'required|string|max:255',
+            'service_description' => 'required|string',
+            'owner_vendor_name' => 'required|string|max:255',
+            'about_the_team' => 'required|string|max:255',
+            'image_path_1' => 'nullable|image|max:2048',
+            'image_path_2' => 'nullable|image|max:2048',
+            'image_path_3' => 'nullable|image|max:2048',
+            'image_path_4' => 'nullable|image|max:2048',
+        ]);
+
+        $vendor = Vendor::where('slug', $slug)->firstOrFail();
+
+        $vendor->update($validatedData);
+
+        if ($request->hasFile('thumbnail_vendor')) {
+            $gambar = $request->file('thumbnail_vendor');
+            $nama_gambar = time() . rand(1, 9) . '.' . $gambar->getClientOriginalExtension();
+            $gambar->move('uploads', $nama_gambar);
+            $vendor->update(['thumbnail_vendor' => $nama_gambar]);
+        }
+
+        for ($i = 1; $i <= 4; $i++) {
+            if ($request->hasFile("image_path_$i")) {
+                $gambar = $request->file("image_path_$i");
+                $imagePath = time() . rand(1, 9) . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move('uploads', $imagePath);
+
+                VendorImages::updateOrCreate(
+                    ['vendor_id' => $vendor->id, 'image_path' => $request->input("old_image_path_$i")],
+                    ['image_path' => $imagePath]
+                );
+            }
+        }
+
+        $vendor->vendor_services()->update([
+            'service_name' => $request['service_name'],
+            'start_price_at' => $request['start_price_at'],
+            'location_available' => $request['location_available'],
+            'service_description' => $request['service_description'],
+        ]);
+
+        $vendor->vendor_team()->update([
+            'owner_vendor_name' => $request['owner_vendor_name'],
+            'about_the_team' => $request['about_the_team'],
+        ]);
+
+        return redirect()->route('admin.dashboard.partner.pengajuan.edit', $vendor->slug)->with('success', 'Vendor successfully updated.');
+    } catch (\Exception $e) {
+        return redirect()->route('admin.dashboard.partner.pengajuan.edit', $slug)->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+    }
+
+    }
+
+    public function destroy(Request $request, $slug){
+        try {
+            $vendor = Vendor::where('slug', $slug)->firstOrFail();
+
+            $vendor->vendor_images()->delete();
+            $vendor->vendor_services()->delete();
+            $vendor->vendor_team()->delete();
+
+            $vendor->delete();
+
+            return redirect()->route('admin.dashboard.partner.pengajuan')->with('success', 'Vendor successfully deleted.');
+        } catch (\Exception $e) {
+            return redirect()->route('admin.dashboard.partner.pengajuan')->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
+
     }
 
     public function generateSlug($raw)

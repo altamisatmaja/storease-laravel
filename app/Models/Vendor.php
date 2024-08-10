@@ -28,8 +28,8 @@ class Vendor extends Model
         'slug',
     ];
 
-    public function vendor_category_services(){
-        return $this->hasMany(VendorCategoryServices::class, 'vendor_category_services_id', 'id');
+    public function vendor_category_service(){
+        return $this->belongsTo(VendorCategoryServices::class, 'vendor_category_services_id', 'id');
     }
 
     public function vendor_images(){
@@ -43,4 +43,5 @@ class Vendor extends Model
     public function vendor_team(){
         return $this->hasMany(VendorTeam::class, 'vendor_id', 'id');
     }
+
 }

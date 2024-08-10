@@ -66,7 +66,9 @@ Route::middleware('auth')->group(function () {
     Route::get('admin/dashboard/partner', [PartnerAdminController::class, 'index'])->name('admin.dashboard.partner');
     Route::get('admin/dashboard/partner/pengajuan/tambah', [PartnerAdminController::class, 'create'])->name('admin.dashboard.partner.pengajuan.tambah');
     Route::post('admin/dashboard/partner/pengajuan/store', [PartnerAdminController::class, 'store'])->name('admin.dashboard.partner.pengajuan.store');
-    Route::get('admin/dashboard/partner/pengajuan/ubah/{id}', [PartnerAdminController::class, 'update'])->name('admin.dashboard.partner.pengajuan.ubah');
+    Route::get('admin/dashboard/partner/pengajuan/ubah/{slug}', [PartnerAdminController::class, 'edit'])->name('admin.dashboard.partner.pengajuan.edit');
+    Route::post('admin/dashboard/partner/pengajuan/update/{slug}', [PartnerAdminController::class, 'update'])->name('admin.dashboard.partner.pengajuan.update');
+    Route::delete('admin/dashboard/partner/pengajuan/destroy/{slug}', [PartnerAdminController::class, 'destroy'])->name('admin.dashboard.partner.pengajuan.destroy');
 
     Route::get('admin/dashboard/cms/hero', [HeroAdminController::class, 'index'])->name('admin.dashboard.cms.hero');
     Route::post('admin/dashboard/cms/hero/home/welcome/ubah', [HeroAdminController::class, 'hero_welcome'])->name('admin.dashboard.hero.welcome.update');
