@@ -61,20 +61,20 @@
             </div>
 
             <div>
-                <p class="text-lg font-bold">Quick Link</p>
+                <p class="text-lg font-bold">Useful Link</p>
                 <div class="flex flex-col items-start mt-5 space-y-2">
-                    <p
+                    <a href="/"
                         class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
-                        Beranda</p>
-                    <p
+                        Beranda</a>
+                    <a href="www.instagram/storease" target="_blank"
                         class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
-                        Instagram</p>
-                    <p
+                        Instagram</a>
+                    <a href="/#portofolio"
                         class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
-                        Portofolio</p>
-                    <p
+                        Portofolio</a>
+                    <a href="/partner"
                         class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
-                        Partner</p>
+                        Partner</a>
                 </div>
             </div>
 
@@ -82,12 +82,12 @@
                 <p class="text-lg font-bold">Customer Service</p>
 
                 <div class="flex flex-col items-start mt-5 space-y-2">
-                    <p
+                    <a href="/kontak"
                         class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
-                        Contact Us</p>
-                    <p
+                        Contact Us</a>
+                    <a href="/#our-service"
                         class="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
-                        Our Service</p>
+                        Our Service</a>
                 </div>
             </div>
         </div>

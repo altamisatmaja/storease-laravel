@@ -38,7 +38,7 @@
 
                 <div class="relative w-sceen overflow-hidden">
                     <div class="absolute inset-y-0 left-0 flex items-center z-40">
-                        <button id="prev" class="bg-blue-500 text-white p-2 rounded focus:outline-none">
+                        <button id="prev" class="bg-primarybase text-white p-2 rounded focus:outline-none">
                             &larr;
                         </button>
                     </div>
@@ -79,7 +79,7 @@
                         @endforeach
                     </div>
                     <div class="absolute inset-y-0 right-0 flex items-center">
-                        <button id="next" class="bg-blue-500 text-white p-2 rounded-full focus:outline-none">
+                        <button id="next" class="bg-primarybase text-white p-2 rounded focus:outline-none">
                             &rarr;
                         </button>
                     </div>

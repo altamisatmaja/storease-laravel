@@ -114,6 +114,7 @@
         ↑
     </button>
 
+
     <a href="https://wa.me/0893828323" target="_blank" id="whatsapp-chat"
         class="fixed bottom-4 right-4 bg-transparent cursor-pointer">
         <div class="flex gap-x-4">
@@ -143,176 +144,24 @@
 
 </body>
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const scrollContainer = document.querySelector('.scroll-container');
-        const scrollLeftButton = document.getElementById('scroll-left');
-        const scrollRightButton = document.getElementById('scroll-right');
-        const scrollItems = document.querySelectorAll('.scroll-item');
+    const backToTopButton = document.getElementById('back-to-top');
 
-        if (scrollItems.length > 0) {
-            const itemWidth = scrollItems[0].offsetWidth + parseInt(window.getComputedStyle(scrollItems[0])
-                .marginRight);
-
-            let scrollInterval = setInterval(() => {
-                scrollContainer.scrollBy({
-                    left: itemWidth,
-                    behavior: 'smooth'
-                });
-            }, 2000);
-
-            scrollLeftButton.addEventListener('click', () => {
-                clearInterval(scrollInterval);
-                scrollContainer.scrollBy({
-                    left: -itemWidth,
-                    behavior: 'smooth'
-                });
-                scrollInterval = setInterval(() => {
-                    scrollContainer.scrollBy({
-                        left: itemWidth,
-                        behavior: 'smooth'
-                    });
-                }, 2000);
-            });
-
-            scrollRightButton.addEventListener('click', () => {
-                clearInterval(scrollInterval);
-                scrollContainer.scrollBy({
-                    left: itemWidth,
-                    behavior: 'smooth'
-                });
-                scrollInterval = setInterval(() => {
-                    scrollContainer.scrollBy({
-                        left: itemWidth,
-                        behavior: 'smooth'
-                    });
-                }, 2000);
-            });
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+            backToTopButton.classList.remove('d-none');
+        } else {
+            backToTopButton.classList.add('d-none');
         }
     });
 
-    document.querySelectorAll('.portfolio-item').forEach(item => {
-        item.addEventListener('mouseover', () => {
-            item.querySelector('.main-image').classList.add('hidden');
-            item.querySelector('.hover-image').classList.remove('hidden');
-        });
-
-        item.addEventListener('mouseout', () => {
-            item.querySelector('.main-image').classList.remove('hidden');
-            item.querySelector('.hover-image').classList.add('hidden');
-        });
-    });
-
-    const portfolioContainer = document.getElementById('portfolio-container');
-    const leftArrow = document.getElementById('left-arrow');
-    const rightArrow = document.getElementById('right-arrow');
-
-    leftArrow.addEventListener('click', () => {
-        portfolioContainer.scrollBy({
-            left: -300,
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
             behavior: 'smooth'
-        });
-    });
-
-    rightArrow.addEventListener('click', () => {
-        portfolioContainer.scrollBy({
-            left: 300,
-            behavior: 'smooth'
-        });
-    });
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const scrollContainer = document.querySelector('.scroll-container');
-        const scrollLeftButton = document.getElementById('scroll-left');
-        const scrollRightButton = document.getElementById('scroll-right');
-        const scrollItems = document.querySelectorAll('.scroll-item');
-        const backToTopButton = document.getElementById('back-to-top');
-
-        if (scrollItems.length > 0) {
-            const itemWidth = scrollItems[0].offsetWidth + parseInt(window.getComputedStyle(scrollItems[0])
-                .marginRight);
-
-            let scrollInterval = setInterval(() => {
-                scrollContainer.scrollBy({
-                    left: itemWidth,
-                    behavior: 'smooth'
-                });
-            }, 2000);
-
-            scrollLeftButton.addEventListener('click', () => {
-                clearInterval(scrollInterval);
-                scrollContainer.scrollBy({
-                    left: -itemWidth,
-                    behavior: 'smooth'
-                });
-                scrollInterval = setInterval(() => {
-                    scrollContainer.scrollBy({
-                        left: itemWidth,
-                        behavior: 'smooth'
-                    });
-                }, 2000);
-            });
-
-            scrollRightButton.addEventListener('click', () => {
-                clearInterval(scrollInterval);
-                scrollContainer.scrollBy({
-                    left: itemWidth,
-                    behavior: 'smooth'
-                });
-                scrollInterval = setInterval(() => {
-                    scrollContainer.scrollBy({
-                        left: itemWidth,
-                        behavior: 'smooth'
-                    });
-                }, 2000);
-            });
-        }
-
-        document.querySelectorAll('.portfolio-item').forEach(item => {
-            item.addEventListener('mouseover', () => {
-                item.querySelector('.main-image').classList.add('hidden');
-                item.querySelector('.hover-image').classList.remove('hidden');
-            });
-
-            item.addEventListener('mouseout', () => {
-                item.querySelector('.main-image').classList.remove('hidden');
-                item.querySelector('.hover-image').classList.add('hidden');
-            });
-        });
-
-        const portfolioContainer = document.getElementById('portfolio-container');
-        const leftArrow = document.getElementById('left-arrow');
-        const rightArrow = document.getElementById('right-arrow');
-
-        leftArrow.addEventListener('click', () => {
-            portfolioContainer.scrollBy({
-                left: -300,
-                behavior: 'smooth'
-            });
-        });
-
-        rightArrow.addEventListener('click', () => {
-            portfolioContainer.scrollBy({
-                left: 300,
-                behavior: 'smooth'
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
-            }
-        });
-
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
         });
     });
 </script>
+
 
 
 </html>

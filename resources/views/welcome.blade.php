@@ -47,52 +47,97 @@
                 </div>
             </div>
         </section>
-        <section class="h-[550px] flex items-center">
-            <div class="flex flex-col md:flex-row w-full max-w-4xl mx-auto text-center items-center">
-                <div class="w-full md:w-1/2 p-4">
-                    <div class="flex flex-col">
-                        <h2 class="mt-4 text-2xl font-semibold text-gray-800 hover:underline">Visi</h2>
-                        <p>{!! $abouts['our_vision'] !!}</p>
+
+        <section class="bg-white py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+
+                    <div class="bg-white rounded-lg  p-6 transform hover:scale-105 transition duration-300">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-semibold text-black">Visi</h3>
+                            <p class="mt-4 text-gray-400">{!! $abouts['our_vision'] !!}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="w-full md:w-1/2 p-4">
-                    <div class="flex flex-col">
-                        <h2 class="mt-4 text-2xl font-semibold text-gray-800 hover:underline">Misi</h2>
-                        <p class="text-left">{!! $abouts['our_mission'] !!}
-                        </p>
+
+                    <!-- Starter Plan -->
+                    <div class="bg-white rounded-lg  p-6 transform hover:scale-105 transition duration-300">
+                        <div class="mb-8">
+                            <h3 class="text-2xl font-semibold text-black">Misi</h3>
+                            <p class="mt-4 text-gray-400">{!! $abouts['our_mission'] !!}</p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
-
-
         <section class="bg-white py-8 w-full px-4" id="portofolio">
             <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-4xl text-center">Portofolio
             </h2>
 
             <div class="relative w-sceen overflow-hidden">
                 <div class="absolute inset-y-0 left-0 flex items-center z-40">
-                    <button id="prev" class="bg-blue-500 text-white p-2 rounded focus:outline-none">
+                    <button class="prev bg-primarybase text-white p-2 rounded focus:outline-none">
                         &larr;
                     </button>
                 </div>
                 <div class="carousel-container flex space-x-4 p-4">
                     @foreach ($portofolios as $portofolio)
                         <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg">
+                            <a href="{{ $portofolio->link_social_media_portofolio }}" target="_blank">
+                                <div
+                                    class="relative group grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
+                                    <img src="{{ asset('uploads/' . $portofolio->thumbnail_portofolio) }}"
+                                        alt="{{ $portofolio->thumbnail_portofolio }}"
+                                        class="absolute inset-0 m-0 h-full w-full object-cover rounded-none shadow-none transition-opacity duration-300 group-hover:opacity-0" />
+                                    <img src="{{ asset('uploads/' . $portofolio->thumbnail_portofolio) }}" alt="Hover Image"
+                                        class="absolute inset-0 m-0 h-full w-full object-cover rounded-none shadow-none transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
+                                    <div
+                                        class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50">
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+                <div class="absolute inset-y-0 right-0 flex items-center">
+                    <button class="next bg-primarybase text-white p-2 rounded focus:outline-none">
+                        &rarr;
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-8 w-full px-4" id="our-service">
+            <h2 class="block mt-4 text-2xl font-semibold text-gray-800 hover:underline md:text-4xl text-center">Our Service
+            </h2>
+
+            <div class="relative w-sceen overflow-hidden">
+                <div class="absolute inset-y-0 left-0 flex items-center z-40">
+                    <button class="prev bg-primarybase text-white p-2 rounded focus:outline-none">
+                        &larr;
+                    </button>
+                </div>
+                <div class="carousel-container flex space-x-4 p-4">
+                    @foreach ($ourservices as $ourservice)
+                        <div class="carousel-item flex-none w-1/4 bg-white p-4 rounded-lg">
                             <div
-                                class="relative grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
-                                <img src="{{ asset('uploads/' . $portofolio->thumbnail_portofolio) }}"
-                                    alt="{{ $portofolio->thumbnail_portofolio }}"
-                                    class="absolute inset-0 m-0 h-full w-full object-cover rounded-none shadow-none" />
+                                class="relative group grid h-[40rem] w-full max-w-[28rem] flex-col items-end justify-center overflow-hidden rounded-xl bg-white bg-clip-border text-center text-gray-700">
+                                <img src="{{ asset('uploads/' . $ourservice->vendor_image) }}"
+                                    alt="{{ $ourservice->vendor_image }}"
+                                    class="absolute inset-0 m-0 h-full w-full object-cover rounded-none shadow-none transition-opacity duration-300 group-hover:opacity-0" />
                                 <div
                                     class="to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/80 via-black/50">
+                                </div>
+                                <div
+                                    class="absolute bottom-0 w-full p-4 bg-black/60 text-white text-lg font-semibold transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                                    {{ $ourservice->vendor_name }}
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 </div>
-                <div class="absolute inset-y-0 right-0 flex items-center">
-                    <button id="next" class="bg-blue-500 text-white p-2 rounded-full focus:outline-none">
+                <div class="absolute inset-y-0 right-0 flex items-center z-40">
+                    <button class="next bg-primarybase text-white p-2 rounded focus:outline-none">
                         &rarr;
                     </button>
                 </div>
@@ -104,7 +149,7 @@
             </h2>
             <div class="container mx-auto px-6">
                 <div class="relative">
-                    <div class="flex overflow-x-auto scroll-smooth h-full scroll-container">
+                    <div class="flex overflow-x-auto scroll-smooth h-[550px] scroll-container">
                         @foreach ($testimonials as $testimonial)
                             <div class="scroll-item bg-white p-4 shadow-lg flex-auto w-full mr-4">
                                 <section class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
@@ -112,7 +157,7 @@
                                         <figure class="mt-10">
                                             <blockquote
                                                 class="text-center text-xl font-semibold leading-8 text-gray-900 sm:text-2xl sm:leading-9">
-                                                <p>“{{ $testimonial->description_testimonial }}”</p>
+                                                <p>“{!! $testimonial->description_testimonial !!}”</p>
                                             </blockquote>
                                             <figcaption class="mt-10">
                                                 <img class="mx-auto h-10 w-10 rounded-full"
@@ -129,12 +174,6 @@
                                             </figcaption>
                                         </figure>
                                     </div>
-                                    <div
-                                        class="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.indigo.100),white)] opacity-20">
-                                    </div>
-                                    <div
-                                        class="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center">
-                                    </div>
                                 </section>
                             </div>
                         @endforeach
@@ -145,19 +184,42 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
             $(document).ready(function() {
-                const carouselContainer = $('.carousel-container');
-                const cardWidth = $('.carousel-item').outerWidth(true);
+                const carouselContainer = $('.scroll-container');
+                const cardWidth = $('.scroll-item').outerWidth(true);
+                const scrollInterval = 3000;
+                const scrollSpeed = 300;
 
-                $('#next').click(function() {
+                function autoScroll() {
                     carouselContainer.animate({
                         scrollLeft: '+=' + cardWidth
-                    }, 300);
-                });
+                    }, scrollSpeed, function() {
+                        if (carouselContainer.scrollLeft() + carouselContainer.innerWidth() >=
+                            carouselContainer[0].scrollWidth) {
+                            carouselContainer.animate({
+                                scrollLeft: 0
+                            }, scrollSpeed);
+                        }
+                    });
+                }
+                setInterval(autoScroll, scrollInterval);
+            });
 
-                $('#prev').click(function() {
-                    carouselContainer.animate({
-                        scrollLeft: '-=' + cardWidth
-                    }, 300);
+            $(document).ready(function() {
+                $('.carousel-container').each(function() {
+                    const carouselContainer = $(this);
+                    const cardWidth = carouselContainer.find('.carousel-item').outerWidth(true);
+
+                    carouselContainer.siblings('.prev').click(function() {
+                        carouselContainer.animate({
+                            scrollLeft: '-=' + cardWidth
+                        }, 300);
+                    });
+
+                    carouselContainer.siblings('.next').click(function() {
+                        carouselContainer.animate({
+                            scrollLeft: '+=' + cardWidth
+                        }, 300);
+                    });
                 });
             });
         </script>
