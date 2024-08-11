@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\Guest\GuestContactUsPagesController;
 use App\Http\Controllers\Guest\GuestHomePagesController;
 use App\Http\Controllers\Guest\GuestPartnerPagesController;
+use App\Http\Controllers\ContactFormController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
  */
 
 Route::get('/', [GuestHomePagesController::class, 'index']);
-Route::get('/kontak', [GuestContactUsPagesController::class, 'index']);
+Route::get('/kontak', [GuestContactUsPagesController::class, 'index'])->name('contact.us');
 Route::get('/partner', [GuestPartnerPagesController::class, 'index'])->name('partner');
 Route::get('/partner/{slug}', [GuestPartnerPagesController::class, 'show'])->name('partner.detail');
 

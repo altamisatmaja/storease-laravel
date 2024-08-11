@@ -89,6 +89,7 @@
             </div>
         </div>
     @endif
+
     <div class="flex h-[100dvh] overflow-hidden">
         @include('layouts.admin.sidebar')
         <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden" x-ref="contentarea">

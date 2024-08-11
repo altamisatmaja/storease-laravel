@@ -8,23 +8,25 @@ use Illuminate\Support\Facades\Mail;
 
 class ContactFormController extends Controller
 {
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         try {
             $data = [
-                'name'    => $request->input('name'),
-                'email'   => $request->input('email'),
-                'address'   => $request->input('address'),
-                'nohp'   => $request->input('nohp'),
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'address' => $request->input('address'),
+                'nohp' => $request->input('nohp'),
                 'subject' => $request->input('subject'),
                 'message' => $request->input('message'),
             ];
 
-            Mail::to('altamisfattah16@gmail.com')->send(new ContactMail($data));
+            $fromAddress = $request->input('email');
 
-            return redirect()->back()->with('success', 'Email berhasil dikirim');
-            // return redirect()->back()->withErrors($validator)->withInput();
+            Mail::to('storease12@gmail.com')->send(new ContactMail($data, $fromAddress));
+
+            return redirect()->route('contact.us')->with('success', 'Email berhasil dikirim');
         } catch (\Exception $e) {
-            return redirect()->back()->with('errors', 'Terjadi kesalahan: '.$e->getMessage());
+            return redirect()->back()->with('errors', 'Terjadi kesalahan: ' . $e->getMessage());
         }
     }
 }
