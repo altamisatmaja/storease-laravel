@@ -25,14 +25,10 @@ class AboutAdminController extends Controller
                 'about_section_description' => 'required',
                 'our_vision' => 'required',
                 'our_mission' => 'required',
-                'about_images' => 'image|mimes:png,jpeg,jpg,gif,webp|max:2048',
             ], [
                 'about_section_description.required' => 'Nama wajib diisi.',
                 'our_vision.required' => 'Our vision wajib diisi.',
                 'our_mission.required' => 'Our mission wajib diisi.',
-                'about_images.image' => 'Gambar harus berupa file gambar.',
-                'about_images.mimes' => 'Gambar harus memiliki format file jpg, png, jpeg, atau webp.',
-                'about_images.max' => 'Gambar harus berukuran 1MB kebawah',
             ]);
 
             $input = $request->except(['_token', '_method']);

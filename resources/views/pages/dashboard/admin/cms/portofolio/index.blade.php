@@ -35,26 +35,21 @@
                                     <tr>
                                         <th scope="col"
                                             class="py-3.5 px-4 text-sm font-normal text-left rtl:text-right text-gray-500 ">
-                                            <div class="flex items-center gap-x-3">
-                                                <button class="flex items-center gap-x-2">
-                                                    <span>No</span>
-                                                </button>
-                                            </div>
                                         </th>
 
                                         <th scope="col"
                                             class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
-                                            link_social_media_portofolio
+                                            Link Sosmed Portofolio
                                         </th>
 
                                         <th scope="col"
                                             class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
-                                            thumbnail_portofolio
+                                            Thumbnail
                                         </th>
 
                                         <th scope="col"
                                             class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-500 ">
-                                            hover_portofolio
+                                            Hover
                                         </th>
 
                                         <th scope="col"

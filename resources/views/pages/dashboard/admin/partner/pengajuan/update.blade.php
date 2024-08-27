@@ -167,7 +167,7 @@
                 </div>
                 <div class="grid grid-cols-1 gap-4 mb-4">
                     <div>
-                        <label class="text-lg font-medium text-textbase" for="location_by_gmaps">Location by gmaps kos
+                        <label class="text-lg font-medium text-textbase" for="location_by_gmaps">Lokasi berdasarkan GMaps
                             *</label>
                         <input name="location_by_gmaps" value="{{ $vendor->location_by_gmaps }}" id="location_by_gmaps"
                             type="text" placeholder="location_by_gmaps kos" class="border p-2 rounded w-full">
@@ -217,10 +217,10 @@
                         <span class="text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="mb-4 sm:mb-0">
+                <div class="mb-4 sm:mb-0 my-4 pb-4">
                     <h1 class="text-xl md:text-2xl text-gray-800 font-semibold">Formulir services vendor</h1>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-2">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-2 mt-4">
                     <div>
                         <label class="text-lg font-medium text-textbase" for="service_name">Nama layanan
                             *</label>
@@ -269,11 +269,12 @@
                         @enderror
                     </div>
                 </div>
-                <div class="grid grid-cols-1 gap-4 mb-4">
+                <div class="grid grid-cols-1 gap-4 my-4">
                     <div class="">
                         <label class="text-lg font-medium text-textbase" for="service_description">Tentang Service Vendor
                             *</label>
-                        <textarea name="service_description" id="service_description">{{ $vendorService->service_description }}</textarea>
+                        <textarea name="service_description" id="service_description"
+                            class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">{{ $vendorService->service_description }}</textarea>
                         @error('service_description')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -281,7 +282,7 @@
                 </div>
                 <div class="my-4">
                     <label for="thumbnail_service" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                        tentang</label>
+                        thumbanil service</label>
                     <label
                         class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
@@ -302,18 +303,19 @@
                         <input type="file" name="thumbnail_service" id="thumbnail_service" class="hidden"
                             onchange="previewImageThumb(event)">
                     </label>
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">gambar</span> thumbnail service!
+                    </p>
                 </div>
 
                 @error('thumbnail_service')
                     <span class="text-red-500">{{ $message }}</span>
                 @enderror
-                <div class="mb-4 sm:mb-0">
+                <div class="mb-4 sm:mb-0 pb-4">
                     <h1 class="text-xl md:text-2xl text-gray-800 font-semibold">Formulir utama vendor</h1>
                 </div>
                 <div>
-                    <label class="text-lg font-medium text-textbase" for="owner_vendor_name">Nama owner
-                        *</label>
+                    <label for="owner_vendor_name" class="block text-gray-800 text-lg font-semibold mb-2">Nama owner
+                        vendor</label>
                     <input name="owner_vendor_name" id="owner_vendor_name" type="text"
                         placeholder="Masukkan harga layanan" value="{{ $vendorTeam->owner_vendor_name }}"
                         class="border p-2 rounded w-full">
@@ -325,7 +327,8 @@
                     <div class="">
                         <label class="text-lg font-medium text-textbase" for="about_the_team">Tentang Tim Vendor
                             *</label>
-                        <textarea name="about_the_team" id="about_the_team">{{ $vendorTeam->about_the_team }}</textarea>
+                        <textarea name="about_the_team" id="about_the_team"
+                            class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">{{ $vendorTeam->about_the_team }}</textarea>
                         @error('about_the_team')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror

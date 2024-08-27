@@ -25,25 +25,27 @@
         <!-- Cards -->
         <div class="grid md:grid-cols-2 gap-x-3 grid-cols-1">
             <div class="">
-                <form action="{{ route('admin.dashboard.hero.welcome.update') }}" method="POST">
+                <form action="{{ route('admin.dashboard.hero.welcome.update') }}" method="POST"
+                    enctype="multipart/form-data">
                     @csrf
                     <label class="block text-gray-800 text-xl font-bold mb-2">Hero Home Page</label>
                     <div class="my-2">
-                        <label for="title" class="block text-gray-800 text-lg font-semibold mb-2">Judul hero</label>
+                        <label for="title" class="block text-gray-800 text-lg font-semibold mb-2">Judul hero home
+                            page</label>
                         <input type="text" name="title" id="title" required value="{{ $heroWelcome->title }}"
                             placeholder="{{ $heroWelcome->title }}"
                             class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">title</span> hero!</p>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">title</span> hero home page!</p>
                     </div>
                     <div class="">
                         <div class="my-4">
                             <label for="image" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                                tentang</label>
+                                home page</label>
                             <label
                                 class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                                 <div class="h-full w-full text-center flex flex-col items-center justify-center">
                                     <div class="relative w-full h-full flex items-center justify-center">
-                                        <img id="image-preview" class=" w-96 h-full object-cover rounded-lg"
+                                        <img id="image-preview-welcome" class=" w-96 h-full object-cover rounded-lg"
                                             src="{{ $heroWelcome['image'] ? asset('uploads/' . $heroWelcome['image']) : 'https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg' }}"
                                             alt="Preview Image">
                                         <div
@@ -59,7 +61,8 @@
                                 <input type="file" name="image" id="image" class="hidden"
                                     onchange="previewImageWelcome(event)">
                             </label>
-                            <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                            <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">gambar</span> hero home
+                                page!</p>
                         </div>
                     </div>
                     @error('image')
@@ -77,21 +80,23 @@
                     enctype="multipart/form-data">
                     @csrf
                     <div class="my-2">
-                        <label for="title" class="block text-gray-800 text-lg font-semibold mb-2">Judul hero</label>
+                        <label for="title" class="block text-gray-800 text-lg font-semibold mb-2">Judul hero contact
+                            us page</label>
                         <input type="text" name="title" id="title" required value="{{ $heroContactUs->title }}"
                             placeholder="{{ $heroContactUs->title }}"
                             class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">title</span> hero!</p>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">title</span> hero contact us!
+                        </p>
                     </div>
                     <div class="">
                         <div class="my-4">
                             <label for="image" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                                tentang</label>
+                                contact us page</label>
                             <label
                                 class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                                 <div class="h-full w-full text-center flex flex-col items-center justify-center">
                                     <div class="relative w-full h-full flex items-center justify-center">
-                                        <img id="image-preview" class=" w-96 h-full object-cover rounded-lg"
+                                        <img id="image-preview-contactus" class=" w-96 h-full object-cover rounded-lg"
                                             src="{{ $heroContactUs['image'] ? asset('uploads/' . $heroContactUs['image']) : 'https://img.freepik.com/free-vector/image-upload-concept-landing-page_52683-27130.jpg?size=338&ext=jpg' }}"
                                             alt="Preview Image">
                                         <div
@@ -107,7 +112,9 @@
                                 <input type="file" name="image" id="image" class="hidden"
                                     onchange="previewImageContactUs(event)">
                             </label>
-                            <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                            <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">gambar</span> hero contact
+                                us!
+                            </p>
                         </div>
                     </div>
                     @error('image')
@@ -124,16 +131,18 @@
             <form action="{{ route('admin.dashboard.hero.partner.update') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="my-2">
-                    <label for="title" class="block text-gray-800 text-lg font-semibold mb-2">Judul hero</label>
+                    <label for="title" class="block text-gray-800 text-lg font-semibold mb-2">Judul hero
+                        partner page</label>
                     <input type="text" name="title" id="title" value="{{ $heroPartner->title }}" required
                         placeholder="{{ $heroPartner->title }}"
                         class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">title</span> hero!</p>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">title</span> hero partner page!
+                    </p>
                 </div>
                 <div class="">
                     <div class="my-4">
                         <label for="image" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                            tentang</label>
+                            hero partner page</label>
                         <label
                             class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                             <div class="h-full w-full text-center flex flex-col items-center justify-center">
@@ -154,7 +163,8 @@
                             <input type="file" name="image" id="image" class="hidden"
                                 onchange="previewImagePartner(event)">
                         </label>
-                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">gambar</span> hero partner
+                            page!</p>
                     </div>
                 </div>
                 @error('image')
@@ -170,7 +180,7 @@
         function previewImageWelcome(event) {
             const reader = new FileReader();
             reader.onload = function() {
-                const output = document.getElementById('image-preview');
+                const output = document.getElementById('image-preview-welcome');
                 output.src = reader.result;
             };
             reader.readAsDataURL(event.target.files[0]);
@@ -179,7 +189,7 @@
         function previewImageContactUs(event) {
             const reader = new FileReader();
             reader.onload = function() {
-                const output = document.getElementById('image-preview');
+                const output = document.getElementById('image-preview-contactus');
                 output.src = reader.result;
             };
             reader.readAsDataURL(event.target.files[0]);

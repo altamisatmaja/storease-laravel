@@ -27,66 +27,65 @@
                 @csrf
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-3">
                     <div class="my-2">
-                        <label for="detail_address_storease" class="block text-gray-800 text-lg font-semibold mb-2">Judul
-                            website</label>
+                        <label for="detail_address_storease"
+                            class="block text-gray-800 text-lg font-semibold mb-2">Alamat</label>
                         <input type="text" name="detail_address_storease" id="detail_address_storease" required
                             placeholder="Masukkan jumlah penyetuju" value="{{ $contacts->detail_address_storease }}"
                             class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">detail_address_storease</span>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">alamat</span>
                             website!</p>
                     </div>
                     <div class="my-2">
-                        <label for="location_storease" class="block text-gray-800 text-lg font-semibold mb-2">Judul
-                            website</label>
+                        <label for="location_storease" class="block text-gray-800 text-lg font-semibold mb-2">Kota</label>
                         <input type="text" name="location_storease" id="location_storease" required
                             placeholder="Masukkan jumlah penyetuju" value="{{ $contacts->location_storease }}"
                             class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">location_storease</span>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">kota</span>
                             website!</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-3">
                     <div class="my-2">
-                        <label for="whatsapp_number_storease" class="block text-gray-800 text-lg font-semibold mb-2">Judul
-                            website</label>
+                        <label for="whatsapp_number_storease" class="block text-gray-800 text-lg font-semibold mb-2">Nomor
+                            hp</label>
                         <input type="text" name="whatsapp_number_storease" id="whatsapp_number_storease" required
                             placeholder="Masukkan jumlah penyetuju" value="{{ $contacts->whatsapp_number_storease }}"
                             class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">whatsapp_number_storease</span>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">nomor hp</span>
                             website!</p>
                     </div>
                     <div class="my-2">
-                        <label for="email_storease" class="block text-gray-800 text-lg font-semibold mb-2">Judul
-                            website</label>
+                        <label for="email_storease" class="block text-gray-800 text-lg font-semibold mb-2">Alamat
+                            email</label>
                         <input type="text" name="email_storease" id="email_storease" required
                             placeholder="Masukkan jumlah penyetuju" value="{{ $contacts->email_storease }}"
                             class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">email_storease</span>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">email</span>
                             website!</p>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-x-3">
                     <div class="my-2">
-                        <label for="operational_schedule_date" class="block text-gray-800 text-lg font-semibold mb-2">Judul
-                            website</label>
+                        <label for="operational_schedule_date" class="block text-gray-800 text-lg font-semibold mb-2">Hari
+                            kerja</label>
                         <input type="text" name="operational_schedule_date" id="operational_schedule_date" required
                             placeholder="Masukkan jumlah penyetuju" value="{{ $contacts->operational_schedule_date }}"
                             class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">operational_schedule_date</span>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">hari kerja</span>
                             website!</p>
                     </div>
                     <div class="my-2">
-                        <label for="operational_schedule_hour" class="block text-gray-800 text-lg font-semibold mb-2">Judul
-                            website</label>
+                        <label for="operational_schedule_hour" class="block text-gray-800 text-lg font-semibold mb-2">Jam
+                            kerja</label>
                         <input type="text" name="operational_schedule_hour" id="operational_schedule_hour" required
                             placeholder="Masukkan jumlah penyetuju" value="{{ $contacts->operational_schedule_hour }}"
                             class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">operational_schedule_hour</span>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">jam kerja</span>
                             website!</p>
                     </div>
                 </div>
                 <button
-                    class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-100 focus:ring-orange-600 bg-primarybase"
+                    class="w-full text-md px-4 py-3 mt-2 border-2 border-gray-200 rounded-lg text-gray-100 focus:ring-orange-600 bg-primarybase"
                     type="submit">Simpan</button>
             </form>
         </div>

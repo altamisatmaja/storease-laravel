@@ -39,7 +39,7 @@
                         </a>
                         <p class="mt-3 text-lg text-gray-500 text-right">
                             <span class="font-bold text-primarybase text-xl">storease. -</span>
-                            {!! $abouts['about_section_description'] !!}}
+                            {!! $abouts['about_section_description'] !!}
                         </p>
                     </div>
                     <img class="object-cover w-full lg:mx-6 lg:w-1/2 rounded-md h-72 lg:h-96"

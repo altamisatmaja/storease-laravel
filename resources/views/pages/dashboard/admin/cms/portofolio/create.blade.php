@@ -7,10 +7,10 @@
         <div class="sm:flex sm:justify-between sm:items-center mb-8">
 
             <div class="mb-4 sm:mb-0">
-                <h1 class="text-2xl md:text-3xl text-gray-800 font-bold">Dashboard</h1>
+                <h1 class="text-2xl md:text-3xl text-gray-800 font-bold">Kelola konten portofolio</h1>
             </div>
 
-            <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
+            <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2 invisible">
                 <button
                     class="px-3 lg:gap-x-2 font-medium text-md inline-flex items-center justify-center rounded-lg leading-5 transition bg-white border-2  border-gray-200 hover:border-gray-300  text-gray-400 ">
                     <svg class="fill-current shrink-0 xs:hidden" width="16" height="16" viewBox="0 0 16 16">
@@ -26,17 +26,17 @@
             <form action="{{ route('admin.dashboard.cms.portofolio.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="my-2">
-                    <label for="link_social_media_portofolio"
-                        class="block text-gray-800 text-lg font-semibold mb-2">link_social_media_portofolio</label>
+                    <label for="link_social_media_portofolio" class="block text-gray-800 text-lg font-semibold mb-2">Link
+                        Sosmed portofolio</label>
                     <input type="text" name="link_social_media_portofolio" id="link_social_media_portofolio" required
                         placeholder="Masukkan jumlah penyetuju"
                         class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">link_social_media_portofolio</span>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">link social media portofolio</span>
                         website!</p>
                 </div>
                 <div class="my-4">
                     <label for="thumbnail_portofolio" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                        tentang</label>
+                        thumbnail portofolio</label>
                     <label
                         class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
@@ -57,11 +57,11 @@
                         <input type="file" name="thumbnail_portofolio" id="thumbnail_portofolio" class="hidden"
                             onchange="previewThumbanilPortofolio(event)">
                     </label>
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">thumbnail portofolio</span>!</p>
                 </div>
                 <div class="my-4">
                     <label for="hover_portofolio" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                        tentang</label>
+                        hover portofolio</label>
                     <label
                         class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
@@ -82,7 +82,7 @@
                         <input type="file" name="hover_portofolio" id="hover_portofolio" class="hidden"
                             onchange="previewHoverPortofolio(event)">
                     </label>
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">hover portofolio</span>!</p>
                 </div>
                 <button
                     class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-100 focus:ring-orange-600 bg-primarybase"

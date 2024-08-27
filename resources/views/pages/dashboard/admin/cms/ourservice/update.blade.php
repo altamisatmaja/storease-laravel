@@ -28,16 +28,16 @@
                 enctype="multipart/form-data">
                 @csrf
                 <div class="my-2">
-                    <label for="vendor_name" class="block text-gray-800 text-lg font-semibold mb-2">nama vendor</label>
+                    <label for="vendor_name" class="block text-gray-800 text-lg font-semibold mb-2">Nama vendor</label>
                     <input type="text" value="{{ $ourservices->vendor_name }}" name="vendor_name" id="vendor_name"
                         required placeholder="Masukkan jumlah penyetuju"
                         class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">vendor_name</span> website!</p>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">nama vendor</span>!</p>
                 </div>
                 <div class="">
                     <div class="my-4">
                         <label for="image" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                            tentang</label>
+                            vendor</label>
                         <label
                             class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                             <div class="h-full w-full text-center flex flex-col items-center justify-center">
@@ -58,7 +58,7 @@
                             <input type="file" name="vendor_image" id="vendor_image" class="hidden"
                                 onchange="previewImage(event)">
                         </label>
-                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                        <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">gambar</span> vendor!</p>
                     </div>
                 </div>
                 <button

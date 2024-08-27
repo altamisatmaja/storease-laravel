@@ -31,11 +31,11 @@
                     <input value="{{ $testimonials->customer_name }}" type="text" name="customer_name" id="customer_name"
                         required placeholder="Masukkan customer_name"
                         class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">customer_name</span> website!</p>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">nama pelanggan</span> di website!
                 </div>
                 <div class="my-4">
                     <label for="customer_pictures" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                        tentang</label>
+                        customer</label>
                     <label
                         class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
@@ -55,11 +55,11 @@
                         <input type="file" name="customer_pictures" id="customer_pictures" class="hidden"
                             onchange="previewImageCustomer(event)">
                     </label>
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">gambar</span> customer!</p>
                 </div>
                 <div class="grid grid-cols-1 gap-4 mb-4">
                     <div class="">
-                        <label class="text-lg font-medium text-textbase" for="description_testimonial">Tentang Tim Vendor
+                        <label class="text-lg font-medium text-textbase" for="description_testimonial">Deskripsi Testimoni
                             *</label>
                         <textarea name="description_testimonial" id="description_testimonial"
                             class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">{{ $testimonials->description_testimonial }}</textarea>
@@ -69,7 +69,7 @@
                     </div>
                 </div>
                 <div class="my-2">
-                    <label for="rating" class="block text-gray-800 text-lg font-semibold mb-2">rating</label>
+                    <label for="rating" class="block text-gray-800 text-lg font-semibold mb-2">Rating</label>
                     <input type="text" value="{{ $testimonials->rating }}" name="rating" id="rating" required
                         placeholder="Masukkan rating"
                         class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">

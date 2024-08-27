@@ -98,7 +98,7 @@ class DatabaseSeeder extends Seeder
 
         $about_pages = [
             'about_images' => 'hero-welcome-images.jpg',
-            'about_section_description' => '<p>adalah sanggar Tata Rias dan Tata Busana Tradisional yang berdiri sejak tahun 1978 pada awalnya merupakan salon kecantikan wajah dan rambut, dan kini berkembang menjadi Sanggar Tata Rias, Sanggar Tata Busana, Photography, Upacara Adat dan lain-lain, sesuai visi kami menjadi perusahaan One Stop Wedding Service.
+            'about_section_description' => 'adalah sanggar Tata Rias dan Tata Busana Tradisional yang berdiri sejak tahun 1978 pada awalnya merupakan salon kecantikan wajah dan rambut, dan kini berkembang menjadi Sanggar Tata Rias, Sanggar Tata Busana, Photography, Upacara Adat dan lain-lain, sesuai visi kami menjadi perusahaan One Stop Wedding Service.
 Inovasi, Kreativitas, serta Profesionalisme merupakan salah satu kiat kami dalam menarik pelanggan, sehingga konsumen yang telah dilayani mencapai ribuan pasangan, dengan rata-rata penanganan sekitar 50-100 pasangan perbulan, dengan harga penawaran paket yang beragam, karena paket yang ditawarkan kepada konsumen bersifat customisasi (disesuaikan).',
             'our_vision' => 'Menjadi Perusahaan One Stop Wedding Service dan selalu menjadi market leader dengan tetap menjaga sustainabilitas perusahaan',
             'our_mission' => '1. Memberikan Pelayanan dengan Kualitas dan Hasil terbaik untuk kepuasan pelanggan<br>

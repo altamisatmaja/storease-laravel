@@ -7,7 +7,7 @@
         <div class="sm:flex sm:justify-between sm:items-center mb-8">
 
             <div class="mb-4 sm:mb-0">
-                <h1 class="text-2xl md:text-3xl text-gray-800 font-bold">List Vendor</h1>
+                <h1 class="text-2xl md:text-3xl text-gray-800 font-bold">List testimoni</h1>
             </div>
 
             <div class="grid grid-flow-col sm:auto-cols-max justify-start sm:justify-end gap-2">
@@ -18,7 +18,7 @@
                             <path
                                 d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
                         </svg>
-                        <span class="hidden lg:block p-2 ">Tambah partner</span>
+                        <span class="hidden lg:block p-2 ">Tambah testimoni</span>
                     </button>
                 </a>
             </div>

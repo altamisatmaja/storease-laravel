@@ -4,7 +4,7 @@
 
 @section('content')
     <div>
-        <section class="py-24 flex items-center justify-center bg-white">
+        <section class="py-24 flex items-center justify-center ">
             <div class="mx-auto max-w-[43rem]">
                 <div class="text-center">
                     <p class="text-lg font-medium leading-8 text-primarybase">Selamat datang, admin!</p>

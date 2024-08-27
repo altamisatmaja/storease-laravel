@@ -144,7 +144,7 @@
                         <label class="text-lg font-medium text-textbase" for="link_website_vendor">Link website vendor
                             *</label>
                         <input name="link_website_vendor" id="link_website_vendor" type="text"
-                            placeholder="Masukkan link facebook" class="border p-2 rounded w-full">
+                            placeholder="Masukkan link website" class="border p-2 rounded w-full">
                         @error('link_website_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -161,10 +161,11 @@
                 </div>
                 <div class="grid grid-cols-1 gap-4 mb-4">
                     <div>
-                        <label class="text-lg font-medium text-textbase" for="location_by_gmaps">Location by gmaps kos
+                        <label class="text-lg font-medium text-textbase" for="location_by_gmaps">Lokasi berdasarkan Google
+                            Maps
                             *</label>
                         <input name="location_by_gmaps" id="location_by_gmaps" type="text"
-                            placeholder="location_by_gmaps kos" class="border p-2 rounded w-full">
+                            placeholder="Lokasi berdasarkan google maps" class="border p-2 rounded w-full">
                         @error('location_by_gmaps')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -172,7 +173,7 @@
                 </div>
                 <div class="my-4">
                     <label for="thumbnail_vendor" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                        tentang</label>
+                        thumbail vendor</label>
                     <label
                         class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
@@ -193,7 +194,8 @@
                         <input type="file" name="thumbnail_vendor" id="thumbnail_vendor" class="hidden"
                             onchange="previewImageThumbVendor(event)">
                     </label>
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">gambar</span> thumbnail vendor!
+                    </p>
                 </div>
                 <div>
                     <label class="text-lg font-medium text-textbase" for="vendor_category_services_id">Kategori vendor
@@ -209,10 +211,10 @@
                         <span class="text-red-500">{{ $message }}</span>
                     @enderror
                 </div>
-                <div class="mb-4 sm:mb-0">
+                <div class="mb-4 sm:mb-0 my-4 pb-4">
                     <h1 class="text-xl md:text-2xl text-gray-800 font-semibold">Formulir services vendor</h1>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-2">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-x-2 mt-4">
                     <div>
                         <label class="text-lg font-medium text-textbase" for="service_name">Nama layanan
                             *</label>
@@ -248,7 +250,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="grid grid-cols-1 gap-4 mb-4">
+                <div class="grid grid-cols-1 gap-4 mb-4 mt-4">
                     <div class="">
                         <label class="text-lg font-medium text-textbase" for="service_description">Tentang Service Vendor
                             *</label>
@@ -261,7 +263,7 @@
                 </div>
                 <div class="my-4">
                     <label for="thumbnail_service" class="block text-gray-800 text-lg font-semibold mb-2">Gambar
-                        tentang</label>
+                        thumbanil service</label>
                     <label
                         class="relative flex flex-col rounded-lg border-4 border-dashed w-full h-96 p-1 group text-center cursor-pointer">
                         <div class="h-full w-full text-center flex flex-col items-center justify-center">
@@ -282,7 +284,8 @@
                         <input type="file" name="thumbnail_service" id="thumbnail_service" class="hidden"
                             onchange="previewImageThumb(event)">
                     </label>
-                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">icon</span> website!</p>
+                    <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">gambar</span> thumbnail service!
+                    </p>
                 </div>
 
                 @error('thumbnail_service')
@@ -291,7 +294,7 @@
                 <div class="mb-4 sm:mb-0">
                     <h1 class="text-xl md:text-2xl text-gray-800 font-semibold">Formulir utama vendor</h1>
                 </div>
-                <div>
+                <div class="pt-4">
                     <label class="text-lg font-medium text-textbase" for="owner_vendor_name">Nama owner
                         *</label>
                     <input name="owner_vendor_name" id="owner_vendor_name" type="text"
