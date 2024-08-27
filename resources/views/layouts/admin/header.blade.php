@@ -23,14 +23,14 @@
                 </div>
                 <div class="flex items-center space-x-3">
 
-                    <!-- Info button -->
-                    @include('components.dropdown-help', ['align' => 'right'])
+                    <!-- User button -->
+                    @include('components.dropdown-profile', ['align' => 'right'])
 
                     <!-- Divider -->
                     <hr class="w-px h-6 bg-gray-200  border-none" />
 
-                    <!-- User button -->
-                    @include('components.dropdown-profile', ['align' => 'right'])
+                    <!-- Info button -->
+                    @include('components.dropdown-help', ['align' => 'right'])
                 </div>
 
             </div>

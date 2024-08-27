@@ -14,7 +14,9 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-x4psK2lU.css') }}">
+    <script src="{{ asset('build/assets/app-TDY56rdZ.js') }}"></script>
     <style>
         .white-filter {
             filter: brightness(0) invert(1);

@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    <link rel="stylesheet" href="{{ asset('build/assets/app-x4psK2lU.css') }}">
+    <script src="{{ asset('build/assets/app-TDY56rdZ.js') }}"></script>
+
     <link rel="shortcut icon" href="{{ asset('icon.svg') }}" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
