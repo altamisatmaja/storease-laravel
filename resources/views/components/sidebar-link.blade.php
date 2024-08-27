@@ -13,9 +13,8 @@
             </div>
         </a>
     </li>
-    <li class="mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))]" x-data="{ open: {{ in_array(Request::segment(1), ['pengajuan']) ? 1 : 0 }} }">
-        <a class="block rounded-lg pl-3 pr-3 py-2 text-textbase hover:bg-hoverbase  truncate transition @if (!in_array(Request::segment(1), ['pengajuan'])) {{ 'hover:text-white ' }} @endif"
-            href="#0" @click.prevent="open = !open; sidebarExpanded = true">
+    <li class="mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))]">
+        <a class="block rounded-lg pl-3 pr-3 py-2 text-textbase hover:bg-hoverbase  truncate transition" href="#0">
             <div class="flex items-center justify-between">
                 <div class="flex items-center duration-200">
                     <svg class="hover:text-white" xmlns="http://www.w3.org/2000/svg" height="30px"
@@ -29,7 +28,7 @@
             </div>
         </a>
         <div class="lg:hidden lg:sidebar-expanded:block 2xl:block">
-            <ul class="pl-8 mt-2 " :class="open ? '!block' : 'hidden'">
+            <ul class="pl-8 mt-2 ">
                 <li class="mb-5 last:mb-0">
                     <a class="block pl-3 text-gray-500  hover:text-gray-700  transition truncate"
                         href="{{ route('admin.dashboard.category') }}">
