@@ -124,7 +124,7 @@
                     <div>
                         <label class="text-lg font-medium text-textbase" for="about_vendor">Tentang vendor *</label>
                         <textarea type="about_vendor" name="about_vendor" id="about_vendor" placeholder="Masukkan deskripsi vendor"
-                            class="border p-2 rounded w-full h-20"></textarea>
+                            class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600"></textarea>
                         @error('about_vendor')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -252,7 +252,8 @@
                     <div class="">
                         <label class="text-lg font-medium text-textbase" for="service_description">Tentang Service Vendor
                             *</label>
-                        <textarea name="service_description" id="service_description"></textarea>
+                        <textarea name="service_description" id="service_description"
+                            class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600"></textarea>
                         @error('service_description')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -303,7 +304,8 @@
                     <div class="">
                         <label class="text-lg font-medium text-textbase" for="about_the_team">Tentang Tim Vendor
                             *</label>
-                        <textarea name="about_the_team" id="about_the_team"></textarea>
+                        <textarea name="about_the_team" id="about_the_team"
+                            class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600"></textarea>
                         @error('about_the_team')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -319,40 +321,6 @@
         </div>
     </div>
     <script>
-        $(document).ready(function() {
-            new FroalaEditor('#about_vendor', {
-                toolbarButtons: [
-                    ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
-                    ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
-                        'backgroundColor'
-                    ],
-                    ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
-                ]
-            });
-        });
-        $(document).ready(function() {
-            new FroalaEditor('#service_description', {
-                toolbarButtons: [
-                    ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
-                    ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
-                        'backgroundColor'
-                    ],
-                    ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
-                ]
-            });
-        });
-        $(document).ready(function() {
-            new FroalaEditor('#about_the_team', {
-                toolbarButtons: [
-                    ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
-                    ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
-                        'backgroundColor'
-                    ],
-                    ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
-                ]
-            });
-        });
-
         function previewImage(event, index) {
             var input = event.target;
             var reader = new FileReader();

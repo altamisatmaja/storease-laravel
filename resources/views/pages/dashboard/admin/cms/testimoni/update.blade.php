@@ -27,7 +27,7 @@
                 enctype="multipart/form-data" method="POST">
                 @csrf
                 <div class="my-2">
-                    <label for="customer_name" class="block text-gray-800 text-lg font-semibold mb-2">customer_name</label>
+                    <label for="customer_name" class="block text-gray-800 text-lg font-semibold mb-2">Nama customer</label>
                     <input value="{{ $testimonials->customer_name }}" type="text" name="customer_name" id="customer_name"
                         required placeholder="Masukkan customer_name"
                         class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
@@ -61,7 +61,8 @@
                     <div class="">
                         <label class="text-lg font-medium text-textbase" for="description_testimonial">Tentang Tim Vendor
                             *</label>
-                        <textarea name="description_testimonial" id="description_testimonial">{{ $testimonials->description_testimonial }}</textarea>
+                        <textarea name="description_testimonial" id="description_testimonial"
+                            class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">{{ $testimonials->description_testimonial }}</textarea>
                         @error('description_testimonial')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
@@ -81,17 +82,17 @@
         </div>
     </div>
     <script>
-        $(document).ready(function() {
-            new FroalaEditor('#description_testimonial', {
-                toolbarButtons: [
-                    ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
-                    ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
-                        'backgroundColor'
-                    ],
-                    ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
-                ]
-            });
-        });
+        // $(document).ready(function() {
+        //     new FroalaEditor('#description_testimonial', {
+        //         toolbarButtons: [
+        //             ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
+        //             ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
+        //                 'backgroundColor'
+        //             ],
+        //             ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
+        //         ]
+        //     });
+        // });
 
         function previewImageCustomer(event) {
             const reader = new FileReader();

@@ -58,7 +58,8 @@
                 <div class="my-4">
                     <label for="about_section_description" class="block text-gray-800 text-lg font-semibold mb-2">Deskripsi
                         tentang</label>
-                    <textarea name="about_section_description" id="about_section_description">{{ $about['about_section_description'] }}</textarea>
+                    <textarea name="about_section_description" id="about_section_description"
+                        class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">{{ $about['about_section_description'] }}</textarea>
                 </div>
                 @error('about_section_description')
                     <span class="text-red-500">{{ $message }}</span>
@@ -66,7 +67,8 @@
                 <div class="my-4">
                     <label for="our_vision" class="block text-gray-800 text-lg font-semibold mb-2">Deskripsi
                         <span class="italic">our vision</span></label>
-                    <textarea name="our_vision" id="our_vision">{{ $about['our_vision'] }}</textarea>
+                    <textarea name="our_vision" id="our_vision"
+                        class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">{{ $about['our_vision'] }}</textarea>
                 </div>
                 @error('our_vision')
                     <span class="text-red-500">{{ $message }}</span>
@@ -74,7 +76,8 @@
                 <div class="my-4">
                     <label for="our_mission" class="block text-gray-800 text-lg font-semibold mb-2">Deskripsi
                         <span class="italic">our mission</span></label></label>
-                    <textarea name="our_mission" id="our_mission">{{ $about['our_mission'] }}</textarea>
+                    <textarea name="our_mission" id="our_mission"
+                        class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">{{ $about['our_mission'] }}</textarea>
                 </div>
                 @error('our_mission')
                     <span class="text-red-500">{{ $message }}</span>
@@ -86,41 +89,41 @@
         </form>
     </div>
     <script>
-        $(document).ready(function() {
-            new FroalaEditor('#about_section_description', {
-                toolbarButtons: [
-                    ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
-                    ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
-                        'backgroundColor'
-                    ],
-                    ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
-                ]
-            });
-        });
+        // $(document).ready(function() {
+        //     new FroalaEditor('#about_section_description', {
+        //         toolbarButtons: [
+        //             ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
+        //             ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
+        //                 'backgroundColor'
+        //             ],
+        //             ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
+        //         ]
+        //     });
+        // });
 
-        $(document).ready(function() {
-            new FroalaEditor('#our_vision', {
-                toolbarButtons: [
-                    ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
-                    ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
-                        'backgroundColor'
-                    ],
-                    ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
-                ]
-            });
-        });
+        // $(document).ready(function() {
+        //     new FroalaEditor('#our_vision', {
+        //         toolbarButtons: [
+        //             ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
+        //             ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
+        //                 'backgroundColor'
+        //             ],
+        //             ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
+        //         ]
+        //     });
+        // });
 
-        $(document).ready(function() {
-            new FroalaEditor('#our_mission', {
-                toolbarButtons: [
-                    ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
-                    ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
-                        'backgroundColor'
-                    ],
-                    ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
-                ]
-            });
-        });
+        // $(document).ready(function() {
+        //     new FroalaEditor('#our_mission', {
+        //         toolbarButtons: [
+        //             ['fontSize', 'bold', 'italic', 'underline', 'strikeThrough'],
+        //             ['alignLeft', 'alignCenter', 'alignRight', 'alignJustify', 'textColor',
+        //                 'backgroundColor'
+        //             ],
+        //             ['formatOLSimple', 'formatUL', 'insertLink', 'insertImage', 'insertFile'],
+        //         ]
+        //     });
+        // });
 
         function previewImage(event) {
             const reader = new FileReader();

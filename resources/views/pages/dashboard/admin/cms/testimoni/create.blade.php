@@ -26,7 +26,7 @@
             <form action="{{ route('admin.dashboard.cms.testimoni.store') }}" enctype="multipart/form-data" method="POST">
                 @csrf
                 <div class="my-2">
-                    <label for="customer_name" class="block text-gray-800 text-lg font-semibold mb-2">customer_name</label>
+                    <label for="customer_name" class="block text-gray-800 text-lg font-semibold mb-2">Nama Customer</label>
                     <input type="text" name="customer_name" id="customer_name" required
                         placeholder="Masukkan customer_name"
                         class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
@@ -61,14 +61,15 @@
                     <div class="">
                         <label class="text-lg font-medium text-textbase" for="description_testimonial">Tentang Tim Vendor
                             *</label>
-                        <textarea name="description_testimonial" id="description_testimonial"></textarea>
+                        <textarea name="description_testimonial" id="description_testimonial"
+                            class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600"></textarea>
                         @error('description_testimonial')
                             <span class="text-red-500">{{ $message }}</span>
                         @enderror
                     </div>
                 </div>
                 <div class="my-2">
-                    <label for="rating" class="block text-gray-800 text-lg font-semibold mb-2">rating</label>
+                    <label for="rating" class="block text-gray-800 text-lg font-semibold mb-2">Rating</label>
                     <input type="text" name="rating" id="rating" required placeholder="Masukkan rating"
                         class="w-full text-md px-4 py-3 border-2 border-gray-200 rounded-lg text-gray-700 focus:ring-orange-600">
                     <p class="mt-2">*Ini akan digunakan untuk <span class="font-bold">rating</span> website!</p>
@@ -79,7 +80,7 @@
             </form>
         </div>
     </div>
-    <script>
+    {{-- <script>
         $(document).ready(function() {
             new FroalaEditor('#description_testimonial', {
                 toolbarButtons: [
@@ -100,5 +101,5 @@
             };
             reader.readAsDataURL(event.target.files[0]);
         }
-    </script>
+    </script> --}}
 @endsection
