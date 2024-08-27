@@ -14,9 +14,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..700&display=swap" rel="stylesheet" />
-    {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.10/css/froala_editor.min.css" rel="stylesheet"> --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/froala-editor/4.0.10/js/froala_editor.min.js"></script> --}}
 </head>
 
 <body class="font-inter antialiased bg-gray-50  text-gray-600 ">
@@ -94,7 +92,7 @@
 
     <div class="flex h-[100dvh] overflow-hidden">
         @include('layouts.admin.sidebar')
-        <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden" x-ref="contentarea">
+        <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
             @include('layouts.admin.header')
             <main class="grow">
                 <div class="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">

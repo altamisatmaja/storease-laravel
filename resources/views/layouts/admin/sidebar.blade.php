@@ -5,15 +5,14 @@
 </style>
 
 
-<div x-data="{ sidebarOpen: false }" class="flex h-screen bg-white shadow-md">
+<div class="flex h-screen bg-white shadow-md">
     <!-- Sidebar backdrop (mobile only) -->
-    <div x-show="sidebarOpen" class="fixed inset-0 bg-[#423c6a] bg-opacity-50 z-30 lg:hidden" @click="sidebarOpen = false">
-    </div>
 
     <!-- Sidebar -->
-    <div class="fixed z-40 inset-y-0 left-0 w-64 bg-white rounded-lg lg:static lg:translate-x-0 transform -translate-x-full transition-transform duration-200 ease-in-out "
-        :class="{ 'translate-x-0': sidebarOpen }">
+    <div
+        class="fixed z-40 inset-y-0 left-0 w-64 bg-white rounded-lg lg:static lg:translate-x-0 transform -translate-x-full transition-transform duration-200 ease-in-out">
         <div class="flex flex-col h-full">
+
             <!-- Sidebar header -->
             <div class="flex items-center justify-center gap-x-4 h-16 bg-[#423c6a] w-full">
                 <div class="flex flex-col w-full px-4">
@@ -28,13 +27,14 @@
                     </div>
                     <div class="text-sm ml-6 font-semibold text-gray-100 ">Administrator</div>
                 </div>
-                <button @click="sidebarOpen = false" class="lg:hidden text-gray-100  focus:outline-none">
+                <button class="lg:hidden text-gray-100 focus:outline-none">
                     <svg class="w-6 h-6" fill="#ffffff" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12">
                         </path>
                     </svg>
                 </button>
+
             </div>
 
             <!-- Sidebar content -->
@@ -48,7 +48,7 @@
     <div class="flex-1 flex flex-col overflow-hidden">
         <!-- Topbar -->
         <header class="flex items-center justify-between h-16 bg-[#423c6a]  px-6  lg:hidden">
-            <button @click="sidebarOpen = true" class="text-gray-100  focus:outline-none lg:hidden">
+            <button class="text-gray-100  focus:outline-none lg:hidden">
                 <svg class="w-6 h-6" fill="#ffffff" stroke="currentColor" viewBox="0 0 24 24"
                     xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
@@ -70,10 +70,10 @@
                         </div>
                     </a>
                 </li>
-                <li class="flex flex-col mx-auto mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))]"
-                    x-data="{ open: {{ in_array(Request::segment(1), ['tasks']) ? 1 : 0 }} }">
+                <li
+                    class="flex flex-col mx-auto mb-0.5 last:mb-0 bg-[linear-gradient(135deg,var(--tw-gradient-stops))]">
                     <a class="block rounded-lg pl-3 pr-3 py-2  hover:bg-orange-400 hover:text-white truncate transition "
-                        href="#0" @click.prevent="open = !open; sidebarExpanded = true">
+                        href="#0">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960"
@@ -85,7 +85,7 @@
                         </div>
                     </a>
                     <div class="lg:hidden lg:sidebar-expanded:block 2xl:block mx-auto">
-                        <ul class="mt-2 " :class="open ? '!block' : 'hidden'">
+                        <ul class="mt-2 ">
                             <li class="mb-5 last:mb-2">
                                 <a class="block text-gray-500  hover:text-gray-800   transition truncate"
                                     href="{{ route('admin.dashboard') }}">
